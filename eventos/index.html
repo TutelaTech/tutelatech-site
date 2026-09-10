@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Radar curado de eventos de IA no Brasil e no mundo — conferências, hackathons gratuitos e prazos de inscrição. Atualizado toda semana pela Tutela Tech.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>📡</text></svg>">
+<title>Radar IA — Tutela Tech</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --ink: #171E2E;
+    --muted: #5B6579;
+    --line: #E1E6EE;
+    --accent: #2451E6;
+    --accent-soft: #E7EDFF;
+    --chip-ink: #FFFFFF;
+    --negocios: #2451E6;
+    --dev: #0E8A5F;
+    --pesquisa: #7444C9;
+    --festival: #C2620A;
+    --handson: #C22E6E;
+    --negocios-soft: #E7EDFF;
+    --dev-soft: #DDF3EA;
+    --pesquisa-soft: #EEE6FB;
+    --festival-soft: #FBEEDD;
+    --handson-soft: #FBE2ED;
+    --past: #9AA3B5;
+    --shadow: 0 1px 2px rgba(23,30,46,.05), 0 6px 18px rgba(23,30,46,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E121B;
+      --surface: #161C29;
+      --ink: #E9EDF5;
+      --muted: #97A1B6;
+      --line: #27303F;
+      --accent: #7C99FF;
+      --accent-soft: #1D2A4E;
+      --negocios: #7C99FF;
+      --dev: #45CE96;
+      --pesquisa: #B08EF5;
+      --festival: #F0A24A;
+      --handson: #F06FA8;
+      --negocios-soft: #1D2A4E;
+      --dev-soft: #123527;
+      --pesquisa-soft: #2C2044;
+      --festival-soft: #3A2A12;
+      --handson-soft: #43152B;
+      --past: #5B6579;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E121B;
+    --surface: #161C29;
+    --ink: #E9EDF5;
+    --muted: #97A1B6;
+    --line: #27303F;
+    --accent: #7C99FF;
+    --accent-soft: #1D2A4E;
+    --negocios: #7C99FF;
+    --dev: #45CE96;
+    --pesquisa: #B08EF5;
+    --festival: #F0A24A;
+    --handson: #F06FA8;
+    --negocios-soft: #1D2A4E;
+    --dev-soft: #123527;
+    --pesquisa-soft: #2C2044;
+    --festival-soft: #3A2A12;
+    --handson-soft: #43152B;
+    --past: #5B6579;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.25);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 40px 20px 64px; }
+
+  header h1 {
+    font-family: "Bricolage Grotesque", Georgia, serif;
+    font-weight: 800;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.05;
+    margin: 0 0 10px;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+  }
+  header h1 .dot { color: var(--accent); }
+  header p.sub { color: var(--muted); max-width: 60ch; margin: 0 0 6px; }
+  .updated {
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .08em;
+  }
+
+  /* ---------- filtros ---------- */
+  .filters {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--bg);
+    padding: 14px 0 12px;
+    margin-top: 22px;
+    border-bottom: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  }
+  .fgroup { display: flex; gap: 6px; flex-wrap: wrap; }
+  .fsep { width: 1px; align-self: stretch; background: var(--line); margin: 0 4px; }
+  .fbtn {
+    font: 500 13px/1 "Instrument Sans", system-ui, sans-serif;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 13px;
+    cursor: pointer;
+  }
+  .fbtn:hover { color: var(--ink); }
+  .fbtn:focus-visible, .search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .fbtn[aria-pressed="true"] {
+    background: var(--accent); border-color: var(--accent); color: #fff;
+  }
+  :root[data-theme="dark"] .fbtn[aria-pressed="true"] { color: #0E121B; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .fbtn[aria-pressed="true"] { color: #0E121B; }
+  }
+  .search { margin-left: auto; }
+  .search input {
+    font: 400 13px/1 "Instrument Sans", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 14px;
+    width: 170px;
+  }
+  .search input::placeholder { color: var(--muted); }
+  .count {
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 12px; color: var(--muted);
+    padding: 10px 0 0; display: block;
+  }
+
+  /* ---------- timeline ---------- */
+  .month { margin-top: 34px; }
+  .month > h2 {
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-weight: 600; font-size: 13px;
+    text-transform: uppercase; letter-spacing: .14em;
+    color: var(--muted);
+    margin: 0 0 12px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .month > h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .event {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 0 18px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+  }
+  .event.past { opacity: .55; }
+  .date {
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 13px; font-weight: 600;
+    color: var(--accent);
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .date small { display: block; font-weight: 400; color: var(--muted); font-size: 11px; margin-top: 2px; }
+  .event h3 {
+    font-family: "Bricolage Grotesque", Georgia, serif;
+    font-weight: 600; font-size: 18px;
+    margin: 0 0 2px; line-height: 1.25;
+  }
+  .event h3 a { color: inherit; text-decoration: none; }
+  .event h3 a:hover { color: var(--accent); text-decoration: underline; }
+  .place { color: var(--muted); font-size: 13.5px; margin: 0 0 8px; }
+  .why { margin: 0 0 10px; font-size: 14.5px; max-width: 62ch; }
+  .why strong { font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font: 500 11px/1 "IBM Plex Mono", Consolas, monospace;
+    text-transform: uppercase; letter-spacing: .06em;
+    border-radius: 5px; padding: 5px 8px;
+  }
+  .tag.cat-negocios { color: var(--negocios); background: var(--negocios-soft); }
+  .tag.cat-dev      { color: var(--dev);      background: var(--dev-soft); }
+  .tag.cat-pesquisa { color: var(--pesquisa); background: var(--pesquisa-soft); }
+  .tag.cat-festival { color: var(--festival); background: var(--festival-soft); }
+  .tag.cat-handson  { color: var(--handson);  background: var(--handson-soft); }
+  .tag.plain { color: var(--muted); background: transparent; border: 1px solid var(--line); }
+  .deadline {
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 10px;
+    display: flex; align-items: baseline; gap: 6px;
+  }
+  .deadline::before { content: "⏳"; }
+  .deadline .days { font-weight: 600; }
+  .deadline.urgent { color: var(--festival); }
+  .deadline.urgent .days { font-weight: 600; }
+  .deadline.closed { text-decoration: line-through; opacity: .7; }
+  .tag.br { color: var(--ink); background: transparent; border: 1px solid var(--line); font-weight: 600; }
+
+  .empty {
+    display: none;
+    text-align: center; color: var(--muted);
+    padding: 48px 0;
+  }
+
+  footer {
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 13px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer p { max-width: 70ch; }
+
+  @media (max-width: 560px) {
+    .event { grid-template-columns: 1fr; gap: 6px; }
+    .search { margin-left: 0; width: 100%; }
+    .search input { width: 100%; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .event { transition: opacity .15s ease; }
+  }
+
+  .nav { display: flex; align-items: center; gap: 24px; padding: 20px 0; max-width: 880px; margin: 0 auto; }
+  .brand { font-family: "Bricolage Grotesque", Georgia, serif; font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: -.01em; }
+  .brand .navdot { color: var(--accent); }
+  .nav-links { margin-left: auto; display: flex; gap: 20px; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 500; }
+  .nav-links a:hover, .nav-links a[aria-current] { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="/">Tutela Tech<span class="navdot">.</span></a>
+    <div class="nav-links">
+      <a href="/#servicos">Serviços</a>
+      <a href="/eventos/" aria-current="page">Radar IA</a>
+      <a href="/#contato">Contato</a>
+    </div>
+  </nav>
+</div>
+
+
+<div class="wrap">
+  <header>
+    <h1>Radar IA 2026–27<span class="dot">.</span></h1>
+    <p class="sub">Mapeamento curado dos eventos de inteligência artificial que valem seu tempo — do maior encontro do Brasil às conferências de pesquisa, hackathons gratuitos e eventos de agentes no mundo. Cada evento traz o motivo prático de ir (ou de assistir de longe) e o prazo de inscrição quando conhecido.</p>
+    <span class="updated">Atualizado em 10 set 2026 · atualização automática semanal · horizonte: set/2026 → jun/2027</span>
+  </header>
+
+  <nav class="filters" aria-label="Filtros">
+    <div class="fgroup" data-filter="local">
+      <button class="fbtn" data-value="todos" aria-pressed="true">Todos</button>
+      <button class="fbtn" data-value="brasil" aria-pressed="false">Brasil</button>
+      <button class="fbtn" data-value="mundo" aria-pressed="false">Mundo</button>
+      <button class="fbtn" data-value="remoto" aria-pressed="false">Dá pra ver online</button>
+    </div>
+    <div class="fsep" aria-hidden="true"></div>
+    <div class="fgroup" data-filter="cat">
+      <button class="fbtn" data-value="todas" aria-pressed="true">Todas</button>
+      <button class="fbtn" data-value="negocios" aria-pressed="false">Negócios</button>
+      <button class="fbtn" data-value="dev" aria-pressed="false">Dev &amp; agentes</button>
+      <button class="fbtn" data-value="pesquisa" aria-pressed="false">Pesquisa</button>
+      <button class="fbtn" data-value="festival" aria-pressed="false">Ecossistema</button>
+      <button class="fbtn" data-value="handson" aria-pressed="false">Hackathons</button>
+    </div>
+    <div class="search"><input id="q" type="search" placeholder="Buscar evento ou cidade…" aria-label="Buscar"></div>
+  </nav>
+  <span class="count" id="count"></span>
+
+  <main id="list">
+
+    <section class="month" data-month="2026-09">
+      <h2>Setembro 2026</h2>
+
+      <article class="event" data-local="mundo" data-cat="handson" data-remoto="sim">
+        <div class="date">1–30 set<small>online</small></div>
+        <div>
+          <h3><a href="https://lablab.ai/ai-hackathons" target="_blank" rel="noopener">AssemblyAI Voice AI Hackathon</a></h3>
+          <p class="place">100% online · gratuito · US$ 10.000 em prêmios</p>
+          <p class="why"><strong>Por que vale:</strong> desafio de um mês inteiro para construir com IA de voz — dá pra entrar a qualquer momento do período e ainda submeter. Formato ideal para aprender fazendo, sem custo e no seu ritmo.</p>
+          <p class="deadline" data-deadline="2026-09-30">Inscrições abertas durante todo o período — submissão até 30 set</p>
+          <div class="tags"><span class="tag cat-handson">Hackathon</span><span class="tag plain">Grátis</span><span class="tag plain">Online</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="handson" data-remoto="sim">
+        <div class="date">10–16 set<small>online</small></div>
+        <div>
+          <h3><a href="https://lablab.ai/ai-hackathons/ai-infra-summit-hackathon" target="_blank" rel="noopener">AI Infra Summit Hackathon</a></h3>
+          <p class="place">Online (10–16 set) + fase presencial opcional em Santa Clara (15–17 set) · gratuito</p>
+          <p class="why"><strong>Por que vale:</strong> hackathon gratuito da lablab.ai focado em infraestrutura de IA — começa hoje. A lablab.ai tem forte suporte a iniciantes e é a porta de entrada mais fácil para hackathons de IA generativa.</p>
+          <p class="deadline" data-deadline="2026-09-16">Build online começa hoje (10 set) — dá pra entrar até o fim do período</p>
+          <div class="tags"><span class="tag cat-handson">Hackathon</span><span class="tag plain">Grátis</span><span class="tag plain">Online</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="brasil" data-cat="handson" data-remoto="sim">
+        <div class="date">11–19 set<small>online</small></div>
+        <div>
+          <h3><a href="https://sopacultural.com/hacktudo-abre-inscricoes-para-19o-hackathon-e-desafia-jovens-a-repensarem-relacao-entre-tecnologia-e-educacao/" target="_blank" rel="noopener">HACKTUDO — 19º Hackathon</a></h3>
+          <p class="place">100% online · gratuito · tema: tecnologia e educação</p>
+          <p class="why"><strong>Por que vale:</strong> hackathon brasileiro tradicional (19ª edição), totalmente online e gratuito — boa vitrine nacional para quem quer portfólio em IA aplicada a impacto social.</p>
+          <p class="deadline" data-deadline="2026-09-10">Inscrições até 10 set — hoje é o último dia!</p>
+          <div class="tags"><span class="tag br">🇧🇷 Brasil</span><span class="tag cat-handson">Hackathon</span><span class="tag plain">Grátis</span><span class="tag plain">Online</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="handson" data-remoto="sim">
+        <div class="date">18–24 set<small>online</small></div>
+        <div>
+          <h3><a href="https://lablab.ai/ai-hackathons/wearedevelopers-hackathon" target="_blank" rel="noopener">WeAreDevelopers Hackathon</a></h3>
+          <p class="place">Online, ligado ao WeAreDevelopers World Congress North America (San José) · gratuito</p>
+          <p class="why"><strong>Por que vale:</strong> build online de uma semana com a comunidade do maior congresso de desenvolvedores do mundo — bom para networking técnico internacional sem viajar.</p>
+          <p class="deadline" data-deadline="2026-09-18">Build online começa 18 set</p>
+          <div class="tags"><span class="tag cat-handson">Hackathon</span><span class="tag plain">Grátis</span><span class="tag plain">Online</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="brasil" data-cat="negocios" data-remoto="nao">
+        <div class="date">24 set<small>qui</small></div>
+        <div>
+          <h3><a href="https://www.iaconferencebrasil.com.br/" target="_blank" rel="noopener">IA Conference Brasil 2026</a></h3>
+          <p class="place">Centro de Convenções Frei Caneca · São Paulo, SP</p>
+          <p class="why"><strong>Por que vale:</strong> o maior evento de IA do país na sua 3ª edição — 50+ conteúdos, 1.300+ profissionais e cases reais de empresas brasileiras aplicando IA. É a chance mais próxima (daqui a 2 semanas) de networking com quem já colocou IA em produção no Brasil.</p>
+          <p class="deadline" data-deadline="2026-09-24">Ingressos na Sympla: Conference R$ 1.698 + taxa (12x) · VIP esgotou no 3º lote — lotes sobem conforme a procura</p>
+          <div class="tags"><span class="tag br">🇧🇷 Brasil</span><span class="tag cat-negocios">Negócios &amp; aplicação</span><span class="tag plain">Presencial</span><span class="tag plain">Pago</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="handson" data-remoto="sim">
+        <div class="date">25–27 set<small>sex–dom</small></div>
+        <div>
+          <h3><a href="https://lablab.ai/ai-hackathons" target="_blank" rel="noopener">IBM Bob 2.0 Hackathon</a></h3>
+          <p class="place">Online · gratuito · 48 horas · US$ 10.000 em prêmios</p>
+          <p class="why"><strong>Por que vale:</strong> formato intenso de fim de semana (48h) — o jeito mais rápido de tirar uma ideia de agente/automação do papel com prazo forçado e premiação real.</p>
+          <p class="deadline" data-deadline="2026-09-25">Inscrições abertas até o início do build (25 set)</p>
+          <div class="tags"><span class="tag cat-handson">Hackathon</span><span class="tag plain">Grátis</span><span class="tag plain">48h</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="month" data-month="2026-10">
+      <h2>Outubro 2026</h2>
+
+      <article class="event" data-local="mundo" data-cat="dev" data-remoto="sim">
+        <div class="date">6 out<small>ter</small></div>
+        <div>
+          <h3><a href="https://openai.com/devday/" target="_blank" rel="noopener">OpenAI DevDay 2026</a></h3>
+          <p class="place">San Francisco, EUA · keynote transmitida online</p>
+          <p class="why"><strong>Por que vale:</strong> historicamente é onde saem novos modelos, APIs e cortes de preço que mudam o que dá pra construir. A keynote costuma ser transmitida de graça — produtivo mesmo sem sair de casa.</p>
+          <p class="deadline" data-deadline="2026-10-06">Presença é limitada e por inscrição no site — keynote online não precisa de inscrição</p>
+          <div class="tags"><span class="tag cat-dev">Dev &amp; agentes</span><span class="tag plain">Keynote online grátis</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="negocios" data-remoto="nao">
+        <div class="date">5–7 out<small>seg–qua</small></div>
+        <div>
+          <h3><a href="https://eventbrowse.com/ai-conferences/" target="_blank" rel="noopener">Agentic AI Summit</a></h3>
+          <p class="place">Loudoun County, Virgínia, EUA</p>
+          <p class="why"><strong>Por que vale:</strong> foco exclusivo em IA agêntica aplicada a operações de empresas — o tema mais quente de 2026 tratado do ponto de vista de quem decide, não só de quem programa.</p>
+          <div class="tags"><span class="tag cat-negocios">Negócios &amp; aplicação</span><span class="tag plain">Presencial</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="negocios" data-remoto="nao">
+        <div class="date">7–8 out<small>qua–qui</small></div>
+        <div>
+          <h3><a href="https://worldsummit.ai/" target="_blank" rel="noopener">World Summit AI</a></h3>
+          <p class="place">Amsterdã, Holanda · a partir de €349</p>
+          <p class="why"><strong>Por que vale:</strong> um dos encontros de IA aplicada mais tradicionais da Europa — estratégia, ética e casos corporativos com plateia global e ingresso relativamente acessível para o porte do evento.</p>
+          <div class="tags"><span class="tag cat-negocios">Negócios &amp; aplicação</span><span class="tag plain">Presencial</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="negocios" data-remoto="nao">
+        <div class="date">20–21 out<small>ter–qua</small></div>
+        <div>
+          <h3><a href="https://www.ai-expo.net/europe/" target="_blank" rel="noopener">AI &amp; Big Data Expo Europe</a></h3>
+          <p class="place">Amsterdã, Holanda</p>
+          <p class="why"><strong>Por que vale:</strong> feira ampla de IA + dados com expositores de ferramentas enterprise — bom para comparar fornecedores e ver demos lado a lado em um só lugar.</p>
+          <div class="tags"><span class="tag cat-negocios">Negócios &amp; aplicação</span><span class="tag plain">Feira / expo</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="dev" data-remoto="nao">
+        <div class="date">22–23 out<small>qui–sex</small></div>
+        <div>
+          <h3><a href="https://www.crossmint.com/learn/ai-agent-conference-calendar" target="_blank" rel="noopener">AGNTCon + MCPCon North America</a></h3>
+          <p class="place">San José, Califórnia, EUA</p>
+          <p class="why"><strong>Por que vale:</strong> conferência dedicada a agentes de IA e ao protocolo MCP — se você constrói automações com Claude, ChatGPT ou agentes próprios, é o evento mais diretamente útil do calendário.</p>
+          <div class="tags"><span class="tag cat-dev">Dev &amp; agentes</span><span class="tag plain">MCP</span><span class="tag plain">Presencial</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="handson" data-remoto="sim">
+        <div class="date">12–18 out<small>híbrido</small></div>
+        <div>
+          <h3><a href="https://lablab.ai/ai-hackathons" target="_blank" rel="noopener">AMD AI Hackathon</a></h3>
+          <p class="place">Online (12–17 out) + fase presencial (17–18 out) · gratuito</p>
+          <p class="why"><strong>Por que vale:</strong> hackathon híbrido com hardware da AMD em jogo — bom para experimentar modelos abertos em GPUs alternativas à NVIDIA e entender custo/desempenho na prática.</p>
+          <p class="deadline" data-deadline="2026-10-12">Build online começa 12 out — inscrição gratuita na lablab.ai</p>
+          <div class="tags"><span class="tag cat-handson">Hackathon</span><span class="tag plain">Grátis</span><span class="tag plain">Híbrido</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="month" data-month="2026-11">
+      <h2>Novembro 2026</h2>
+
+      <article class="event" data-local="mundo" data-cat="festival" data-remoto="nao">
+        <div class="date">9–12 nov<small>seg–qui</small></div>
+        <div>
+          <h3><a href="https://websummit.com/" target="_blank" rel="noopener">Web Summit Lisboa 2026</a></h3>
+          <p class="place">Lisboa, Portugal · ~70.000 participantes</p>
+          <p class="why"><strong>Por que vale:</strong> o maior festival de tecnologia da Europa, com IA dominando os palcos. Para brasileiros é o grande evento internacional "em casa": muito conteúdo e networking em português, e ponte natural com investidores europeus.</p>
+          <p class="deadline" data-deadline="2026-11-09">Early bird ~€895 — sobe para €995+ perto do evento · pacote startup desde €495</p>
+          <div class="tags"><span class="tag cat-festival">Ecossistema</span><span class="tag plain">Fala-se português</span><span class="tag plain">Presencial</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="mundo" data-cat="dev" data-remoto="sim">
+        <div class="date">nov<small>data a confirmar</small></div>
+        <div>
+          <h3><a href="https://www.ai.engineer/" target="_blank" rel="noopener">AI Engineer Code Summit</a></h3>
+          <p class="place">Nova York, EUA · palestras publicadas no YouTube</p>
+          <p class="why"><strong>Por que vale:</strong> a série AI Engineer virou referência técnica em engenharia de agentes e coding agents. Mesmo sem ir, as palestras publicadas depois estão entre o conteúdo técnico mais denso e prático disponível de graça.</p>
+          <div class="tags"><span class="tag cat-dev">Dev &amp; agentes</span><span class="tag plain">Conteúdo grátis depois</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="month" data-month="2026-12">
+      <h2>Dezembro 2026</h2>
+
+      <article class="event" data-local="mundo" data-cat="pesquisa" data-remoto="sim">
+        <div class="date">6–12 dez<small>dom–sáb</small></div>
+        <div>
+          <h3><a href="https://neurips.cc/" target="_blank" rel="noopener">NeurIPS 2026</a></h3>
+          <p class="place">Sydney, Austrália · hubs paralelos em Atlanta e Paris (9–13 dez)</p>
+          <p class="why"><strong>Por que vale:</strong> a conferência de pesquisa em IA mais influente do mundo, na 40ª edição e pela primeira vez em formato multi-hub. O que aparece aqui vira produto 12–18 meses depois — acompanhar os papers premiados é ver o futuro com antecedência.</p>
+          <p class="deadline">Inscrição antecipada (desconto) costuma encerrar no início de novembro — confira em neurips.cc</p>
+          <div class="tags"><span class="tag cat-pesquisa">Pesquisa</span><span class="tag plain">Papers abertos</span><span class="tag plain">Multi-hub</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="month" data-month="2027-01">
+      <h2>Janeiro 2027</h2>
+
+      <article class="event" data-local="mundo" data-cat="festival" data-remoto="sim">
+        <div class="date">~6–9 jan<small>a confirmar</small></div>
+        <div>
+          <h3><a href="https://www.ces.tech/" target="_blank" rel="noopener">CES 2027</a></h3>
+          <p class="place">Las Vegas, EUA · keynotes transmitidas online</p>
+          <p class="why"><strong>Por que vale:</strong> o termômetro anual de IA em produtos de consumo — robôs, carros, wearables e casa inteligente. As keynotes online bastam para captar as tendências do ano sem passagem aérea.</p>
+          <div class="tags"><span class="tag cat-festival">Ecossistema</span><span class="tag plain">Keynotes online</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="month" data-month="2027-03">
+      <h2>Março 2027</h2>
+
+      <article class="event" data-local="mundo" data-cat="dev" data-remoto="sim">
+        <div class="date">mar<small>a confirmar</small></div>
+        <div>
+          <h3><a href="https://www.nvidia.com/gtc/" target="_blank" rel="noopener">NVIDIA GTC 2027</a></h3>
+          <p class="place">San José, Califórnia, EUA · keynote e sessões online grátis</p>
+          <p class="why"><strong>Por que vale:</strong> o evento que dita o ritmo do hardware de IA — IA física, robótica e "fábricas de IA". A keynote do Jensen Huang é transmitida de graça e centenas de sessões técnicas ficam disponíveis online mediante cadastro.</p>
+          <div class="tags"><span class="tag cat-dev">Dev &amp; agentes</span><span class="tag plain">Sessões online grátis</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="brasil" data-cat="festival" data-remoto="nao">
+        <div class="date">mar–abr<small>a confirmar</small></div>
+        <div>
+          <h3><a href="https://www.southsummit.io/brazil/" target="_blank" rel="noopener">South Summit Brazil 2027</a></h3>
+          <p class="place">Porto Alegre, RS</p>
+          <p class="why"><strong>Por que vale:</strong> o principal ponto de encontro entre startups, investidores e grandes empresas no Brasil — trilhas fortes de IA e a melhor densidade de networking do ecossistema nacional fora do eixo Rio–SP.</p>
+          <div class="tags"><span class="tag br">🇧🇷 Brasil</span><span class="tag cat-festival">Ecossistema</span><span class="tag plain">Startups</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="month" data-month="2027-05">
+      <h2>Maio 2027</h2>
+
+      <article class="event" data-local="brasil" data-cat="negocios" data-remoto="nao">
+        <div class="date">~mai<small>a confirmar</small></div>
+        <div>
+          <h3><a href="https://agenciacafeonline.com.br/blog/calendario-eventos-ia-tecnologia-brasil-2026/" target="_blank" rel="noopener">Digital Tech Show 2027</a></h3>
+          <p class="place">São Paulo, SP</p>
+          <p class="why"><strong>Por que vale:</strong> voltado a gestores de TI e PMEs avaliando soluções de IA na prática — útil para quem precisa escolher ferramentas com orçamento realista, sem o hype dos megaeventos. Edição 2026 foi em 5–6 de maio.</p>
+          <div class="tags"><span class="tag br">🇧🇷 Brasil</span><span class="tag cat-negocios">Negócios &amp; aplicação</span><span class="tag plain">PMEs</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="month" data-month="2027-06">
+      <h2>Junho 2027</h2>
+
+      <article class="event" data-local="brasil" data-cat="festival" data-remoto="nao">
+        <div class="date">14–17 jun<small>seg–qui</small></div>
+        <div>
+          <h3><a href="https://rio.websummit.com/pt-br/" target="_blank" rel="noopener">Web Summit Rio 2027</a></h3>
+          <p class="place">Riocentro · Rio de Janeiro, RJ</p>
+          <p class="why"><strong>Por que vale:</strong> a maior conferência de tecnologia da América do Sul, com palcos dedicados a IA e presença forte de big techs e fundos internacionais — a edição com melhor custo-benefício para networking global sem sair do Brasil.</p>
+          <div class="tags"><span class="tag br">🇧🇷 Brasil</span><span class="tag cat-festival">Ecossistema</span><span class="tag plain">Presencial</span></div>
+        </div>
+      </article>
+
+      <article class="event" data-local="brasil" data-cat="negocios" data-remoto="nao">
+        <div class="date">~jun<small>a confirmar</small></div>
+        <div>
+          <h3><a href="https://febrabantech.febraban.org.br/" target="_blank" rel="noopener">Febraban Tech 2027</a></h3>
+          <p class="place">São Paulo, SP</p>
+          <p class="why"><strong>Por que vale:</strong> o maior evento de tecnologia do setor financeiro da América Latina — onde bancos brasileiros mostram IA em produção em escala real (crédito, antifraude, atendimento). Referência de caso aplicado mesmo para quem não é do setor.</p>
+          <div class="tags"><span class="tag br">🇧🇷 Brasil</span><span class="tag cat-negocios">Negócios &amp; aplicação</span><span class="tag plain">Setor financeiro</span></div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <div class="empty" id="empty">Nenhum evento com esses filtros. Limpe a busca ou escolha outra categoria.</div>
+
+  <footer>
+    <p><strong>Como este radar foi montado:</strong> curadoria priorizando eventos com histórico comprovado, conteúdo aplicável e boa relação custo–retorno — descartando eventos genéricos de "tendências". Datas marcadas com "a confirmar" seguem o padrão histórico do evento; confira o site oficial antes de comprar passagem.</p>
+    <p>Fontes: <a href="https://www.datacamp.com/blog/top-ai-conferences" target="_blank" rel="noopener">DataCamp</a> · <a href="https://www.acate.com.br/blog-da-acate/agenda-de-eventos-mundiais-em-2026-tecnologia-ia-inovacao/" target="_blank" rel="noopener">ACATE</a> · <a href="https://eventbrowse.com/ai-conferences/" target="_blank" rel="noopener">EventBrowse</a> · <a href="https://www.tldl.io/resources/ai-conferences-2026" target="_blank" rel="noopener">TLDL (calendário acadêmico)</a> · <a href="https://agenciacafeonline.com.br/blog/calendario-eventos-ia-tecnologia-brasil-2026/" target="_blank" rel="noopener">Agência Café (Brasil)</a> · <a href="https://lablab.ai/ai-hackathons" target="_blank" rel="noopener">lablab.ai (hackathons)</a> · <a href="https://devpost.com/c/artificial-intelligence" target="_blank" rel="noopener">Devpost</a> · <a href="https://www.sympla.com.br/evento/ia-conference-brasil-2026/3269443" target="_blank" rel="noopener">Sympla (ingressos IA Conference)</a> · sites oficiais dos eventos.</p>
+    <p><strong>Onde achar mais hackathons e webinars gratuitos:</strong> a <a href="https://lablab.ai/ai-hackathons" target="_blank" rel="noopener">lablab.ai</a> lança hackathons de IA generativa quase toda semana (gratuitos, online, com suporte a iniciantes) e o <a href="https://devpost.com/c/artificial-intelligence" target="_blank" rel="noopener">Devpost</a> é o maior diretório global — vale acompanhar os dois além deste radar.</p>
+  </footer>
+</div>
+
+<script>
+  const state = { local: "todos", cat: "todas", q: "" };
+  const events = Array.from(document.querySelectorAll(".event"));
+  const months = Array.from(document.querySelectorAll(".month"));
+  const countEl = document.getElementById("count");
+  const emptyEl = document.getElementById("empty");
+
+  function norm(s) {
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
+  function apply() {
+    let shown = 0;
+    events.forEach(ev => {
+      const okLocal =
+        state.local === "todos" ||
+        (state.local === "remoto" ? ev.dataset.remoto === "sim" : ev.dataset.local === state.local);
+      const okCat = state.cat === "todas" || ev.dataset.cat === state.cat;
+      const okQ = !state.q || norm(ev.textContent).includes(state.q);
+      const show = okLocal && okCat && okQ;
+      ev.hidden = !show;
+      if (show) shown++;
+    });
+    months.forEach(m => {
+      m.hidden = !m.querySelector(".event:not([hidden])");
+    });
+    countEl.textContent = shown + (shown === 1 ? " evento no radar" : " eventos no radar");
+    emptyEl.style.display = shown === 0 ? "block" : "none";
+  }
+
+  document.querySelectorAll(".fgroup").forEach(group => {
+    const key = group.dataset.filter;
+    group.addEventListener("click", e => {
+      const btn = e.target.closest(".fbtn");
+      if (!btn) return;
+      group.querySelectorAll(".fbtn").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      state[key === "local" ? "local" : "cat"] = btn.dataset.value;
+      apply();
+    });
+  });
+
+  document.getElementById("q").addEventListener("input", e => {
+    state.q = norm(e.target.value.trim());
+    apply();
+  });
+
+  // contagem regressiva dos prazos de inscrição
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+  document.querySelectorAll(".deadline[data-deadline]").forEach(el => {
+    const alvo = new Date(el.dataset.deadline + "T00:00:00");
+    const dias = Math.round((alvo - hoje) / 86400000);
+    const span = document.createElement("span");
+    span.className = "days";
+    if (dias < 0) {
+      el.classList.add("closed");
+      span.textContent = "· encerrado";
+    } else if (dias === 0) {
+      el.classList.add("urgent");
+      span.textContent = "· é hoje!";
+    } else if (dias <= 14) {
+      el.classList.add("urgent");
+      span.textContent = "· faltam " + dias + (dias === 1 ? " dia" : " dias");
+    } else {
+      span.textContent = "· em " + dias + " dias";
+    }
+    el.appendChild(span);
+  });
+
+  apply();
+</script>
+
+</body>
+</html>
