@@ -215,12 +215,18 @@
     content: "";
     position: absolute; inset: -1px;
     border-radius: inherit;
-    background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgba(65,205,246,.2), transparent 65%);
+    background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(143,233,255,.3),
+      rgba(65,205,246,.13) 45%,
+      transparent 72%);
     opacity: 0;
-    transition: opacity .35s ease;
+    transition: opacity .3s ease;
     pointer-events: none;
   }
   .lightable:hover::before { opacity: 1; }
+  /* celular: o card no centro da tela acende conforme a rolagem */
+  .lightable.touch-lit::before { opacity: 1; }
+  .service.touch-lit, .radar-card.touch-lit { border-color: var(--line-strong); box-shadow: 0 0 34px rgba(46,123,255,.18); }
 
   @keyframes sweep {
     from { background-position: 170% 0; opacity: 1; }
@@ -567,16 +573,23 @@
   }, { threshold: 0, rootMargin: "-30% 0px -30% 0px" });
   lightSections.forEach(s => sio.observe(s));
 
-  // holofote do farol seguindo o cursor (só em telas com mouse)
+  // holofote do farol seguindo o cursor (telas com mouse)
+  const cards = document.querySelectorAll(".service, .step, .radar-card");
+  cards.forEach(el => el.classList.add("lightable"));
   if (window.matchMedia("(hover: hover)").matches) {
-    document.querySelectorAll(".service, .step, .radar-card").forEach(el => {
-      el.classList.add("lightable");
+    cards.forEach(el => {
       el.addEventListener("mousemove", e => {
         const r = el.getBoundingClientRect();
         el.style.setProperty("--mx", (e.clientX - r.left) + "px");
         el.style.setProperty("--my", (e.clientY - r.top) + "px");
       });
     });
+  } else {
+    // celular/tablet: o card no centro da tela acende conforme a rolagem
+    const cio = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle("touch-lit", e.isIntersecting));
+    }, { threshold: 0, rootMargin: "-35% 0px -35% 0px" });
+    cards.forEach(el => cio.observe(el));
   }
 </script>
 
