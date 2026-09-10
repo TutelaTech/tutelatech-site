@@ -315,7 +315,11 @@
 
   /* processo */
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px 18px; }
-  .step { border-top: 1px solid var(--line-strong); padding-top: 22px; border-radius: 10px; }
+  .step {
+    border-top: 1px solid var(--line-strong);
+    padding: 24px 22px 26px;
+    border-radius: 12px;
+  }
   .step .num {
     font-family: "IBM Plex Mono", monospace;
     font-size: 12px; font-weight: 600;
