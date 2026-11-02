@@ -202,6 +202,13 @@
   footer a:hover { text-decoration: underline; }
   footer p { max-width: 72ch; }
 
+  .rali-destaque{display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:center;background:linear-gradient(120deg,var(--surface2),var(--surface));border:1px solid var(--line-strong);border-radius:14px;padding:22px 24px;margin-top:26px}
+  .rali-destaque .rbadge{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#FFD464;background:rgba(255,196,42,.1);border:1px solid rgba(255,196,42,.35);border-radius:6px;padding:4px 9px;display:inline-block;margin-bottom:10px}
+  .rali-destaque h2{font-weight:800;font-size:20px;margin:0 0 6px;letter-spacing:-.01em;font-family:"Manrope",sans-serif}
+  .rali-destaque p{color:var(--muted);margin:0;font-size:14.5px;max-width:60ch}
+  .rali-destaque .rbtn{display:inline-block;font-weight:700;font-size:14.5px;text-decoration:none;border-radius:9px;padding:12px 20px;background:linear-gradient(135deg,var(--accent),var(--cyan));color:var(--btn-ink);white-space:nowrap}
+  .rali-destaque .rbtn:hover{filter:brightness(1.1)}
+  @media (max-width: 620px) { .rali-destaque{grid-template-columns:1fr} }
   @media (max-width: 560px) {
     .event { grid-template-columns: 1fr; gap: 6px; }
     .search { margin-left: 0; width: 100%; }
@@ -239,6 +246,15 @@
     <p class="sub">Mapeamento curado dos eventos de inteligência artificial que valem seu tempo — do maior encontro do Brasil às conferências de pesquisa, hackathons gratuitos e eventos de agentes no mundo. Cada evento traz o motivo prático de ir (ou de assistir de longe) e o prazo de inscrição quando conhecido.</p>
     <span class="updated">Atualizado em 2 nov 2026 · atualização automática semanal · horizonte: out/2026 → ago/2027</span>
   </header>
+
+  <div class="rali-destaque">
+    <div>
+      <span class="rbadge">🏁 Evento com apoio da Tutela · inscrições até 20/11</span>
+      <h2>Rali de Inovação — 2ª edição</h2>
+      <p>Maratona de inovação do SENAI Toledo e IguassuTec: equipes resolvem dores reais da indústria do Oeste do Paraná, de nov/2026 a mar/2027. R$ 8 mil em prêmios.</p>
+    </div>
+    <a class="rbtn" href="/rali/">Conhecer o Rali →</a>
+  </div>
 
   <nav class="filters" aria-label="Filtros">
     <div class="fgroup" data-filter="local">
@@ -733,7 +749,7 @@
         (state.local === "remoto" ? ev.dataset.remoto === "sim" : ev.dataset.local === state.local);
       const okCat = state.cat === "todas" || ev.dataset.cat === state.cat;
       const okQ = !state.q || norm(ev.textContent).includes(state.q);
-      const show = okLocal && okCat && okQ;
+      const show = okLocal && okCat && okQ && !ev.classList.contains("expired");
       ev.hidden = !show;
       if (show) shown++;
     });
@@ -783,6 +799,11 @@
     }
     el.appendChild(span);
   });
+
+  // oculta eventos de meses ja encerrados e eventos marcados como passados
+  const mesAtual = new Date().getFullYear() + "-" + String(new Date().getMonth() + 1).padStart(2, "0");
+  months.forEach(m => { if (m.dataset.month < mesAtual) m.querySelectorAll(".event").forEach(ev => ev.classList.add("expired")); });
+  events.forEach(ev => { if (ev.classList.contains("past")) ev.classList.add("expired"); });
 
   apply();
 </script>
