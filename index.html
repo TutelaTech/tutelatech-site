@@ -80,6 +80,23 @@
     transition: color .15s ease, border-color .15s ease;
   }
   .nav-links a.nav-cta:hover { border-color: var(--cyan); color: var(--glow); }
+  .nav-links a.nav-rali {
+    color: #FFD464;
+    font-weight: 700;
+    border: 1px solid rgba(255,196,42,.45);
+    background: rgba(255,196,42,.08);
+    border-radius: 8px; padding: 9px 14px;
+    transition: color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .nav-links a.nav-rali:hover { color: #FFE39A; border-color: #FFD464; background: rgba(255,196,42,.14); }
+  .nav-rali .lshort { display: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .nav-links a.nav-rali { animation: raliGlow 2.6s ease-in-out infinite; }
+  }
+  @keyframes raliGlow {
+    0%, 100% { box-shadow: 0 0 0 rgba(255,196,42,0); }
+    50% { box-shadow: 0 0 14px rgba(255,196,42,.35); }
+  }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 
   /* ---------- hero ---------- */
@@ -422,9 +439,12 @@
     #radar .radar-card { grid-template-columns: 1fr; padding: 32px 26px; }
     #radar .radar-card::after { display: none; }
     section { padding: 56px 0; }
-    .nav-links { gap: 14px; }
-    .nav-links a:not(.nav-cta):not([href="/eventos/"]) { display: none; }
+    .nav-links { gap: 10px; }
+    .nav-links a:not(.nav-cta):not(.nav-rali):not([href="/eventos/"]) { display: none; }
     .nav-links a.nav-cta { padding: 8px 13px; font-size: 13.5px; }
+    .nav-links a.nav-rali { padding: 8px 11px; font-size: 13.5px; }
+    .nav-rali .lfull { display: none; }
+    .nav-rali .lshort { display: inline; }
   }
   @media (max-width: 400px) {
     .cta-row .btn { width: 100%; text-align: center; }
@@ -448,7 +468,7 @@
         <a href="#servicos">Serviços</a>
         <a href="#processo">Como trabalhamos</a>
         <a href="/eventos/">Radar IA</a>
-        <a href="/rali/">Rali de Inovação</a>
+        <a class="nav-rali" href="/rali/"><span class="lfull">🏁 Rali de Inovação</span><span class="lshort">🏁 Rali</span></a>
         <a class="nav-cta" href="#contato">Fale conosco</a>
       </div>
     </nav>
