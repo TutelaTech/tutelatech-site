@@ -14,17 +14,22 @@
   --bg:#F6F8FB; --paper:#FFFFFF; --ink:#0B2545; --ink-2:#3F5473; --muted:#6B7A93;
   --line:#D9E1EC; --blue:#1A5E8E; --blue-2:#DCEBF5; --navy:#0B2545; --gold:#C4922A; --gold-2:#F6ECD6;
   --lime:#9CC73C; --lime-2:#EEF6D9; --cta:#1A5E8E; --cta-ink:#FFFFFF;
+  --dband:#E9F1F9; --dcard:#FFFFFF; --dcard-line:#C9D7E8;
   --hero-light:block; --hero-dark:none;
   --display:'Barlow Semi Condensed',Arial Narrow,Arial,sans-serif; --body:'Source Sans 3',Segoe UI,Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
   --blue:#7CC4F2; --blue-2:#143A61; --navy:#061428; --gold:#E2B55B; --gold-2:#3A2E12; --lime:#C6F55A; --lime-2:#203514;
-  --cta:#C6F55A; --cta-ink:#071A33; --hero-light:none; --hero-dark:block; color-scheme:dark } }
+  --cta:#C6F55A; --cta-ink:#071A33;
+  --dband:#0A1E3C; --dcard:#17365F; --dcard-line:#33557F;
+  --hero-light:none; --hero-dark:block; color-scheme:dark } }
 :root[data-theme="dark"]{
   --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
   --blue:#7CC4F2; --blue-2:#143A61; --navy:#061428; --gold:#E2B55B; --gold-2:#3A2E12; --lime:#C6F55A; --lime-2:#203514;
-  --cta:#C6F55A; --cta-ink:#071A33; --hero-light:none; --hero-dark:block; color-scheme:dark }
+  --cta:#C6F55A; --cta-ink:#071A33;
+  --dband:#0A1E3C; --dcard:#17365F; --dcard-line:#33557F;
+  --hero-light:none; --hero-dark:block; color-scheme:dark }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
@@ -151,6 +156,16 @@ a{color:var(--blue)}
 .d .dica h4{color:#4F6B0F}
 :root[data-theme="dark"] .d .dica h4{color:var(--lime)}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .d .dica h4{color:var(--lime)} }
+
+/* desafios: 3 planos visuais — faixa, card e chips — para separar bem as áreas */
+#desafios.band.alt{background:var(--dband)}
+#desafios .chip{background:var(--dcard);border-color:var(--dcard-line)}
+#desafios .chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+:root[data-theme="dark"] #desafios .chip.on{color:#071A33}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) #desafios .chip.on{color:#071A33} }
+#desafios .d{background:var(--dcard);border-color:var(--dcard-line);box-shadow:0 2px 12px rgba(7,26,51,.12)}
+#desafios .d .body{border-top-color:var(--dcard-line)}
+#desafios .d .areas span{background:var(--dband);border-color:var(--dcard-line)}
 
 /* premiação */
 .prizes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:24px}
