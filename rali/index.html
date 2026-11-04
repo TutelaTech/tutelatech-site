@@ -1124,7 +1124,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
 </div></section>
 
-<div class="ctabar" id="ctabar"><a class="btn primary" href="#inscricao" target="_blank" rel="noopener">Inscreva sua equipe</a></div>
+<div class="ctabar" id="ctabar"><a class="btn primary" href="#inscricao">Inscreva sua equipe</a></div>
 
 <footer><div class="wrap"><span>Rali de Inovação · 2ª Edição · Desafios da Indústria · novembro/2026 a março/2027</span><span>SENAI Toledo · IguassuTec · INSIDE Sistemas</span></div></footer>
 
@@ -1170,10 +1170,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
   // ===== efeitos (do site da Tutela Tech, adaptados) =====
   var motion=window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-  var cards=[].slice.call(document.querySelectorAll('.pcard,.step,.prize,.crit,.req,.brand,.slogo,.stat,.d'));
+  var fxCards=[].slice.call(document.querySelectorAll('.pcard,.step,.prize,.crit,.req,.brand,.slogo,.stat,.d'));
   var grids='.cards3,.stats,.prizes,.criteria,.reqs,.brands,.support';
   if(motion && 'IntersectionObserver' in window){
-    var els=cards.filter(function(el){ return !el.closest('.hero'); }).concat([].slice.call(document.querySelectorAll('.faq details,.contact')));
+    var els=fxCards.filter(function(el){ return !el.closest('.hero'); }).concat([].slice.call(document.querySelectorAll('.faq details,.contact')));
     els.forEach(function(el){
       el.classList.add('pre-reveal');
       if(!el.classList.contains('slogo') && !el.classList.contains('d')) el.classList.add('sweepable');
@@ -1196,12 +1196,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     secs.forEach(function(s){ sio.observe(s); });
   }
   // holofote
-  cards.forEach(function(el){ el.classList.add('lightable'); });
+  fxCards.forEach(function(el){ el.classList.add('lightable'); });
   if(window.matchMedia('(hover: hover)').matches){
-    cards.forEach(function(el){ el.addEventListener('mousemove',function(e){ var r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px'); }); });
+    fxCards.forEach(function(el){ el.addEventListener('mousemove',function(e){ var r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px'); }); });
   } else if('IntersectionObserver' in window){
     var cio=new IntersectionObserver(function(entries){ entries.forEach(function(e){ e.target.classList.toggle('touch-lit',e.isIntersecting); }); },{threshold:0,rootMargin:'-35% 0px -35% 0px'});
-    cards.forEach(function(el){ cio.observe(el); });
+    fxCards.forEach(function(el){ cio.observe(el); });
   }
 })();
 </script>
