@@ -39,8 +39,8 @@ h3{font-size:22px;font-weight:700}
 p{margin:0;text-wrap:pretty}
 a{color:var(--blue)}
 .nowrap{white-space:nowrap}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.band{padding-block:56px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:16px;padding-right:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-top:56px;padding-bottom:56px}
 .band.alt{background:var(--paper)}
 .eyebrow{font:700 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .lead{font-size:19px;color:var(--ink-2);max-width:80ch;margin-top:12px}
@@ -68,7 +68,7 @@ a{color:var(--blue)}
 .top .t2{font:400 8px Michroma,var(--display);letter-spacing:.5em;color:var(--blue);margin-top:4px}
 
 /* herói: arte à esquerda, texto e botões à direita; empilha em telas estreitas */
-.hero{padding-block:28px 48px}
+.hero{padding-top:28px;padding-bottom:48px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:center}
 .hero .art-box{aspect-ratio:1600/842;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
 .hero .art{display:block;width:100%;height:100%;object-fit:cover}
@@ -79,7 +79,7 @@ a{color:var(--blue)}
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr;gap:24px}
   .hero .hero-text{text-align:center}
-  .hero .lead{margin-inline:auto;max-width:58ch}
+  .hero .lead{margin-left:auto;margin-right:auto;max-width:58ch}
   .hero .cta-row{justify-content:center}
 }
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:10px;
@@ -248,7 +248,7 @@ html.sem-forms .forms-note{display:block;margin-top:8px}
 }
 .contact{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:18px;color:var(--ink-2)}
 .contact b{color:var(--ink)}
-footer{padding-block:28px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer{padding-top:28px;padding-bottom:28px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
 
