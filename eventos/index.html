@@ -801,12 +801,32 @@
     el.appendChild(span);
   });
 
-  // oculta eventos de meses ja encerrados e eventos marcados como passados
+  // oculta eventos de meses ja encerrados, eventos marcados como passados
+  // e eventos do mes atual cuja data final (ultimo "D mes" do .date) ja passou
   const mesAtual = new Date().getFullYear() + "-" + String(new Date().getMonth() + 1).padStart(2, "0");
   months.forEach(m => { if (m.dataset.month < mesAtual) m.querySelectorAll(".event").forEach(ev => ev.classList.add("expired")); });
   events.forEach(ev => { if (ev.classList.contains("past")) ev.classList.add("expired"); });
+  const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+  months.forEach(m => {
+    const [ano, mes] = (m.dataset.month || "").split("-").map(Number);
+    if (!ano || !mes) return;
+    m.querySelectorAll(".event").forEach(ev => {
+      const d = ev.querySelector(".date");
+      if (!d) return;
+      const datas = [...d.textContent.toLowerCase().matchAll(/(\d{1,2})\s*(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)/g)];
+      if (!datas.length) return;
+      const [, dia, nome] = datas[datas.length - 1];
+      const mesFim = MESES.indexOf(nome);
+      const fim = new Date(mesFim < mes - 1 ? ano + 1 : ano, mesFim, Number(dia));
+      if (fim < hoje) ev.classList.add("expired");
+    });
+  });
 
   apply();
+
+  // pagina aberta de um dia para o outro (telao): recarrega na virada do dia
+  const diaCarregado = hoje.getTime();
+  setInterval(() => { const d = new Date(); d.setHours(0, 0, 0, 0); if (d.getTime() !== diaCarregado) location.reload(); }, 600000);
 </script>
 </body>
 </html>
