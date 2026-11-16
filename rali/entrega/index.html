@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Rali de Inovação 2ª Edição — envio da entrega da classificatória: vídeo pitch, PM Canvas, autorização de imagem, resumo da solução e protótipo. Prazo: 15/12/2026.">
+<meta name="robots" content="noindex">
+<title>Entrega da classificatória · Rali de Inovação</title>
+<link rel="icon" href="/assets/logo-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Michroma&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --bg:#F6F8FB; --paper:#FFFFFF; --ink:#0B2545; --ink-2:#3F5473; --muted:#6B7A93;
+  --line:#D9E1EC; --blue:#1A5E8E; --blue-2:#DCEBF5; --gold:#9A6F12; --gold-2:#F6ECD6;
+  --lime:#5E8A12; --lime-2:#EEF6D9; --cta:#1A5E8E; --cta-ink:#FFFFFF; --field:#FFFFFF;
+  --erro:#B3261E; --erro-2:#FBE9E7; --ok:#1E7A4C; --ok-2:#E3F3EA;
+  --display:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
+  --blue:#7CC4F2; --blue-2:#143A61; --gold:#E2B55B; --gold-2:#3A2E12; --lime:#C6F55A; --lime-2:#203514;
+  --cta:#C6F55A; --cta-ink:#071A33; --field:#0A1E3C;
+  --erro:#FFB4AB; --erro-2:#4A1512; --ok:#8EE0B0; --ok-2:#113A26; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
+  --blue:#7CC4F2; --blue-2:#143A61; --gold:#E2B55B; --gold-2:#3A2E12; --lime:#C6F55A; --lime-2:#203514;
+  --cta:#C6F55A; --cta-ink:#071A33; --field:#0A1E3C;
+  --erro:#FFB4AB; --erro-2:#4A1512; --ok:#8EE0B0; --ok-2:#113A26; color-scheme:dark }
+*{box-sizing:border-box}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body)}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+p{margin:0}
+a{color:var(--blue)}
+[hidden]{display:none !important}
+.wrap{max-width:880px;margin:0 auto;padding-left:16px;padding-right:16px}
+
+.top{position:sticky;top:0;z-index:9;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;min-height:64px}
+.tutela{display:flex;align-items:center;text-decoration:none;margin-right:auto}
+.tutela img{width:42px;height:42px;border-radius:50%;display:block;margin-right:11px}
+.tutela .t1{display:block;font:400 14px/1 Michroma,var(--display);letter-spacing:.12em;color:var(--ink)}
+.tutela .t2{display:block;font:400 8px/1 Michroma,var(--display);letter-spacing:.5em;color:var(--blue);margin-top:4px}
+.voltar{font:700 15px var(--display);text-decoration:none;color:var(--ink-2);padding:10px 12px;border-radius:8px;border:1px solid var(--line)}
+.voltar:hover,.voltar:focus-visible{background:var(--blue-2);color:var(--ink);outline:none}
+
+.hero{padding-top:36px;padding-bottom:8px}
+.eyebrow{font:700 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h1{font-size:40px;font-weight:800}
+@media (max-width:560px){ h1{font-size:32px} }
+.lead{font-size:19px;color:var(--ink-2);margin-top:12px}
+.prazo{display:inline-block;margin-top:18px;background:var(--gold-2);color:var(--ink);border-radius:10px;padding:10px 14px;font:700 17px/1.3 var(--display)}
+.prazo b{color:var(--gold)}
+
+.aviso{border-radius:12px;padding:14px 16px;margin-top:20px;border:1px solid var(--line);background:var(--paper)}
+.aviso.espera{border-left:6px solid var(--gold)}
+.aviso.fechado{border-left:6px solid var(--erro);background:var(--erro-2)}
+.aviso b{font-family:var(--display);font-size:19px;display:block;margin-bottom:2px}
+
+section{padding-top:32px}
+h2{font-size:28px;font-weight:800;margin-bottom:14px}
+.itens{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){ .itens{grid-template-columns:1fr} }
+.itens li{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 56px;position:relative;color:var(--ink-2);font-size:16px}
+.itens li b{display:block;font:700 19px/1.2 var(--display);color:var(--ink);margin-bottom:3px}
+.itens li::before{content:attr(data-n);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--blue-2);color:var(--ink);font:800 17px/30px var(--display);text-align:center}
+.itens li.largo{grid-column:1/-1}
+
+form{margin-top:8px}
+fieldset{border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:18px 18px 20px;margin:0 0 16px;min-width:0}
+legend{font:800 21px/1 var(--display);padding:0 8px;color:var(--ink)}
+legend span{color:var(--gold)}
+.campo{margin-top:14px}
+.campo label,.rotulo{display:block;font:700 16px/1.25 var(--display);color:var(--ink);margin-bottom:5px}
+.dica{display:block;font:400 14.5px/1.4 var(--body);color:var(--muted);margin-top:4px}
+input[type=text],input[type=tel],input[type=email],input[type=url],select,textarea{
+  width:100%;font:400 17px/1.3 var(--body);color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:10px;padding:12px 12px;min-height:48px}
+textarea{min-height:84px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--blue-2);border-color:var(--blue)}
+.duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+@media (max-width:640px){ .duas{grid-template-columns:1fr} }
+.invalido input,.invalido select,.invalido .solta{border-color:var(--erro)}
+.msg-erro{display:none;color:var(--erro);font:600 14.5px/1.35 var(--body);margin-top:5px}
+.invalido .msg-erro{display:block}
+.confirma{display:flex;align-items:flex-start;margin-top:14px;font-size:16px;color:var(--ink-2);cursor:pointer}
+.confirma input{width:22px;height:22px;margin:2px 10px 0 0;flex:none;accent-color:var(--blue)}
+.regras{margin:10px 0 0;padding-left:20px;color:var(--ink-2);font-size:15.5px}
+.isca{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.solta{display:block;border:2px dashed var(--line);border-radius:12px;padding:14px 16px;background:var(--field);cursor:pointer;color:var(--ink-2);font-size:15.5px}
+.solta:hover,.solta.sobre{border-color:var(--blue);background:var(--blue-2)}
+.solta b{font:700 17px var(--display);color:var(--blue)}
+.solta input{position:absolute;width:1px;height:1px;opacity:0}
+.solta:focus-within{outline:3px solid var(--blue-2);border-color:var(--blue)}
+.lista{list-style:none;margin:8px 0 0;padding:0}
+.lista li{display:flex;align-items:center;background:var(--blue-2);border-radius:9px;padding:7px 8px 7px 12px;margin-top:6px;font-size:15.5px;color:var(--ink)}
+.lista .nome{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lista .tam{color:var(--ink-2);margin:0 10px;white-space:nowrap;font-size:14px}
+.lista button{border:0;background:none;color:var(--ink);font:700 15px var(--display);cursor:pointer;padding:6px 8px;border-radius:7px;min-height:36px}
+.lista button:hover{background:var(--paper)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:10px;font:700 19px var(--display);text-decoration:none;cursor:pointer;border:2px solid transparent;background:var(--cta);color:var(--cta-ink)}
+.btn[disabled]{opacity:.55;cursor:default}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.acoes{display:flex;flex-wrap:wrap;align-items:center;margin-top:6px}
+.acoes .btn{margin:8px 12px 0 0}
+@media (max-width:560px){ .acoes .btn{width:100%;margin-right:0} }
+.nota{color:var(--muted);font-size:14.5px;margin-top:12px}
+
+.caixa-erro{background:var(--erro-2);color:var(--ink);border:1px solid var(--erro);border-radius:12px;padding:12px 16px;margin:0 0 16px;font-weight:600}
+.andamento{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 16px}
+.andamento b{font:800 20px var(--display)}
+.barra{height:12px;border-radius:6px;background:var(--blue-2);overflow:hidden;margin:12px 0 8px}
+.barra i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}
+.andamento p{color:var(--ink-2);font-size:15.5px}
+
+.comprovante{background:var(--paper);border:2px solid var(--ok);border-radius:16px;padding:22px 20px;margin-top:10px}
+.comprovante .selo{display:inline-block;background:var(--ok-2);color:var(--ok);font:800 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
+.comprovante h2{margin:14px 0 4px}
+.comprovante .proto{font:800 30px/1.1 var(--display);color:var(--ok);letter-spacing:.02em;word-break:break-all}
+.comprovante dl{margin:16px 0 0;display:grid;grid-template-columns:170px minmax(0,1fr);gap:8px 14px;font-size:16px}
+@media (max-width:560px){ .comprovante dl{grid-template-columns:1fr;gap:2px 0} .comprovante dd{margin-bottom:8px} }
+.comprovante dt{font:700 15px var(--display);color:var(--muted)}
+.comprovante dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
+.comprovante .alerta{background:var(--gold-2);border-left:6px solid var(--gold);border-radius:0 10px 10px 0;padding:12px 14px;margin-top:16px;font-weight:600}
+
+footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media print{ .top,.hero,#oque,form,footer,.acoes,.aviso{display:none !important} body{background:#fff} .comprovante{border-color:#000} }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="tutela" href="/" title="Tutela Tech">
+    <img src="/assets/emblema.png" alt="" width="42" height="42">
+    <span><span class="t1">TUTELA</span><span class="t2">TECH</span></span>
+  </a>
+  <a class="voltar" href="/rali/">← Página do Rali</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <p class="eyebrow">Rali de Inovação · 2ª edição · Etapa 1</p>
+    <h1>Entrega da classificatória</h1>
+    <p class="lead">O líder envia, de uma vez só, o link do vídeo pitch e os arquivos da equipe. Leva uns cinco minutos se tudo já estiver pronto.</p>
+    <p class="prazo">Prazo: <b>15/12/2026 às 23:59</b> <span id="falta"></span></p>
+  </div>
+
+  <div class="aviso espera" id="aviso-espera" hidden><b>O envio abre em breve</b>O formulário de envio ainda está sendo preparado. Enquanto isso, deixe prontos os itens abaixo.</div>
+  <div class="aviso fechado" id="aviso-fechado" hidden><b>Envio encerrado</b><span id="motivo-fechado"></span> Dúvidas: procure o comitê do Rali no SENAI Toledo.</div>
+  <div class="aviso espera" id="aviso-rede" hidden><b>Sem conexão com o servidor</b>Não conseguimos confirmar se o envio está aberto. Confira a internet e <a href="">recarregue a página</a>.</div>
+
+  <section id="oque">
+    <h2>O que a equipe entrega</h2>
+    <ol class="itens">
+      <li data-n="1"><b>Vídeo pitch no YouTube</b>Link do vídeo de até 5 minutos, gravado na <strong>horizontal</strong>, publicado como vídeo comum (<strong>não é Shorts</strong>) e com visibilidade <strong>Não listado</strong>.</li>
+      <li data-n="2"><b>PM Canvas preenchido</b>Um arquivo em PDF, Word (DOCX) ou imagem.</li>
+      <li data-n="3"><b>Autorização de imagem</b>Preenchida e assinada por cada integrante. Para <strong>menores de idade</strong>, também com a assinatura dos pais ou responsáveis.</li>
+      <li data-n="4"><b>Resumo da solução</b>Um arquivo em PDF ou Word (DOCX).</li>
+      <li data-n="5" class="largo"><b>Apresentação do protótipo</b>Imagens, fotos ou um PDF mostrando o protótipo.</li>
+    </ol>
+  </section>
+
+  <section id="envio" hidden>
+    <h2>Enviar a entrega</h2>
+    <div class="caixa-erro" id="erro" role="alert" hidden></div>
+
+    <form id="f" novalidate>
+      <fieldset>
+        <legend><span>1.</span> Equipe</legend>
+        <div class="duas">
+          <div class="campo" data-campo="equipe"><label for="equipe">Nome da equipe</label><input id="equipe" type="text" maxlength="80" autocomplete="off" required><span class="msg-erro"></span></div>
+          <div class="campo" data-campo="lider"><label for="lider">Nome do líder</label><input id="lider" type="text" maxlength="100" autocomplete="name" required><span class="msg-erro"></span></div>
+          <div class="campo" data-campo="whatsapp"><label for="whatsapp">WhatsApp do líder (com DDD)</label><input id="whatsapp" type="tel" maxlength="20" autocomplete="tel" placeholder="(45) 99999-9999" required><span class="msg-erro"></span></div>
+          <div class="campo" data-campo="email"><label for="email">E-mail do líder</label><input id="email" type="email" maxlength="120" autocomplete="email" required><span class="msg-erro"></span></div>
+        </div>
+        <div class="campo" data-campo="desafio"><label for="desafio">Desafio da equipe</label>
+          <select id="desafio" required>
+            <option value="">Escolha o desafio…</option>
+            <optgroup label="Iniciante">
+              <option value="Ligar ventiladores e aspersores na hora certa para as vacas leiteiras">Ligar ventiladores e aspersores na hora certa para as vacas leiteiras (Pecuária leiteira · cooperativa)</option>
+              <option value="Registrar as paradas de máquina na hora em que acontecem">Registrar as paradas de máquina na hora em que acontecem (Indústria · produção e manutenção)</option>
+              <option value="Rastrear sementes do caminhão até o cliente sem planilhas de papel">Rastrear sementes do caminhão até o cliente sem planilhas de papel (Beneficiamento de sementes · cooperativa)</option>
+              <option value="Saber quanto cada setor da fábrica gasta de energia e água">Saber quanto cada setor da fábrica gasta de energia e água (Indústria)</option>
+              <option value="Aquecer aviários gastando menos">Aquecer aviários gastando menos (Avicultura · cooperativa e produtores)</option>
+              <option value="Medir a pegada de carbono de uma fábrica que está nascendo">Medir a pegada de carbono de uma fábrica que está nascendo (Sysmex · diagnóstico em saúde)</option>
+              <option value="Entender por que os colaboradores vão embora — e fazê-los ficar">Entender por que os colaboradores vão embora — e fazê-los ficar (Baston · indústria)</option>
+              <option value="Conhecer a experiência de quem almoça no restaurante todos os dias">Conhecer a experiência de quem almoça no restaurante todos os dias (Apetit · restaurantes corporativos)</option>
+              <option value="Levar o conhecimento até o mecânico na hora do aperto">Levar o conhecimento até o mecânico na hora do aperto (Magnetron · Academia 2 Rodas)</option>
+            </optgroup>
+            <optgroup label="Intermediário">
+              <option value="Receber lenha e paletes sem depender da balança da rodovia">Receber lenha e paletes sem depender da balança da rodovia (Indústria · recebimento de biomassa)</option>
+              <option value="Enxergar onde a energia está sendo desperdiçada na fábrica">Enxergar onde a energia está sendo desperdiçada na fábrica (Agroindústria · grãos, moinho e câmaras frias)</option>
+              <option value="Medir quanto biogás o biodigestor produz">Medir quanto biogás o biodigestor produz (Suinocultura · cooperativa)</option>
+              <option value="Lavar o frigorífico com menos água e menos esforço">Lavar o frigorífico com menos água e menos esforço (Frigorífico)</option>
+              <option value="Um lava-rápido para o interior de baús e contêineres refrigerados">Um lava-rápido para o interior de baús e contêineres refrigerados (Transporte e logística de alimentos)</option>
+              <option value="O que fazer com os dejetos de suínos?">O que fazer com os dejetos de suínos? (Suinocultura · cooperativa)</option>
+              <option value="Prever o peso das aves antes de elas chegarem ao abate">Prever o peso das aves antes de elas chegarem ao abate (Pluma Agroavícola · frigorífico de aves)</option>
+              <option value="Conferir cada peça antes de o equipamento embarcar">Conferir cada peça antes de o equipamento embarcar (Beckhauser · equipamentos de manejo bovino)</option>
+              <option value="Embalar equipamentos pesados sem sacrificar o corpo de ninguém">Embalar equipamentos pesados sem sacrificar o corpo de ninguém (Beckhauser · equipamentos de manejo bovino)</option>
+              <option value="Unir cursos, alunos e vendas em um ecossistema só">Unir cursos, alunos e vendas em um ecossistema só (Magnetron · Academia 2 Rodas)</option>
+              <option value="Acabar com os volumes que ficam órfãos no estoque">Acabar com os volumes que ficam órfãos no estoque (Caemmun · indústria moveleira)</option>
+              <option value="Prever a demanda para não parar a linha por falta de insumo">Prever a demanda para não parar a linha por falta de insumo (Baston · indústria)</option>
+              <option value="Transformar a experiência dos engenheiros em dados de precificação">Transformar a experiência dos engenheiros em dados de precificação (Intertechne · engenharia de projetos)</option>
+            </optgroup>
+            <optgroup label="Avançado">
+              <option value="Refilar o filé de peito de frango com menos trabalho manual">Refilar o filé de peito de frango com menos trabalho manual (Frigorífico de aves)</option>
+              <option value="Analisar o tamanho dos grãos de soja sem parar a máquina">Analisar o tamanho dos grãos de soja sem parar a máquina (Indústria de óleo de soja)</option>
+              <option value="Medir a espessura das lâminas de soja em tempo real">Medir a espessura das lâminas de soja em tempo real (Indústria de óleo de soja)</option>
+              <option value="Menos tilápias mortas entre o tanque e o abate">Menos tilápias mortas entre o tanque e o abate (Piscicultura e frigorífico de peixes)</option>
+              <option value="Reaproveitar o calor da água que a caldeira descarta">Reaproveitar o calor da água que a caldeira descarta (Indústria de óleo de soja)</option>
+              <option value="Tirar a subjetividade da inspeção na linha de processamento">Tirar a subjetividade da inspeção na linha de processamento (Pluma Agroavícola · frigorífico de aves)</option>
+              <option value="Sincronizar produção e carregamento para acabar com a fila de caminhões">Sincronizar produção e carregamento para acabar com a fila de caminhões (Avenorte / Guibon Foods · frigorífico de aves)</option>
+              <option value="Carregar a câmara fria sem rearranjar pallets no frio">Carregar a câmara fria sem rearranjar pallets no frio (Avenorte / Guibon Foods · frigorífico de aves)</option>
+              <option value="Escolher o mix de produção que gera mais resultado">Escolher o mix de produção que gera mais resultado (Caemmun · indústria moveleira)</option>
+              <option value="Manter a temperatura certa em rotas longas de cadeia fria">Manter a temperatura certa em rotas longas de cadeia fria (Sysmex · diagnóstico em saúde)</option>
+              <option value="Encontrar qualquer documento em 38 anos de projetos de engenharia">Encontrar qualquer documento em 38 anos de projetos de engenharia (Intertechne · engenharia de projetos)</option>
+              <option value="Transformar relatórios em previsões e planos de ação automáticos">Transformar relatórios em previsões e planos de ação automáticos (Apetit · restaurantes corporativos)</option>
+            </optgroup>
+            <option value="Desafio próprio">Desafio próprio (trazido pela equipe)</option>
+          </select><span class="msg-erro"></span></div>
+        <div class="campo" data-campo="codigo" id="caixa-codigo" hidden><label for="codigo">Código da entrega</label><input id="codigo" type="text" maxlength="60" autocomplete="off"><span class="dica">Código divulgado pelo comitê do Rali para as equipes.</span><span class="msg-erro"></span></div>
+        <div class="isca" aria-hidden="true"><label for="site">Não preencha este campo</label><input id="site" type="text" tabindex="-1" autocomplete="off"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>2.</span> Vídeo pitch</legend>
+        <div class="campo" data-campo="video"><label for="video">Link do vídeo no YouTube</label>
+          <input id="video" type="url" inputmode="url" maxlength="300" placeholder="https://youtu.be/..." autocomplete="off" required>
+          <span class="dica">No YouTube: Compartilhar › Copiar link. Em “Visibilidade”, escolha <strong>Não listado</strong> (com “Privado” a banca não consegue assistir).</span>
+          <span class="msg-erro"></span></div>
+        <div data-campo="confirmaVideo"><label class="confirma"><input id="confirmaVideo" type="checkbox"><span>Confirmo que o vídeo está na <strong>horizontal</strong>, <strong>não é Shorts</strong> e está como <strong>Não listado</strong>.</span></label><span class="msg-erro"></span></div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>3.</span> Arquivos</legend>
+        <p class="dica" style="margin-top:8px">Até 20 MB por arquivo. Fotos de documentos precisam estar legíveis.</p>
+
+        <div class="campo" data-campo="canvas"><span class="rotulo">PM Canvas preenchido</span>
+          <label class="solta"><input type="file" data-item="canvas" accept=".pdf,.docx,.png,.jpg,.jpeg,.webp"><b>Escolher arquivo</b> · PDF, DOCX ou imagem</label>
+          <ul class="lista" data-lista="canvas"></ul><span class="msg-erro"></span></div>
+
+        <div class="campo" data-campo="autorizacao"><span class="rotulo">Autorização de imagem assinada</span>
+          <label class="solta"><input type="file" data-item="autorizacao" multiple accept=".pdf,.docx,.png,.jpg,.jpeg,.webp"><b>Escolher arquivos</b> · PDF, DOCX ou imagem · até 6 arquivos</label>
+          <span class="dica">Uma por integrante, ou um único arquivo com todas. Menores de idade: com a assinatura dos pais ou responsáveis.</span>
+          <ul class="lista" data-lista="autorizacao"></ul><span class="msg-erro"></span></div>
+
+        <div class="campo" data-campo="resumo"><span class="rotulo">Resumo da solução</span>
+          <label class="solta"><input type="file" data-item="resumo" accept=".pdf,.docx"><b>Escolher arquivo</b> · PDF ou DOCX</label>
+          <ul class="lista" data-lista="resumo"></ul><span class="msg-erro"></span></div>
+
+        <div class="campo" data-campo="prototipo"><span class="rotulo">Apresentação do protótipo</span>
+          <label class="solta"><input type="file" data-item="prototipo" multiple accept=".pdf,.png,.jpg,.jpeg,.webp"><b>Escolher arquivos</b> · imagens, fotos ou PDF · até 5 arquivos</label>
+          <ul class="lista" data-lista="prototipo"></ul><span class="msg-erro"></span></div>
+
+        <div class="campo"><label for="obs">Observações para o comitê (opcional)</label><textarea id="obs" maxlength="1000"></textarea></div>
+      </fieldset>
+
+      <div class="andamento" id="andamento" hidden aria-live="polite"><b id="and-titulo">Enviando…</b><div class="barra"><i id="and-barra"></i></div><p id="and-texto"></p><p class="nota">Não feche nem recarregue esta página até aparecer o comprovante.</p></div>
+
+      <div class="acoes"><button class="btn" id="enviar" type="submit">Enviar a entrega</button></div>
+      <p class="nota">Pode enviar de novo até o prazo: vale a <strong>última entrega completa</strong>. Para substituir, use o mesmo nome de equipe e o mesmo WhatsApp ou e-mail do líder. Os arquivos ficam em uma pasta restrita ao comitê organizador do Rali e são usados apenas para a avaliação e a divulgação do evento.</p>
+    </form>
+  </section>
+
+  <section id="pronto" hidden>
+    <div class="comprovante" tabindex="-1" id="comprovante">
+      <span class="selo">✓ Entrega recebida</span>
+      <h2>Comprovante de entrega</h2>
+      <p class="proto" id="c-proto"></p>
+      <div class="alerta" id="c-alerta" hidden></div>
+      <dl>
+        <dt>Recebida em</dt><dd id="c-quando"></dd>
+        <dt>Equipe</dt><dd id="c-equipe"></dd>
+        <dt>Vídeo</dt><dd id="c-video"></dd>
+      </dl>
+      <dl id="c-arquivos"></dl>
+      <p class="nota">Guarde este comprovante: tire um print ou salve em PDF. O número do protocolo identifica a entrega junto ao comitê.</p>
+    </div>
+    <div class="acoes">
+      <button class="btn" type="button" id="imprimir">Salvar / imprimir comprovante</button>
+      <button class="btn ghost" type="button" id="denovo">Enviar outra versão</button>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Rali de Inovação · 2ª Edição · SENAI Toledo · IguassuTec · INSIDE Sistemas</div></footer>
+
+<script>
+(function () {
+  'use strict';
+  // Endereço do App da Web (termina em /exec). Vazio = envio ainda não aberto.
+  var API = '';
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    var teste = new URLSearchParams(location.search).get('api');
+    if (teste) API = teste;
+  }
+
+  var ITENS = {
+    canvas:      { rotulo: 'PM Canvas',             max: 1, ext: ['pdf', 'docx', 'png', 'jpg', 'jpeg', 'webp'] },
+    autorizacao: { rotulo: 'Autorização de imagem', max: 6, ext: ['pdf', 'docx', 'png', 'jpg', 'jpeg', 'webp'] },
+    resumo:      { rotulo: 'Resumo da solução',     max: 1, ext: ['pdf', 'docx'] },
+    prototipo:   { rotulo: 'Protótipo',             max: 5, ext: ['pdf', 'png', 'jpg', 'jpeg', 'webp'] }
+  };
+  var ORDEM = ['canvas', 'autorizacao', 'resumo', 'prototipo'];
+  var MAX_MB = 20, MAX_TOTAL_MB = 100;
+  var CAMPOS = ['equipe', 'lider', 'whatsapp', 'email', 'desafio', 'video', 'obs'];
+
+  function $(id) { return document.getElementById(id); }
+  var form = $('f'), btn = $('enviar');
+  var escolhidos = { canvas: [], autorizacao: [], resumo: [], prototipo: [] };
+  var enviando = false, sessao = null, exigeCodigo = false;
+
+  /* ---------- prazo e situação do envio ---------- */
+  var prazoMs = Date.UTC(2026, 11, 16, 2, 59, 59), desvio = 0, relogio = null, conferindo = false;
+  function consultar() { return fetch(API, { redirect: 'follow' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }); }
+  function aplicarEstado(e) {
+    if (e.prazoIso) { prazoMs = new Date(e.prazoIso).getTime(); document.querySelector('.prazo b').textContent = e.prazo; }
+    if (e.agoraIso) desvio = new Date(e.agoraIso).getTime() - Date.now();
+    exigeCodigo = !!e.exigeCodigo; $('caixa-codigo').hidden = !exigeCodigo;
+    if (e.aberto) { $('aviso-fechado').hidden = true; if ($('pronto').hidden) $('envio').hidden = false; }
+    else if (!enviando && !sessao) fechar(e.motivo);
+  }
+  function contagem() {
+    var falta = prazoMs - (Date.now() + desvio), el = $('falta');
+    if (falta <= 0) {
+      el.textContent = sessao ? '· prazo encerrado: conclua o envio em andamento' : '· encerrado';
+      // envio em andamento ou pausado continua: o servidor aceita por mais alguns minutos quem começou antes do prazo
+      if (API && !enviando && !sessao && !conferindo && !$('envio').hidden) {
+        conferindo = true;
+        consultar().then(function (e) { conferindo = false; aplicarEstado(e); }).catch(function () { conferindo = false; });
+      }
+      return;
+    }
+    var dias = Math.floor(falta / 86400000), horas = Math.floor(falta / 3600000);
+    el.textContent = dias >= 2 ? '· faltam ' + dias + ' dias' : (horas >= 1 ? '· faltam ' + horas + (horas === 1 ? ' hora' : ' horas') : '· falta menos de 1 hora');
+  }
+  relogio = setInterval(contagem, 30000);
+
+  function fechar(motivo) {
+    $('envio').hidden = true; $('aviso-fechado').hidden = false; $('motivo-fechado').textContent = motivo || 'O envio das entregas está fechado.';
+  }
+  contagem();
+  if (!API) {
+    $('aviso-espera').hidden = false;
+  } else {
+    consultar().then(function (e) {
+      aplicarEstado(e);
+      contagem();
+    }).catch(function () {
+      $('aviso-rede').hidden = false;
+    });
+  }
+
+  /* ---------- rascunho dos campos de texto ---------- */
+  function guardar() { try { var o = {}; CAMPOS.forEach(function (c) { o[c] = $(c).value; }); sessionStorage.setItem('rali_entrega', JSON.stringify(o)); } catch (e) {} }
+  try {
+    var salvo = JSON.parse(sessionStorage.getItem('rali_entrega') || '{}');
+    CAMPOS.forEach(function (c) { if (typeof salvo[c] === 'string' && salvo[c]) $(c).value = salvo[c]; });
+  } catch (e) {}
+  form.addEventListener('input', guardar);
+  // o aviso de um campo some quando a pessoa mexe nele
+  function limparCampo(e) { var c = e.target && e.target.closest && e.target.closest('[data-campo]'); if (c && e.target.type !== 'file') c.classList.remove('invalido'); }
+  form.addEventListener('input', limparCampo);
+  form.addEventListener('change', limparCampo);
+  form.addEventListener('change', guardar);
+
+  /* ---------- erros ---------- */
+  function limparErros() {
+    [].forEach.call(document.querySelectorAll('.invalido'), function (el) { el.classList.remove('invalido'); });
+    $('erro').hidden = true;
+  }
+  function erroCampo(campo, msg) {
+    var el = document.querySelector('[data-campo="' + campo + '"]');
+    if (campo === 'codigo' && el) { exigeCodigo = true; el.hidden = false; }
+    if (!el || el.offsetParent === null) return false;
+    el.classList.add('invalido');
+    el.querySelector('.msg-erro').textContent = msg;
+    return el;
+  }
+  function erroGeral(msg) { var e = $('erro'); e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: 'center' }); }
+
+  function recomecar() { sessao = null; btn.textContent = 'Enviar a entrega'; $('erro').hidden = true; }
+  function travar(sim) { [].forEach.call(form.querySelectorAll('fieldset'), function (f) { f.disabled = sim; }); }
+
+  /* ---------- link do YouTube (mesma regra do servidor) ---------- */
+  function youtube(link) {
+    var u = String(link || '').trim();
+    if (!u) return { erro: 'Informe o link do vídeo no YouTube.' };
+    if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+    var m = u.match(/^https?:\/\/(?:www\.|m\.|music\.)?(youtube\.com|youtu\.be|youtube-nocookie\.com)\/(.*)$/i);
+    if (!m) return { erro: 'O link precisa ser de um vídeo do YouTube (youtube.com ou youtu.be).' };
+    var host = m[1].toLowerCase(), resto = m[2];
+    if (/^shorts\//i.test(resto)) return { erro: 'Esse link é de um Shorts. Publique o vídeo na horizontal, como vídeo comum, e envie o link dele.' };
+    var id = '';
+    if (host === 'youtu.be') id = resto.split(/[?&#\/]/)[0];
+    else {
+      var q = resto.match(/^watch\/?\?(?:[^#]*&)?v=([\w-]{11})(?![\w-])/), p = resto.match(/^(?:live|embed|v)\/([\w-]{11})(?![\w-])/);
+      id = q ? q[1] : (p ? p[1] : '');
+    }
+    if (!/^[\w-]{11}$/.test(id)) return { erro: 'Não reconhecemos esse link. Abra o vídeo no YouTube, toque em Compartilhar › Copiar link e cole aqui.' };
+    return { id: id };
+  }
+
+  /* ---------- arquivos escolhidos ---------- */
+  function tamanho(b) { return b >= 1048576 ? (b / 1048576).toFixed(1).replace('.', ',') + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB'; }
+  function extensao(nome) { var m = String(nome).match(/\.([A-Za-z0-9]{2,5})$/); return m ? m[1].toLowerCase() : ''; }
+  function desenhar(item) {
+    var ul = document.querySelector('[data-lista="' + item + '"]');
+    ul.textContent = '';
+    escolhidos[item].forEach(function (f, i) {
+      var li = document.createElement('li'), n = document.createElement('span'), t = document.createElement('span'), b = document.createElement('button');
+      n.className = 'nome'; n.textContent = f.name; t.className = 'tam'; t.textContent = tamanho(f.size);
+      b.type = 'button'; b.textContent = 'Remover'; b.setAttribute('aria-label', 'Remover ' + f.name);
+      b.addEventListener('click', function () { if (enviando) return; escolhidos[item].splice(i, 1); recomecar(); desenhar(item); });
+      li.appendChild(n); li.appendChild(t); li.appendChild(b); ul.appendChild(li);
+    });
+  }
+  // formato de verdade, pelos primeiros bytes ('?' = não deu para ler; o servidor decide)
+  function tipoReal(f) {
+    return new Promise(function (ok) {
+      var r = new FileReader();
+      r.onerror = function () { ok('?'); };
+      r.onload = function () {
+        var b = new Uint8Array(r.result);
+        if (b.length < 12) return ok('');
+        if (b[0] === 0x25 && b[1] === 0x50 && b[2] === 0x44 && b[3] === 0x46) return ok('pdf');
+        if (b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4E && b[3] === 0x47) return ok('png');
+        if (b[0] === 0xFF && b[1] === 0xD8 && b[2] === 0xFF) return ok('jpg');
+        if (b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46 && b[8] === 0x57 && b[9] === 0x45 && b[10] === 0x42 && b[11] === 0x50) return ok('webp');
+        if (b[0] === 0x50 && b[1] === 0x4B && b[2] === 0x03 && b[3] === 0x04) return ok('docx');
+        ok('');
+      };
+      try { r.readAsArrayBuffer(f.slice(0, 12)); } catch (e) { ok('?'); }
+    });
+  }
+  function adicionar(item, arquivos) {
+    if (enviando) return;
+    var def = ITENS[item], caixa = document.querySelector('[data-campo="' + item + '"]'), problemas = [], candidatos = [];
+    var formatos = def.ext.join(', ').toUpperCase();
+    caixa.classList.remove('invalido');
+    [].forEach.call(arquivos, function (f) {
+      if (def.ext.indexOf(extensao(f.name)) < 0) { problemas.push('“' + f.name + '” não é aceito aqui (formatos: ' + formatos + ').'); return; }
+      if (f.size > MAX_MB * 1048576) { problemas.push('“' + f.name + '” passa de ' + MAX_MB + ' MB.'); return; }
+      if (f.size === 0) { problemas.push('“' + f.name + '” está vazio.'); return; }
+      candidatos.push(f);
+    });
+    Promise.all(candidatos.map(tipoReal)).then(function (tipos) {
+      if (enviando) return;
+      candidatos.forEach(function (f, n) {
+        if (tipos[n] !== '?' && def.ext.indexOf(tipos[n]) < 0) { problemas.push('“' + f.name + '” não é um arquivo válido para este item (formatos: ' + formatos + '). Se for outro tipo de arquivo, exporte ou salve como PDF.'); return; }
+        if (def.max === 1) { escolhidos[item] = [f]; return; }
+        if (escolhidos[item].some(function (x) { return x.name === f.name && x.size === f.size; })) return;
+        if (escolhidos[item].length >= def.max) { problemas.push('Máximo de ' + def.max + ' arquivos em “' + def.rotulo + '”: “' + f.name + '” ficou de fora.'); return; }
+        escolhidos[item].push(f);
+      });
+      recomecar();
+      desenhar(item);
+      if (problemas.length) erroCampo(item, problemas.join(' '));
+    });
+  }
+  [].forEach.call(document.querySelectorAll('input[type=file]'), function (inp) {
+    var item = inp.getAttribute('data-item'), caixa = inp.parentNode;
+    inp.addEventListener('change', function () { adicionar(item, inp.files); inp.value = ''; });
+    ['dragenter', 'dragover'].forEach(function (ev) { caixa.addEventListener(ev, function (e) { e.preventDefault(); caixa.classList.add('sobre'); }); });
+    ['dragleave', 'drop'].forEach(function (ev) { caixa.addEventListener(ev, function (e) { e.preventDefault(); caixa.classList.remove('sobre'); }); });
+    caixa.addEventListener('drop', function (e) { if (e.dataTransfer && e.dataTransfer.files) adicionar(item, e.dataTransfer.files); });
+  });
+
+  /* ---------- conferência antes de enviar ---------- */
+  function conferir() {
+    limparErros();
+    var primeiro = null;
+    function falha(campo, msg) { var el = erroCampo(campo, msg); if (!primeiro) primeiro = el; }
+    var v = {}; CAMPOS.forEach(function (c) { v[c] = $(c).value.trim(); });
+    if (v.equipe.length < 2) falha('equipe', 'Informe o nome da equipe.');
+    if (v.lider.length < 3) falha('lider', 'Informe o nome do líder da equipe.');
+    var fone = v.whatsapp.replace(/\D/g, '');
+    if (fone.length < 10 || fone.length > 13) falha('whatsapp', 'Informe o WhatsApp com DDD.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)) falha('email', 'Informe um e-mail válido.');
+    if (!v.desafio) falha('desafio', 'Escolha o desafio da equipe.');
+    v.codigo = $('codigo').value.trim();
+    if (exigeCodigo && !v.codigo) falha('codigo', 'Informe o código da entrega divulgado pelo comitê.');
+    var yt = youtube(v.video);
+    if (yt.erro) falha('video', yt.erro);
+    if (!$('confirmaVideo').checked) falha('confirmaVideo', 'Marque a confirmação sobre o vídeo.');
+    var total = 0;
+    ORDEM.forEach(function (k) {
+      if (!escolhidos[k].length) falha(k, 'Falta anexar: ' + ITENS[k].rotulo + '.');
+      escolhidos[k].forEach(function (f) { total += f.size; });
+    });
+    if (!primeiro && total > MAX_TOTAL_MB * 1048576) { erroGeral('A soma dos arquivos passa de ' + MAX_TOTAL_MB + ' MB. Reduza os arquivos maiores.'); return null; }
+    if (primeiro) { primeiro.scrollIntoView({ block: 'center' }); var foco = primeiro.querySelector('input,select'); if (foco) foco.focus({ preventScroll: true }); return null; }
+    v.confirmaVideo = true; v.site = $('site').value;
+    return v;
+  }
+
+  /* ---------- conversa com o servidor ---------- */
+  function esperar(ms) { return new Promise(function (ok) { setTimeout(ok, ms); }); }
+  function chamar(obj, tentativa) {
+    tentativa = tentativa || 1;
+    return fetch(API, { method: 'POST', body: JSON.stringify(obj), redirect: 'follow' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (j) {
+        if (j && !j.ok && j.temporario) { var t = new Error(j.erro || 'Servidor ocupado.'); t.aviso = j.erro; throw t; }
+        return j;
+      })
+      .catch(function (e) {
+        if (tentativa >= 3) throw e;
+        return esperar(tentativa * 2500).then(function () { return chamar(obj, tentativa + 1); });
+      })
+      .then(function (j) {
+        if (j && j.ok) return j;
+        var e = new Error((j && j.erro) || 'Resposta inesperada do servidor.'); e.servidor = true; e.campo = j && j.campo; throw e;
+      });
+  }
+  function ler(arquivo, item) {
+    return new Promise(function (ok, falhou) {
+      var r = new FileReader();
+      r.onload = function () { var s = String(r.result); ok(s.slice(s.indexOf(',') + 1)); };
+      r.onerror = function () { var e = new Error('Não foi possível ler “' + arquivo.name + '” neste aparelho. Remova e escolha o arquivo de novo.'); e.leitura = true; e.item = item; falhou(e); };
+      r.readAsDataURL(arquivo);
+    });
+  }
+  function andamento(feitos, total, texto) {
+    $('and-barra').style.width = Math.round(100 * feitos / total) + '%';
+    $('and-texto').textContent = texto;
+  }
+
+  function enviar(dados) {
+    var fila = [];
+    ORDEM.forEach(function (k) { escolhidos[k].forEach(function (f, i) { fila.push({ item: k, indice: i, arquivo: f }); }); });
+    var total = fila.length + 2, feitos = 0;
+
+    var inicio = sessao ? Promise.resolve(sessao) : (andamento(0, total, 'Conferindo os dados e o link do vídeo…'), chamar(Object.assign({ acao: 'iniciar' }, dados)).then(function (s) { sessao = { protocolo: s.protocolo, token: s.token, prontos: {} }; return sessao; }));
+
+    return inicio.then(function (s) {
+      feitos = 1;
+      return fila.reduce(function (antes, x, n) {
+        return antes.then(function () {
+          var chave = x.item + '#' + x.indice;
+          if (s.prontos[chave]) { feitos++; return; }
+          andamento(feitos, total, 'Enviando arquivo ' + (n + 1) + ' de ' + fila.length + ': ' + x.arquivo.name + ' (' + tamanho(x.arquivo.size) + ')…');
+          return ler(x.arquivo, x.item).then(function (b64) {
+            return chamar({ acao: 'arquivo', protocolo: s.protocolo, token: s.token, item: x.item, indice: x.indice, nome: x.arquivo.name, dados: b64 });
+          }).then(function () { s.prontos[chave] = true; feitos++; });
+        });
+      }, Promise.resolve()).then(function () {
+        andamento(feitos, total, 'Concluindo a entrega…');
+        return chamar({ acao: 'finalizar', protocolo: s.protocolo, token: s.token });
+      });
+    });
+  }
+
+  function mostrarComprovante(c) {
+    $('c-proto').textContent = c.protocolo;
+    $('c-quando').textContent = c.recebidoEm + ' (horário de Brasília)';
+    $('c-equipe').textContent = c.equipe;
+    var v = $('c-video'); v.textContent = '';
+    if (c.tituloVideo) { v.appendChild(document.createTextNode(c.tituloVideo)); v.appendChild(document.createElement('br')); }
+    var a = document.createElement('a'); a.href = c.video; a.target = '_blank'; a.rel = 'noopener'; a.textContent = c.video; v.appendChild(a);
+    var avisos = [c.avisoEntrega, c.avisoVideo].filter(function (x) { return !!x; });
+    var al = $('c-alerta'); al.hidden = !avisos.length; al.textContent = avisos.length ? 'Atenção: ' + avisos.join(' ') : '';
+    var dl = $('c-arquivos'); dl.textContent = '';
+    c.arquivos.forEach(function (g) {
+      var dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = g.item; dd.textContent = g.nomes.join(' · ');
+      dl.appendChild(dt); dl.appendChild(dd);
+    });
+    $('envio').hidden = true; $('oque').hidden = true; $('pronto').hidden = false;
+    $('comprovante').focus(); window.scrollTo(0, 0);
+  }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (enviando) return;
+    var dados = conferir();
+    if (!dados) return;
+    enviando = true; btn.disabled = true; btn.textContent = 'Enviando…'; travar(true);
+    $('and-titulo').textContent = 'Enviando a entrega…'; $('andamento').hidden = false;
+    $('andamento').scrollIntoView({ block: 'center' });
+
+    enviar(dados).then(function (c) {
+      enviando = false; sessao = null; travar(false);
+      try { sessionStorage.removeItem('rali_entrega'); } catch (e) {}
+      mostrarComprovante(c);
+    }).catch(function (e) {
+      enviando = false; btn.disabled = false; $('andamento').hidden = true; travar(false);
+      if (e.leitura) {
+        // o navegador não conseguiu ler o arquivo: não é problema de internet
+        var caixa = erroCampo(e.item, e.message);
+        btn.textContent = sessao ? 'Continuar o envio' : 'Enviar a entrega';
+        if (caixa) caixa.scrollIntoView({ block: 'center' }); else erroGeral(e.message);
+      } else if (e.servidor) {
+        // recusado pelo servidor: a equipe corrige e manda de novo (vira um novo protocolo)
+        sessao = null; btn.textContent = 'Enviar a entrega';
+        var el = e.campo && erroCampo(e.campo, e.message);
+        if (el) { el.scrollIntoView({ block: 'center' }); var foco = el.querySelector('input,select'); if (foco && e.campo === 'codigo') foco.focus({ preventScroll: true }); }
+        else if (/prazo de entrega terminou|está fechado/i.test(e.message)) fechar(e.message);
+        else erroGeral(e.message);
+      } else {
+        btn.textContent = sessao ? 'Continuar o envio' : 'Enviar a entrega';
+        erroGeral(e.aviso ? e.aviso + ' O que já foi enviado não se perde: aguarde alguns minutos e toque em “' + btn.textContent + '”.'
+          : 'A conexão falhou no meio do envio. Confira a internet e toque em “' + btn.textContent + '”: o que já foi enviado não se perde.');
+      }
+    });
+  });
+  // mudar um dado de texto depois de uma falha recomeça o envio do zero (os dados já foram gravados no primeiro passo)
+  function mexeu(e) { if (!enviando && sessao && e.target && e.target.type !== 'file') recomecar(); }
+  form.addEventListener('input', mexeu);
+  form.addEventListener('change', mexeu);
+
+  window.addEventListener('beforeunload', function (e) { if (enviando) { e.preventDefault(); e.returnValue = ''; } });
+  $('imprimir').addEventListener('click', function () { window.print(); });
+  $('denovo').addEventListener('click', function () {
+    ORDEM.forEach(function (k) { escolhidos[k] = []; desenhar(k); });
+    $('confirmaVideo').checked = false; btn.textContent = 'Enviar a entrega'; btn.disabled = false; $('andamento').hidden = true; travar(false); sessao = null;
+    limparErros();
+    $('pronto').hidden = true; $('oque').hidden = false; $('envio').hidden = false; window.scrollTo(0, 0);
+    contagem();
+  });
+})();
+</script>
+</body>
+</html>

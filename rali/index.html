@@ -40,6 +40,10 @@ p{margin:0;text-wrap:pretty}
 a{color:var(--blue)}
 .nowrap{white-space:nowrap}
 html{scroll-padding-top:76px}
+.entrega-box{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 24px;align-items:center;margin-top:26px;background:var(--gold-2);border-left:6px solid var(--gold);border-radius:0 14px 14px 0;padding:18px 20px}
+.entrega-box b{display:block;font:800 22px/1.15 var(--display);color:var(--ink)}
+.entrega-box span{display:block;color:var(--ink-2);margin-top:4px}
+@media (max-width:700px){ .entrega-box{grid-template-columns:1fr} }
 .wrap{max-width:1080px;margin:0 auto;padding-left:16px;padding-right:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .band{padding-top:56px;padding-bottom:56px}
 .band.alt{background:var(--paper)}
@@ -379,10 +383,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <h2>Da largada à final em cinco momentos</h2>
   <div class="timeline">
     <div class="step"><span class="when">5 e 6 de novembro</span><h3>Largada no Mundo SENAI</h3><p>Conhecendo as empresas e os desafios, lançamento oficial, formação das equipes e regras do jogo — tudo nos dois dias.</p><span class="tag">Presencial</span></div>
-    <div class="step"><span class="when"><em>Etapa 1</em>nov e dez</span><h3>Classificatória</h3><p>Entender a dor, pesquisar e desenhar a solução. Em dezembro a equipe entrega um vídeo pitch de até 5 minutos e o documento da proposta.</p><span class="tag">Vídeo pitch</span></div>
+    <div class="step"><span class="when"><em>Etapa 1</em>nov e dez</span><h3>Classificatória</h3><p>Entender a dor, pesquisar e desenhar a solução. Até 15/12 a equipe envia o vídeo pitch de até 5 minutos, o PM Canvas, o resumo da solução, a apresentação do protótipo e as autorizações de imagem.</p><span class="tag">Vídeo pitch</span></div>
     <div class="step"><span class="when">Fevereiro</span><h3>Anúncio dos semifinalistas</h3><p>Evento presencial na INSIDE Sistemas com a divulgação das equipes classificadas para a semifinal e a entrega do kit do semifinalista, com a camiseta oficial do Rali.</p><span class="tag">Kit do semifinalista</span></div>
     <div class="step"><span class="when"><em>Etapa 2</em>fevereiro</span><h3>Semifinal</h3><p>Mentorias com a equipe de educação do SENAI, a equipe técnica da INSIDE Sistemas e profissionais das empresas da IguassuTec. Entrega até o fim de fevereiro: novo vídeo pitch, documento e protótipo.</p><span class="tag">Mentorias + protótipo</span></div>
     <div class="step"><span class="when"><em>Etapa 3</em>março</span><h3>Grande final</h3><p>As melhores equipes da semifinal, em classificação geral, apresentam o pitch ao vivo e demonstram o protótipo para a banca. Vencedores e premiação no mesmo dia.</p><span class="tag">Presencial na INSIDE Sistemas</span></div>
+  </div>
+  <div class="entrega-box" id="entrega">
+    <div><b>Entrega da classificatória: até 15/12/2026</b><span>Vídeo pitch no YouTube, PM Canvas, autorização de imagem, resumo da solução e apresentação do protótipo.</span></div>
+    <a class="btn primary" href="/rali/entrega/">Ver o que entregar e enviar</a>
   </div>
 </div></section>
 
@@ -1089,8 +1097,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <h2>Antes de se inscrever</h2>
   <div class="faq">
     <details><summary>Não tenho equipe. Posso participar?</summary><p>Pode. Inscreva-se sozinho marcando a opção “ainda não tenho equipe” e o comitê ajuda a formar uma equipe com outras pessoas na mesma situação, até o lançamento.</p></details>
-    <details><summary>O que é o vídeo pitch?</summary><p>Um vídeo de até 5 minutos, gravado com celular mesmo, em que a equipe explica qual é a dor, como pretende resolvê-la e o que já fez. Nas etapas 1 e 2 a avaliação é feita pelo vídeo e pelo documento da proposta; só a final é presencial.</p></details>
-    <details><summary>Preciso construir um protótipo de verdade?</summary><p>Sim, na semifinal. Pode ser uma prova de conceito: uma maquete, um circuito com sensores, um aplicativo simples, uma planilha funcional ou um dispositivo em escala. O importante é mostrar que a ideia funciona.</p></details>
+    <details><summary>O que é o vídeo pitch?</summary><p>Um vídeo de até 5 minutos, gravado com celular mesmo, na horizontal, em que a equipe explica qual é a dor, como pretende resolvê-la e o que já fez. Ele é publicado no YouTube como “Não listado” (não vale Shorts) e o link vai na entrega. Nas etapas 1 e 2 a avaliação é feita pelo vídeo e pelos documentos da entrega; só a final é presencial.</p></details>
+    <details><summary>O que a equipe entrega na classificatória?</summary><p>Até 15/12/2026: o link do vídeo pitch, o PM Canvas preenchido, a autorização de imagem assinada (para menores, também pelos pais ou responsáveis), o resumo da solução e a apresentação do protótipo. O envio é feito pelo líder na página de <a href="/rali/entrega/">entrega da classificatória</a>.</p></details>
+    <details><summary>Preciso construir um protótipo de verdade?</summary><p>Na classificatória a equipe apresenta o protótipo em imagens, fotos ou PDF. Na semifinal ele precisa existir de verdade. Pode ser uma prova de conceito: uma maquete, um circuito com sensores, um aplicativo simples, uma planilha funcional ou um dispositivo em escala. O importante é mostrar que a ideia funciona.</p></details>
     <details><summary>Como funcionam as mentorias?</summary><p>A partir da semifinal, cada equipe classificada recebe horas de mentoria agendadas pelo comitê, com a equipe de educação do SENAI Toledo, a equipe técnica da INSIDE Sistemas e profissionais das empresas associadas à IguassuTec, conforme a área do desafio.</p></details>
     <details><summary>Posso trazer meu próprio desafio ou ideia?</summary><p>Pode. Marque “desafio próprio” na inscrição e descreva a dor: qual é o problema, quem sofre com ele e como é resolvido hoje. O comitê organizador conversa com a equipe para alinhar o desafio antes da etapa 1, e a avaliação é a mesma dos desafios publicados aqui.</p></details>
     <details><summary>Posso trocar de desafio depois da inscrição?</summary><p>Pode, até o lançamento oficial, em 6 de novembro. Depois disso, a troca depende de autorização do comitê organizador.</p></details>
