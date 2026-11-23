@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Rali de Inovação 2ª Edição — envio da entrega da classificatória: vídeo pitch, PM Canvas, autorização de imagem, resumo da solução e protótipo. Prazo: 15/12/2026.">
+<meta name="description" content="Rali de Inovação 2ª Edição — área da equipe: termos de autorização de imagem de cada integrante e entrega da classificatória (vídeo pitch, PM Canvas, resumo da solução e protótipo). Prazo: 15/12/2026.">
 <meta name="robots" content="noindex">
-<title>Entrega da classificatória · Rali de Inovação</title>
+<title>Área da equipe · Rali de Inovação</title>
 <link rel="icon" href="/assets/logo-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Michroma&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
@@ -14,19 +14,19 @@
   --bg:#F6F8FB; --paper:#FFFFFF; --ink:#0B2545; --ink-2:#3F5473; --muted:#6B7A93;
   --line:#D9E1EC; --blue:#1A5E8E; --blue-2:#DCEBF5; --gold:#9A6F12; --gold-2:#F6ECD6;
   --lime:#5E8A12; --lime-2:#EEF6D9; --cta:#1A5E8E; --cta-ink:#FFFFFF; --field:#FFFFFF;
-  --erro:#B3261E; --erro-2:#FBE9E7; --ok:#1E7A4C; --ok-2:#E3F3EA;
+  --erro:#B3261E; --erro-2:#FBE9E7; --ok:#1E7A4C; --ok-2:#E3F3EA; --wait:#8A5A00; --wait-2:#FFF1C2; --off:#5F6B7A; --off-2:#E8EAED;
   --display:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
   --blue:#7CC4F2; --blue-2:#143A61; --gold:#E2B55B; --gold-2:#3A2E12; --lime:#C6F55A; --lime-2:#203514;
   --cta:#C6F55A; --cta-ink:#071A33; --field:#0A1E3C;
-  --erro:#FFB4AB; --erro-2:#4A1512; --ok:#8EE0B0; --ok-2:#113A26; color-scheme:dark } }
+  --erro:#FFB4AB; --erro-2:#4A1512; --ok:#8EE0B0; --ok-2:#113A26; --wait:#F2C94C; --wait-2:#3A2E12; --off:#AAB6C6; --off-2:#1C3354; color-scheme:dark } }
 :root[data-theme="dark"]{
   --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
   --blue:#7CC4F2; --blue-2:#143A61; --gold:#E2B55B; --gold-2:#3A2E12; --lime:#C6F55A; --lime-2:#203514;
   --cta:#C6F55A; --cta-ink:#071A33; --field:#0A1E3C;
-  --erro:#FFB4AB; --erro-2:#4A1512; --ok:#8EE0B0; --ok-2:#113A26; color-scheme:dark }
+  --erro:#FFB4AB; --erro-2:#4A1512; --ok:#8EE0B0; --ok-2:#113A26; --wait:#F2C94C; --wait-2:#3A2E12; --off:#AAB6C6; --off-2:#1C3354; color-scheme:dark }
 *{box-sizing:border-box}
 html{scroll-padding-top:80px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body)}
@@ -34,7 +34,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
 p{margin:0}
 a{color:var(--blue)}
 [hidden]{display:none !important}
-.wrap{max-width:880px;margin:0 auto;padding-left:16px;padding-right:16px}
+.wrap{max-width:900px;margin:0 auto;padding-left:16px;padding-right:16px}
 
 .top{position:sticky;top:0;z-index:9;background:var(--paper);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;min-height:64px}
@@ -42,10 +42,11 @@ a{color:var(--blue)}
 .tutela img{width:42px;height:42px;border-radius:50%;display:block;margin-right:11px}
 .tutela .t1{display:block;font:400 14px/1 Michroma,var(--display);letter-spacing:.12em;color:var(--ink)}
 .tutela .t2{display:block;font:400 8px/1 Michroma,var(--display);letter-spacing:.5em;color:var(--blue);margin-top:4px}
-.voltar{font:700 15px var(--display);text-decoration:none;color:var(--ink-2);padding:10px 12px;border-radius:8px;border:1px solid var(--line)}
-.voltar:hover,.voltar:focus-visible{background:var(--blue-2);color:var(--ink);outline:none}
+.toplink{font:700 15px var(--display);text-decoration:none;color:var(--ink-2);padding:10px 12px;border-radius:8px;border:1px solid var(--line);margin-left:8px;white-space:nowrap}
+.toplink:hover,.toplink:focus-visible{background:var(--blue-2);color:var(--ink);outline:none}
+@media (max-width:520px){ .toplink.painel{display:none} }
 
-.hero{padding-top:36px;padding-bottom:8px}
+.hero{padding-top:34px;padding-bottom:6px}
 .eyebrow{font:700 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 h1{font-size:40px;font-weight:800}
 @media (max-width:560px){ h1{font-size:32px} }
@@ -58,7 +59,7 @@ h1{font-size:40px;font-weight:800}
 .aviso.fechado{border-left:6px solid var(--erro);background:var(--erro-2)}
 .aviso b{font-family:var(--display);font-size:19px;display:block;margin-bottom:2px}
 
-section{padding-top:32px}
+section{padding-top:30px}
 h2{font-size:28px;font-weight:800;margin-bottom:14px}
 .itens{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 @media (max-width:640px){ .itens{grid-template-columns:1fr} }
@@ -66,16 +67,18 @@ h2{font-size:28px;font-weight:800;margin-bottom:14px}
 .itens li b{display:block;font:700 19px/1.2 var(--display);color:var(--ink);margin-bottom:3px}
 .itens li::before{content:attr(data-n);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--blue-2);color:var(--ink);font:800 17px/30px var(--display);text-align:center}
 .itens li.largo{grid-column:1/-1}
+.baixar{display:inline-block;margin:8px 10px 0 0;font:700 15px var(--display);text-decoration:none;padding:6px 10px;border-radius:8px;border:1px solid var(--line);color:var(--blue);background:var(--field)}
+.baixar:hover{background:var(--blue-2)}
 
-form{margin-top:8px}
-fieldset{border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:18px 18px 20px;margin:0 0 16px;min-width:0}
-legend{font:800 21px/1 var(--display);padding:0 8px;color:var(--ink)}
-legend span{color:var(--gold)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 18px;margin:0 0 18px}
+.card h2{margin-bottom:6px}
+.card .sub{color:var(--ink-2);font-size:16px;margin-bottom:12px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
 .campo{margin-top:14px}
 .campo label,.rotulo{display:block;font:700 16px/1.25 var(--display);color:var(--ink);margin-bottom:5px}
 .dica{display:block;font:400 14.5px/1.4 var(--body);color:var(--muted);margin-top:4px}
 input[type=text],input[type=tel],input[type=email],input[type=url],select,textarea{
-  width:100%;font:400 17px/1.3 var(--body);color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:10px;padding:12px 12px;min-height:48px}
+  width:100%;font:400 17px/1.3 var(--body);color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:10px;padding:12px;min-height:48px}
 textarea{min-height:84px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:3px solid var(--blue-2);border-color:var(--blue)}
 .duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
@@ -85,7 +88,6 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--blue-2);border-c
 .invalido .msg-erro{display:block}
 .confirma{display:flex;align-items:flex-start;margin-top:14px;font-size:16px;color:var(--ink-2);cursor:pointer}
 .confirma input{width:22px;height:22px;margin:2px 10px 0 0;flex:none;accent-color:var(--blue)}
-.regras{margin:10px 0 0;padding-left:20px;color:var(--ink-2);font-size:15.5px}
 .isca{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 .solta{display:block;border:2px dashed var(--line);border-radius:12px;padding:14px 16px;background:var(--field);cursor:pointer;color:var(--ink-2);font-size:15.5px}
@@ -100,20 +102,64 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--blue-2);border-c
 .lista button{border:0;background:none;color:var(--ink);font:700 15px var(--display);cursor:pointer;padding:6px 8px;border-radius:7px;min-height:36px}
 .lista button:hover{background:var(--paper)}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:10px;font:700 19px var(--display);text-decoration:none;cursor:pointer;border:2px solid transparent;background:var(--cta);color:var(--cta-ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:10px;font:700 19px var(--display);text-decoration:none;cursor:pointer;border:2px solid transparent;background:var(--cta);color:var(--cta-ink)}
 .btn[disabled]{opacity:.55;cursor:default}
 .btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn.pequeno{min-height:40px;font-size:16px;padding:0 14px}
 .acoes{display:flex;flex-wrap:wrap;align-items:center;margin-top:6px}
-.acoes .btn{margin:8px 12px 0 0}
+.acoes .btn{margin:10px 12px 0 0}
 @media (max-width:560px){ .acoes .btn{width:100%;margin-right:0} }
 .nota{color:var(--muted);font-size:14.5px;margin-top:12px}
 
 .caixa-erro{background:var(--erro-2);color:var(--ink);border:1px solid var(--erro);border-radius:12px;padding:12px 16px;margin:0 0 16px;font-weight:600}
-.andamento{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 16px}
+.andamento{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:12px 0}
 .andamento b{font:800 20px var(--display)}
 .barra{height:12px;border-radius:6px;background:var(--blue-2);overflow:hidden;margin:12px 0 8px}
 .barra i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}
 .andamento p{color:var(--ink-2);font-size:15.5px}
+
+/* cabeçalho da equipe */
+.eqtopo{display:flex;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px}
+.eqtopo > div{flex:1;min-width:220px}
+.eqtopo .eqid{font:700 14px var(--display);color:var(--muted);letter-spacing:.06em}
+.eqtopo h2{font-size:32px;margin:2px 0 4px}
+.eqtopo .desafio{color:var(--ink-2);font-size:16px}
+.eqtopo .btn{margin-top:4px}
+
+/* termos por integrante */
+.pessoas{list-style:none;margin:0;padding:0}
+.pessoa{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:10px;background:var(--field)}
+.pessoa .linha1{display:flex;align-items:center;flex-wrap:wrap}
+.pessoa .quem{font:700 19px var(--display);margin-right:10px}
+.pessoa .tag{font:700 12px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 8px;margin-right:8px}
+.chip{display:inline-flex;align-items:center;font:700 14px/1 var(--display);letter-spacing:.04em;border-radius:999px;padding:7px 11px;margin-left:auto;white-space:nowrap}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;margin-right:7px}
+.chip.validado{background:var(--ok-2);color:var(--ok)}
+.chip.em_validacao{background:var(--wait-2);color:var(--wait)}
+.chip.recusado{background:var(--erro-2);color:var(--erro)}
+.chip.a_entregar{background:var(--off-2);color:var(--off)}
+.pessoa .motivo{margin-top:8px;color:var(--erro);font-weight:600;font-size:15.5px}
+.pessoa .ajuda{margin-top:6px;color:var(--ink-2);font-size:15px}
+.pessoa .ajuda a{font-weight:700}
+.envio{display:flex;align-items:center;flex-wrap:wrap;margin-top:10px}
+.envio label.btn{margin:0 12px 0 0;position:relative}
+.envio label.btn:focus-within{outline:3px solid var(--blue-2);outline-offset:2px}
+.envio label.btn.ocupado{pointer-events:none;opacity:.6}
+.envio input{position:absolute;width:1px;height:1px;opacity:0}
+.envio .estado{font-size:15px;color:var(--ink-2)}
+.envio .estado.erro{color:var(--erro);font-weight:600}
+.todos{border-top:1px dashed var(--line);margin-top:16px;padding-top:14px}
+.fixo{font:700 18px/1.3 var(--display);color:var(--ink);background:var(--blue-2);border-radius:10px;padding:11px 13px}
+.com-olho{display:flex;align-items:stretch}
+.com-olho input{flex:1;min-width:0;border-radius:10px 0 0 10px;letter-spacing:.1em;font-weight:600}
+.olho{border:1.5px solid var(--line);border-left:0;border-radius:0 10px 10px 0;background:var(--blue-2);color:var(--ink);font:700 15px var(--display);padding:0 14px;cursor:pointer;min-width:86px}
+.olho:focus-visible{outline:3px solid var(--blue-2);outline-offset:2px}
+.resumo-termos{display:flex;flex-wrap:wrap;margin:4px 0 2px}
+.resumo-termos span{font:700 15px var(--display);margin-right:16px;color:var(--ink-2)}
+
+.entregue{border:2px solid var(--ok);border-radius:12px;padding:14px 16px;background:var(--ok-2);margin-bottom:6px}
+.entregue b{font:800 19px var(--display);color:var(--ok);display:block}
+.entregue span{display:block;color:var(--ink);font-size:15.5px;margin-top:3px;overflow-wrap:anywhere}
 
 .comprovante{background:var(--paper);border:2px solid var(--ok);border-radius:16px;padding:22px 20px;margin-top:10px}
 .comprovante .selo{display:inline-block;background:var(--ok-2);color:var(--ok);font:800 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
@@ -126,7 +172,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--blue-2);border-c
 .comprovante .alerta{background:var(--gold-2);border-left:6px solid var(--gold);border-radius:0 10px 10px 0;padding:12px 14px;margin-top:16px;font-weight:600}
 
 footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-@media print{ .top,.hero,#oque,form,footer,.acoes,.aviso{display:none !important} body{background:#fff} .comprovante{border-color:#000} }
+@media print{ .top,.hero,#oque,#entrar,#termos,#form-entrega,#status-entrega,footer,.acoes,.aviso,.eqtopo{display:none !important} body{background:#fff} .comprovante{border-color:#000} }
 </style>
 </head>
 <body>
@@ -136,45 +182,86 @@ footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);colo
     <img src="/assets/emblema.png" alt="" width="42" height="42">
     <span><span class="t1">TUTELA</span><span class="t2">TECH</span></span>
   </a>
-  <a class="voltar" href="/rali/">← Página do Rali</a>
+  <a class="toplink painel" href="/rali/painel/">Painel das equipes</a>
+  <a class="toplink" href="/rali/">← Rali</a>
 </div></header>
 
 <main class="wrap">
   <div class="hero">
     <p class="eyebrow">Rali de Inovação · 2ª edição · Etapa 1</p>
-    <h1>Entrega da classificatória</h1>
-    <p class="lead">O líder envia, de uma vez só, o link do vídeo pitch e os arquivos da equipe. Leva uns cinco minutos se tudo já estiver pronto.</p>
+    <h1>Área da equipe</h1>
+    <p class="lead">O líder entra com o <strong>usuário e a senha da equipe</strong> para enviar o <strong>termo de imagem de cada integrante</strong> e a <strong>entrega da classificatória</strong>. Dá para enviar aos poucos, até o prazo.</p>
     <p class="prazo">Prazo: <b>15/12/2026 às 23:59</b> <span id="falta"></span></p>
   </div>
 
-  <div class="aviso espera" id="aviso-espera" hidden><b>O envio abre em breve</b>O formulário de envio ainda está sendo preparado. Enquanto isso, deixe prontos os itens abaixo.</div>
+  <div class="aviso espera" id="aviso-espera" hidden><b>A área da equipe abre em breve</b>Enquanto isso, baixem os modelos abaixo e deixem os arquivos prontos.</div>
   <div class="aviso fechado" id="aviso-fechado" hidden><b>Envio encerrado</b><span id="motivo-fechado"></span> Dúvidas: procure o comitê do Rali no SENAI Toledo.</div>
-  <div class="aviso espera" id="aviso-rede" hidden><b>Sem conexão com o servidor</b>Não conseguimos confirmar se o envio está aberto. Confira a internet e <a href="">recarregue a página</a>.</div>
+  <div class="aviso espera" id="aviso-rede" hidden><b id="aviso-rede-t">Sem conexão com o servidor</b><span id="aviso-rede-x">Não conseguimos carregar a área da equipe. Confira a internet e </span><a href="">recarregue a página</a>.</div>
 
   <section id="oque">
-    <h2>O que a equipe entrega</h2>
+    <h2>O que a equipe entrega até 15/12</h2>
     <ol class="itens">
-      <li data-n="1"><b>Vídeo pitch no YouTube</b>Link do vídeo de até 5 minutos, gravado na <strong>horizontal</strong>, publicado como vídeo comum (<strong>não é Shorts</strong>) e com visibilidade <strong>Não listado</strong>.</li>
-      <li data-n="2"><b>PM Canvas preenchido</b>Um arquivo em PDF, Word (DOCX) ou imagem.</li>
-      <li data-n="3"><b>Autorização de imagem</b>Preenchida e assinada por cada integrante. Para <strong>menores de idade</strong>, também com a assinatura dos pais ou responsáveis.</li>
-      <li data-n="4"><b>Resumo da solução</b>Um arquivo em PDF ou Word (DOCX).</li>
-      <li data-n="5" class="largo"><b>Apresentação do protótipo</b>Imagens, fotos ou um PDF mostrando o protótipo.</li>
+      <li data-n="1"><b>Vídeo pitch no YouTube</b>Até 5 minutos, gravado na <strong>horizontal</strong>, publicado como vídeo comum (<strong>não é Shorts</strong>) e com visibilidade <strong>Não listado</strong>.</li>
+      <li data-n="2"><b>PM Canvas preenchido</b>Em PDF, Word (DOCX) ou imagem.
+        <span><a class="baixar" href="/rali/modelos/Rali-2a-Edicao-PM-Canvas.docx" download>⬇ Modelo (Word)</a><a class="baixar" href="/rali/modelos/Rali-2a-Edicao-PM-Canvas.pdf" target="_blank" rel="noopener">⬇ PDF para imprimir</a></span></li>
+      <li data-n="3"><b>Resumo da solução</b>Em PDF ou Word (DOCX), até 3 páginas, seguindo o roteiro.
+        <span><a class="baixar" href="/rali/modelos/Rali-2a-Edicao-Resumo-da-Solucao.docx" download>⬇ Roteiro (Word)</a><a class="baixar" href="/rali/modelos/Rali-2a-Edicao-Resumo-da-Solucao.pdf" target="_blank" rel="noopener">⬇ PDF</a></span></li>
+      <li data-n="4"><b>Apresentação do protótipo</b>Imagens, fotos ou PDF mostrando o protótipo (até 5 arquivos).</li>
+      <li data-n="5" class="largo"><b>Termo de autorização de imagem de cada integrante</b>Impresso, preenchido e assinado. Para <strong>menores de 18 anos</strong>, assinado também pelos pais ou responsáveis. Envie a foto ou o PDF de cada um na área da equipe (ou um arquivo só com todos).
+        <span><a class="baixar" href="/rali/modelos/Rali-2a-Edicao-Termo-de-Imagem-Maior-de-18.pdf" target="_blank" rel="noopener">⬇ Termo — 18 anos ou mais</a><a class="baixar" href="/rali/modelos/Rali-2a-Edicao-Termo-de-Imagem-Menor-de-18.pdf" target="_blank" rel="noopener">⬇ Termo — menor de 18</a></span></li>
     </ol>
   </section>
 
-  <section id="envio" hidden>
-    <h2>Enviar a entrega</h2>
-    <div class="caixa-erro" id="erro" role="alert" hidden></div>
+  <!-- 1) entrar -->
+  <section id="entrar" hidden>
+    <div class="card">
+      <h2>Entrar na área da equipe</h2>
+      <p class="sub">Use o <strong>usuário e a senha</strong> que o líder recebeu por e-mail do Rali. Cada equipe vê só a própria área.</p>
+      <div class="caixa-erro" id="erro-entrar" role="alert" hidden></div>
+      <form id="f-entrar" novalidate>
+        <div class="campo" data-campo="usuario"><label for="usuario">Usuário</label>
+          <input id="usuario" type="text" maxlength="120" autocomplete="username" autocapitalize="none" spellcheck="false" inputmode="email" placeholder="e-mail do líder ou código da equipe (EQ-07)">
+          <span class="dica">O e-mail do líder (o mesmo da inscrição) ou o código da equipe, que vem no e-mail.</span><span class="msg-erro"></span></div>
+        <div class="campo" data-campo="senha"><label for="senha">Senha</label>
+          <div class="com-olho"><input id="senha" type="password" maxlength="20" autocomplete="current-password" autocapitalize="characters" spellcheck="false" placeholder="Ex.: K7Q2-MD8P"><button class="olho" type="button" id="ver-senha" aria-pressed="false">Mostrar</button></div>
+          <span class="dica">8 letras e números, no e-mail que o líder recebeu do Rali (confira o spam). Perdeu a senha? Procure o comitê do Rali.</span><span class="msg-erro"></span></div>
+        <div class="isca" aria-hidden="true"><label for="site">Não preencha este campo</label><input id="site" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="acoes"><button class="btn" id="b-entrar" type="submit">Entrar</button></div>
+      </form>
+    </div>
+  </section>
 
-    <form id="f" novalidate>
-      <fieldset>
-        <legend><span>1.</span> Equipe</legend>
-        <div class="duas">
-          <div class="campo" data-campo="equipe"><label for="equipe">Nome da equipe</label><input id="equipe" type="text" maxlength="80" autocomplete="off" required><span class="msg-erro"></span></div>
-          <div class="campo" data-campo="lider"><label for="lider">Nome do líder</label><input id="lider" type="text" maxlength="100" autocomplete="name" required><span class="msg-erro"></span></div>
-          <div class="campo" data-campo="whatsapp"><label for="whatsapp">WhatsApp do líder (com DDD)</label><input id="whatsapp" type="tel" maxlength="20" autocomplete="tel" placeholder="(45) 99999-9999" required><span class="msg-erro"></span></div>
-          <div class="campo" data-campo="email"><label for="email">E-mail do líder</label><input id="email" type="email" maxlength="120" autocomplete="email" required><span class="msg-erro"></span></div>
-        </div>
+  <!-- 2) área da equipe -->
+  <section id="area" hidden>
+    <div class="eqtopo">
+      <div><span class="eqid" id="eq-id"></span><h2 id="eq-nome"></h2><p class="desafio" id="eq-desafio"></p></div>
+      <button class="btn ghost pequeno" type="button" id="sair">Sair</button>
+    </div>
+
+    <div class="aviso espera" id="aviso-hora" role="status" hidden><b id="aviso-hora-t"></b>O que chegar depois do prazo não é aceito (Edital, item 5.9). Envie com folga: arquivos grandes demoram para subir.</div>
+
+    <div class="card" id="termos">
+      <h2>Termos de imagem</h2>
+      <p class="sub">Um termo por integrante, assinado. Envie a foto (com boa luz, legível) ou o PDF de cada um. O comitê confere e muda o status para <strong>Validado</strong>.</p>
+      <div class="resumo-termos" id="resumo-termos"></div>
+      <ul class="pessoas" id="pessoas"></ul>
+      <div class="todos" id="todos" hidden>
+        <span class="rotulo">Tem os termos de todos num arquivo só?</span>
+        <span class="dica">Por exemplo, um PDF escaneado com os termos. Ele vale para quem está "A entregar" ou "Recusado"; quem já mandou o próprio termo continua com o dele.</span>
+        <div class="envio"><label class="btn pequeno ghost" id="todos-botao">Enviar arquivo com todos os termos<input type="file" id="todos-arquivo" accept=".pdf,.jpg,.jpeg,.png,.webp" aria-label="Enviar um arquivo com os termos de todos os integrantes"></label><span class="estado" id="todos-estado" role="status"></span></div>
+      </div>
+      <p class="nota">Status: <strong>A entregar</strong> → <strong>Em validação</strong> (enviado, aguardando o comitê) → <strong>Validado</strong>. Se aparecer <strong>Recusado</strong>, veja o motivo e envie de novo.</p>
+    </div>
+
+    <div class="card">
+      <h2>Entrega da classificatória</h2>
+      <div id="status-entrega"></div>
+      <div class="caixa-erro" id="erro" role="alert" hidden></div>
+
+      <form id="form-entrega" novalidate>
+        <div class="campo" id="desafio-fixo" hidden><span class="rotulo">Desafio da equipe</span>
+          <p class="fixo" id="desafio-fixo-texto"></p>
+          <span class="dica">Definido na inscrição. Para trocar de desafio, fale com o comitê do Rali.</span></div>
         <div class="campo" data-campo="desafio"><label for="desafio">Desafio da equipe</label>
           <select id="desafio" required>
             <option value="">Escolha o desafio…</option>
@@ -218,79 +305,66 @@ footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);colo
               <option value="Encontrar qualquer documento em 38 anos de projetos de engenharia">Encontrar qualquer documento em 38 anos de projetos de engenharia (Intertechne · engenharia de projetos)</option>
               <option value="Transformar relatórios em previsões e planos de ação automáticos">Transformar relatórios em previsões e planos de ação automáticos (Apetit · restaurantes corporativos)</option>
             </optgroup>
-            <option value="Desafio próprio">Desafio próprio (trazido pela equipe)</option>
+            <option value="Desafio próprio">Desafio próprio (validado pelo comitê)</option>
           </select><span class="msg-erro"></span></div>
-        <div class="campo" data-campo="codigo" id="caixa-codigo" hidden><label for="codigo">Código da entrega</label><input id="codigo" type="text" maxlength="60" autocomplete="off"><span class="dica">Código divulgado pelo comitê do Rali para as equipes.</span><span class="msg-erro"></span></div>
-        <div class="isca" aria-hidden="true"><label for="site">Não preencha este campo</label><input id="site" type="text" tabindex="-1" autocomplete="off"></div>
-      </fieldset>
-
-      <fieldset>
-        <legend><span>2.</span> Vídeo pitch</legend>
-        <div class="campo" data-campo="video"><label for="video">Link do vídeo no YouTube</label>
-          <input id="video" type="url" inputmode="url" maxlength="300" placeholder="https://youtu.be/..." autocomplete="off" required>
+        <div class="campo" data-campo="titulo"><label for="titulo">Nome da solução</label>
+          <input id="titulo" type="text" maxlength="120" autocomplete="off" placeholder="Ex.: Kit de Troca Rápida">
+          <span class="dica">Aparece no painel das equipes.</span><span class="msg-erro"></span></div>
+        <div class="campo" data-campo="video"><label for="video">Link do vídeo pitch no YouTube</label>
+          <input id="video" type="url" inputmode="url" maxlength="300" placeholder="https://youtu.be/..." autocomplete="off">
           <span class="dica">No YouTube: Compartilhar › Copiar link. Em “Visibilidade”, escolha <strong>Não listado</strong> (com “Privado” a banca não consegue assistir).</span>
           <span class="msg-erro"></span></div>
-        <div data-campo="confirmaVideo"><label class="confirma"><input id="confirmaVideo" type="checkbox"><span>Confirmo que o vídeo está na <strong>horizontal</strong>, <strong>não é Shorts</strong> e está como <strong>Não listado</strong>.</span></label><span class="msg-erro"></span></div>
-      </fieldset>
-
-      <fieldset>
-        <legend><span>3.</span> Arquivos</legend>
-        <p class="dica" style="margin-top:8px">Até 20 MB por arquivo. Fotos de documentos precisam estar legíveis.</p>
+        <div data-campo="confirmaVideo"><label class="confirma"><input id="confirmaVideo" type="checkbox"><span>Confirmo que o vídeo tem até 5 minutos, está na <strong>horizontal</strong>, <strong>não é Shorts</strong> e está como <strong>Não listado</strong>.</span></label><span class="msg-erro"></span></div>
 
         <div class="campo" data-campo="canvas"><span class="rotulo">PM Canvas preenchido</span>
           <label class="solta"><input type="file" data-item="canvas" accept=".pdf,.docx,.png,.jpg,.jpeg,.webp"><b>Escolher arquivo</b> · PDF, DOCX ou imagem</label>
           <ul class="lista" data-lista="canvas"></ul><span class="msg-erro"></span></div>
-
-        <div class="campo" data-campo="autorizacao"><span class="rotulo">Autorização de imagem assinada</span>
-          <label class="solta"><input type="file" data-item="autorizacao" multiple accept=".pdf,.docx,.png,.jpg,.jpeg,.webp"><b>Escolher arquivos</b> · PDF, DOCX ou imagem · até 6 arquivos</label>
-          <span class="dica">Uma por integrante, ou um único arquivo com todas. Menores de idade: com a assinatura dos pais ou responsáveis.</span>
-          <ul class="lista" data-lista="autorizacao"></ul><span class="msg-erro"></span></div>
-
         <div class="campo" data-campo="resumo"><span class="rotulo">Resumo da solução</span>
           <label class="solta"><input type="file" data-item="resumo" accept=".pdf,.docx"><b>Escolher arquivo</b> · PDF ou DOCX</label>
           <ul class="lista" data-lista="resumo"></ul><span class="msg-erro"></span></div>
-
         <div class="campo" data-campo="prototipo"><span class="rotulo">Apresentação do protótipo</span>
           <label class="solta"><input type="file" data-item="prototipo" multiple accept=".pdf,.png,.jpg,.jpeg,.webp"><b>Escolher arquivos</b> · imagens, fotos ou PDF · até 5 arquivos</label>
           <ul class="lista" data-lista="prototipo"></ul><span class="msg-erro"></span></div>
-
+        <p class="dica">Até 20 MB por arquivo.</p>
         <div class="campo"><label for="obs">Observações para o comitê (opcional)</label><textarea id="obs" maxlength="1000"></textarea></div>
-      </fieldset>
+        <div class="isca" aria-hidden="true"><label for="site2">Não preencha este campo</label><input id="site2" type="text" tabindex="-1" autocomplete="off"></div>
 
-      <div class="andamento" id="andamento" hidden aria-live="polite"><b id="and-titulo">Enviando…</b><div class="barra"><i id="and-barra"></i></div><p id="and-texto"></p><p class="nota">Não feche nem recarregue esta página até aparecer o comprovante.</p></div>
+        <div class="andamento" id="andamento" hidden aria-live="polite"><b>Enviando a entrega…</b><div class="barra"><i id="and-barra"></i></div><p id="and-texto"></p><p class="nota">Não feche nem recarregue esta página até aparecer o comprovante.</p></div>
+        <div class="acoes"><button class="btn" id="enviar" type="submit">Enviar a entrega</button></div>
+        <p class="nota">Pode enviar de novo até o prazo: vale a <strong>última entrega completa</strong>. Os arquivos ficam em pasta restrita à Comissão Organizadora e aos avaliadores.</p>
+      </form>
 
-      <div class="acoes"><button class="btn" id="enviar" type="submit">Enviar a entrega</button></div>
-      <p class="nota">Pode enviar de novo até o prazo: vale a <strong>última entrega completa</strong>. Para substituir, use o mesmo nome de equipe e o mesmo WhatsApp ou e-mail do líder. Os arquivos ficam em uma pasta restrita ao comitê organizador do Rali e são usados apenas para a avaliação e a divulgação do evento.</p>
-    </form>
-  </section>
-
-  <section id="pronto" hidden>
-    <div class="comprovante" tabindex="-1" id="comprovante">
-      <span class="selo">✓ Entrega recebida</span>
-      <h2>Comprovante de entrega</h2>
-      <p class="proto" id="c-proto"></p>
-      <div class="alerta" id="c-alerta" hidden></div>
-      <dl>
-        <dt>Recebida em</dt><dd id="c-quando"></dd>
-        <dt>Equipe</dt><dd id="c-equipe"></dd>
-        <dt>Vídeo</dt><dd id="c-video"></dd>
-      </dl>
-      <dl id="c-arquivos"></dl>
-      <p class="nota">Guarde este comprovante: tire um print ou salve em PDF. O número do protocolo identifica a entrega junto ao comitê.</p>
-    </div>
-    <div class="acoes">
-      <button class="btn" type="button" id="imprimir">Salvar / imprimir comprovante</button>
-      <button class="btn ghost" type="button" id="denovo">Enviar outra versão</button>
+      <div id="pronto" hidden>
+        <div class="comprovante" tabindex="-1" id="comprovante">
+          <span class="selo">✓ Entrega recebida</span>
+          <h2>Comprovante de entrega</h2>
+          <p class="proto" id="c-proto"></p>
+          <div class="alerta" id="c-alerta" hidden></div>
+          <dl>
+            <dt>Recebida em</dt><dd id="c-quando"></dd>
+            <dt>Equipe</dt><dd id="c-equipe"></dd>
+            <dt>Solução</dt><dd id="c-titulo"></dd>
+            <dt>Desafio</dt><dd id="c-desafio"></dd>
+            <dt>Vídeo</dt><dd id="c-video"></dd>
+          </dl>
+          <dl id="c-arquivos"></dl>
+          <p class="nota">Guarde este comprovante: tire um print ou salve em PDF. O protocolo identifica a entrega junto ao comitê.</p>
+        </div>
+        <div class="acoes">
+          <button class="btn" type="button" id="imprimir">Salvar / imprimir comprovante</button>
+          <button class="btn ghost" type="button" id="voltar-area">Voltar para a área da equipe</button>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap">Rali de Inovação · 2ª Edição · SENAI Toledo · IguassuTec · INSIDE Sistemas</div></footer>
+<footer><div class="wrap">Rali de Inovação · 2ª Edição · SENAI Toledo · IguassuTec · Biopark · INSIDE Sistemas</div></footer>
 
 <script>
 (function () {
   'use strict';
-  // Endereço do App da Web (termina em /exec). Vazio = envio ainda não aberto.
+  // Endereço do App da Web (termina em /exec). Vazio = área da equipe ainda não aberta.
   var API = '';
   if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     var teste = new URLSearchParams(location.search).get('api');
@@ -298,125 +372,144 @@ footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);colo
   }
 
   var ITENS = {
-    canvas:      { rotulo: 'PM Canvas',             max: 1, ext: ['pdf', 'docx', 'png', 'jpg', 'jpeg', 'webp'] },
-    autorizacao: { rotulo: 'Autorização de imagem', max: 6, ext: ['pdf', 'docx', 'png', 'jpg', 'jpeg', 'webp'] },
-    resumo:      { rotulo: 'Resumo da solução',     max: 1, ext: ['pdf', 'docx'] },
-    prototipo:   { rotulo: 'Protótipo',             max: 5, ext: ['pdf', 'png', 'jpg', 'jpeg', 'webp'] }
+    canvas:    { rotulo: 'PM Canvas',         max: 1, ext: ['pdf', 'docx', 'png', 'jpg', 'jpeg', 'webp'] },
+    resumo:    { rotulo: 'Resumo da solução', max: 1, ext: ['pdf', 'docx'] },
+    prototipo: { rotulo: 'Protótipo',         max: 5, ext: ['pdf', 'png', 'jpg', 'jpeg', 'webp'] }
   };
-  var ORDEM = ['canvas', 'autorizacao', 'resumo', 'prototipo'];
-  var MAX_MB = 20, MAX_TOTAL_MB = 100;
-  var CAMPOS = ['equipe', 'lider', 'whatsapp', 'email', 'desafio', 'video', 'obs'];
+  var ORDEM = ['canvas', 'resumo', 'prototipo'];
+  var EXT_TERMO = ['pdf', 'png', 'jpg', 'jpeg', 'webp'];
+  var MAX_MB = 20, MAX_TOTAL_MB = 100, TERMO_MB = 20;
+  var MODELO = {
+    maior: '/rali/modelos/Rali-2a-Edicao-Termo-de-Imagem-Maior-de-18.pdf',
+    menor: '/rali/modelos/Rali-2a-Edicao-Termo-de-Imagem-Menor-de-18.pdf'
+  };
+  var ROTULO_TERMO = { validado: 'Validado', em_validacao: 'Em validação', recusado: 'Recusado', a_entregar: 'A entregar' };
 
   function $(id) { return document.getElementById(id); }
-  var form = $('f'), btn = $('enviar');
-  var escolhidos = { canvas: [], autorizacao: [], resumo: [], prototipo: [] };
-  var enviando = false, sessao = null, exigeCodigo = false;
+  function el(tag, cls, texto) { var e = document.createElement(tag); if (cls) e.className = cls; if (texto !== undefined) e.textContent = texto; return e; }
+  var token = '', equipe = null, estado = null;
+  var escolhidos = { canvas: [], resumo: [], prototipo: [] };
+  var enviando = false, sessao = null, enviandoTermo = 0, envioId = null;
+  var termosEmEnvio = {}, termosErro = {}; // por integrante: envio em andamento e último erro
 
-  /* ---------- prazo e situação do envio ---------- */
-  var prazoMs = Date.UTC(2026, 11, 16, 2, 59, 59), desvio = 0, relogio = null, conferindo = false;
-  function consultar() { return fetch(API, { redirect: 'follow' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }); }
+  /* ---------- prazo ---------- */
+  var prazoMs = Date.UTC(2026, 11, 16, 2, 59, 59), desvio = 0;
+  function contagem() {
+    var falta = prazoMs - (Date.now() + desvio), x = $('falta'), hora = $('aviso-hora');
+    var aberto = !estado || estado.aberto;
+    if (falta <= 0) { x.textContent = '· encerrado'; hora.hidden = true; return; }
+    var dias = Math.floor(falta / 86400000), horas = Math.floor(falta / 3600000), min = Math.max(1, Math.ceil(falta / 60000));
+    x.textContent = dias >= 2 ? '· faltam ' + dias + ' dias' : (horas >= 1 ? '· faltam ' + horas + (horas === 1 ? ' hora' : ' horas') : '· falta menos de 1 hora');
+    // nas duas últimas horas, aviso dentro da área da equipe
+    hora.hidden = !(aberto && falta < 2 * 3600000);
+    if (!hora.hidden) $('aviso-hora-t').textContent = 'Faltam ' + (min >= 60 ? Math.floor(min / 60) + ' h ' + (min % 60) + ' min' : min + (min === 1 ? ' minuto' : ' minutos')) + ' para o prazo';
+  }
+  contagem(); setInterval(contagem, 20000);
+
   function aplicarEstado(e) {
+    estado = e;
     if (e.prazoIso) { prazoMs = new Date(e.prazoIso).getTime(); document.querySelector('.prazo b').textContent = e.prazo; }
     if (e.agoraIso) desvio = new Date(e.agoraIso).getTime() - Date.now();
-    exigeCodigo = !!e.exigeCodigo; $('caixa-codigo').hidden = !exigeCodigo;
-    if (e.aberto) { $('aviso-fechado').hidden = true; if ($('pronto').hidden) $('envio').hidden = false; }
-    else if (!enviando && !sessao) fechar(e.motivo);
+    if (e.limites) { MAX_MB = e.limites.arquivoMb || MAX_MB; TERMO_MB = e.limites.termoMb || TERMO_MB; MAX_TOTAL_MB = e.limites.totalMb || MAX_TOTAL_MB; }
+    $('aviso-fechado').hidden = !!e.aberto;
+    if (!e.aberto) $('motivo-fechado').textContent = e.motivo || 'O envio está fechado.';
+    contagem();
   }
-  function contagem() {
-    var falta = prazoMs - (Date.now() + desvio), el = $('falta');
-    if (falta <= 0) {
-      el.textContent = sessao ? '· prazo encerrado: conclua o envio em andamento' : '· encerrado';
-      // envio em andamento ou pausado continua: o servidor aceita por mais alguns minutos quem começou antes do prazo
-      if (API && !enviando && !sessao && !conferindo && !$('envio').hidden) {
-        conferindo = true;
-        consultar().then(function (e) { conferindo = false; aplicarEstado(e); }).catch(function () { conferindo = false; });
-      }
-      return;
+
+  /* ---------- conversa com o servidor ---------- */
+  function esperar(ms) { return new Promise(function (ok) { setTimeout(ok, ms); }); }
+  function buscar(acao) {
+    return fetch(API + (acao ? (API.indexOf('?') >= 0 ? '&' : '?') + 'acao=' + acao : ''), { redirect: 'follow' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (j) {
+        if (!j || j.ok === false) { var e = new Error((j && j.erro) || 'Resposta inesperada do servidor.'); e.servidor = true; throw e; }
+        return j;
+      });
+  }
+  function chamar(obj, tentativa) {
+    tentativa = tentativa || 1;
+    return fetch(API, { method: 'POST', body: JSON.stringify(obj), redirect: 'follow' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (j) {
+        if (j && !j.ok && j.temporario) { var t = new Error(j.erro || 'Servidor ocupado.'); t.aviso = j.erro; throw t; }
+        return j;
+      })
+      .catch(function (e) {
+        if (tentativa >= 3) throw e;
+        return esperar(tentativa * 2500).then(function () { return chamar(obj, tentativa + 1); });
+      })
+      .then(function (j) {
+        if (j && j.ok) { if (token) guardarSessao(); return j; }
+        var e = new Error((j && j.erro) || 'Resposta inesperada do servidor.'); e.servidor = true; e.campo = j && j.campo; e.sair = j && j.sair; e.reiniciar = j && j.reiniciar; throw e;
+      });
+  }
+
+  /* ---------- sessão ---------- */
+  // O navegador guarda a sessão só para aguentar um "recarregar" (puxar a tela para baixo no celular).
+  // Aba fechada e reaberta, voltar de outra página ou mais de 15 minutos parada: pede a senha de novo.
+  function guardarSessao() { try { sessionStorage.setItem('rali_area', JSON.stringify({ t: token, u: Date.now() })); } catch (x) {} }
+  function esquecerSessao() { try { sessionStorage.removeItem('rali_area'); } catch (x) {} }
+  function revogar(t) {
+    if (!t || !API) return;
+    try { fetch(API, { method: 'POST', body: JSON.stringify({ acao: 'sair', token: t }), keepalive: true }).catch(function () {}); } catch (x) {}
+  }
+  function sessaoGuardada() {
+    var s = null;
+    try { s = JSON.parse(sessionStorage.getItem('rali_area') || 'null'); } catch (x) { s = null; }
+    esquecerSessao();
+    if (!s || !s.t) return '';
+    var nav = window.performance && performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+    var recarga = nav ? nav.type === 'reload' : !!(window.performance && performance.navigation && performance.navigation.type === 1);
+    if (recarga && Date.now() - s.u < 15 * 60000) return s.t;
+    revogar(s.t); // a sessão antiga deixa de valer também no servidor
+    return '';
+  }
+  var guardado = null; // o que já estava preenchido na entrega quando a sessão venceu
+  function semSessao(e) {
+    if (!e || !e.sair) return false;
+    if (equipe && !$('form-entrega').hidden) {
+      guardado = { equipe: equipe.id, titulo: $('titulo').value, video: $('video').value, obs: $('obs').value, desafio: $('desafio').value,
+        confirma: $('confirmaVideo').checked, arquivos: { canvas: escolhidos.canvas.slice(), resumo: escolhidos.resumo.slice(), prototipo: escolhidos.prototipo.slice() } };
     }
-    var dias = Math.floor(falta / 86400000), horas = Math.floor(falta / 3600000);
-    el.textContent = dias >= 2 ? '· faltam ' + dias + ' dias' : (horas >= 1 ? '· faltam ' + horas + (horas === 1 ? ' hora' : ' horas') : '· falta menos de 1 hora');
+    token = ''; esquecerSessao();
+    limparArea();
+    $('area').hidden = true; $('entrar').hidden = false;
+    erroEm('erro-entrar', e.message + (guardado ? ' O que você já tinha preenchido na entrega continua guardado nesta página: entre de novo para enviar.' : ''));
+    return true;
   }
-  relogio = setInterval(contagem, 30000);
-
-  function fechar(motivo) {
-    $('envio').hidden = true; $('aviso-fechado').hidden = false; $('motivo-fechado').textContent = motivo || 'O envio das entregas está fechado.';
-  }
-  contagem();
-  if (!API) {
-    $('aviso-espera').hidden = false;
-  } else {
-    consultar().then(function (e) {
-      aplicarEstado(e);
-      contagem();
-    }).catch(function () {
-      $('aviso-rede').hidden = false;
-    });
-  }
-
-  /* ---------- rascunho dos campos de texto ---------- */
-  function guardar() { try { var o = {}; CAMPOS.forEach(function (c) { o[c] = $(c).value; }); sessionStorage.setItem('rali_entrega', JSON.stringify(o)); } catch (e) {} }
-  try {
-    var salvo = JSON.parse(sessionStorage.getItem('rali_entrega') || '{}');
-    CAMPOS.forEach(function (c) { if (typeof salvo[c] === 'string' && salvo[c]) $(c).value = salvo[c]; });
-  } catch (e) {}
-  form.addEventListener('input', guardar);
-  // o aviso de um campo some quando a pessoa mexe nele
-  function limparCampo(e) { var c = e.target && e.target.closest && e.target.closest('[data-campo]'); if (c && e.target.type !== 'file') c.classList.remove('invalido'); }
-  form.addEventListener('input', limparCampo);
-  form.addEventListener('change', limparCampo);
-  form.addEventListener('change', guardar);
-
-  /* ---------- erros ---------- */
-  function limparErros() {
-    [].forEach.call(document.querySelectorAll('.invalido'), function (el) { el.classList.remove('invalido'); });
-    $('erro').hidden = true;
-  }
-  function erroCampo(campo, msg) {
-    var el = document.querySelector('[data-campo="' + campo + '"]');
-    if (campo === 'codigo' && el) { exigeCodigo = true; el.hidden = false; }
-    if (!el || el.offsetParent === null) return false;
-    el.classList.add('invalido');
-    el.querySelector('.msg-erro').textContent = msg;
-    return el;
-  }
-  function erroGeral(msg) { var e = $('erro'); e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: 'center' }); }
-
-  function recomecar() { sessao = null; btn.textContent = 'Enviar a entrega'; $('erro').hidden = true; }
-  function travar(sim) { [].forEach.call(form.querySelectorAll('fieldset'), function (f) { f.disabled = sim; }); }
-
-  /* ---------- link do YouTube (mesma regra do servidor) ---------- */
-  function youtube(link) {
-    var u = String(link || '').trim();
-    if (!u) return { erro: 'Informe o link do vídeo no YouTube.' };
-    if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
-    var m = u.match(/^https?:\/\/(?:www\.|m\.|music\.)?(youtube\.com|youtu\.be|youtube-nocookie\.com)\/(.*)$/i);
-    if (!m) return { erro: 'O link precisa ser de um vídeo do YouTube (youtube.com ou youtu.be).' };
-    var host = m[1].toLowerCase(), resto = m[2];
-    if (/^shorts\//i.test(resto)) return { erro: 'Esse link é de um Shorts. Publique o vídeo na horizontal, como vídeo comum, e envie o link dele.' };
-    var id = '';
-    if (host === 'youtu.be') id = resto.split(/[?&#\/]/)[0];
-    else {
-      var q = resto.match(/^watch\/?\?(?:[^#]*&)?v=([\w-]{11})(?![\w-])/), p = resto.match(/^(?:live|embed|v)\/([\w-]{11})(?![\w-])/);
-      id = q ? q[1] : (p ? p[1] : '');
+  // mesma equipe entrou de novo: devolve o que estava preenchido (outra equipe: descarta)
+  function restaurarGuardado() {
+    var g = guardado; guardado = null;
+    if (!g || !equipe || g.equipe !== equipe.id || (estado && !estado.aberto)) return;
+    if ($('form-entrega').hidden) {
+      $('form-entrega').hidden = false;
+      var b = document.querySelector('#status-entrega button'); if (b) b.hidden = true;
+      prepararForm();
     }
-    if (!/^[\w-]{11}$/.test(id)) return { erro: 'Não reconhecemos esse link. Abra o vídeo no YouTube, toque em Compartilhar › Copiar link e cole aqui.' };
-    return { id: id };
+    $('titulo').value = g.titulo; $('video').value = g.video; $('obs').value = g.obs;
+    if (!equipe.desafioTravado) $('desafio').value = g.desafio;
+    $('confirmaVideo').checked = g.confirma;
+    ORDEM.forEach(function (k) { escolhidos[k] = g.arquivos[k]; desenhar(k); });
+    // o envio começa de novo (a senha pode ter sido trocada); os arquivos já estão escolhidos
+    sessao = null; envioId = null;
+    $('enviar').textContent = 'Enviar a entrega';
+  }
+  // ao sair, nada da equipe anterior fica na tela (computador compartilhado do laboratório)
+  function limparArea() {
+    equipe = null; sessao = null; envioId = null; termosEmEnvio = {}; termosErro = {};
+    ['eq-id', 'eq-nome', 'eq-desafio', 'resumo-termos', 'pessoas', 'status-entrega', 'todos-estado', 'desafio-fixo-texto',
+      'c-proto', 'c-quando', 'c-equipe', 'c-titulo', 'c-desafio', 'c-video', 'c-alerta', 'c-arquivos', 'and-texto'].forEach(function (id) { $(id).textContent = ''; });
+    ['titulo', 'video', 'obs', 'desafio', 'usuario', 'senha'].forEach(function (id) { $(id).value = ''; });
+    $('confirmaVideo').checked = false; $('and-barra').style.width = '0';
+    ORDEM.forEach(function (k) { escolhidos[k] = []; desenhar(k); });
+    limparErros(); $('erro').hidden = true; $('pronto').hidden = true; $('status-entrega').hidden = false;
+    $('todos').hidden = true; $('todos-estado').classList.remove('erro'); $('todos-botao').classList.remove('ocupado');
+    $('enviar').textContent = 'Enviar a entrega';
   }
 
-  /* ---------- arquivos escolhidos ---------- */
+  /* ---------- arquivos ---------- */
   function tamanho(b) { return b >= 1048576 ? (b / 1048576).toFixed(1).replace('.', ',') + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB'; }
   function extensao(nome) { var m = String(nome).match(/\.([A-Za-z0-9]{2,5})$/); return m ? m[1].toLowerCase() : ''; }
-  function desenhar(item) {
-    var ul = document.querySelector('[data-lista="' + item + '"]');
-    ul.textContent = '';
-    escolhidos[item].forEach(function (f, i) {
-      var li = document.createElement('li'), n = document.createElement('span'), t = document.createElement('span'), b = document.createElement('button');
-      n.className = 'nome'; n.textContent = f.name; t.className = 'tam'; t.textContent = tamanho(f.size);
-      b.type = 'button'; b.textContent = 'Remover'; b.setAttribute('aria-label', 'Remover ' + f.name);
-      b.addEventListener('click', function () { if (enviando) return; escolhidos[item].splice(i, 1); recomecar(); desenhar(item); });
-      li.appendChild(n); li.appendChild(t); li.appendChild(b); ul.appendChild(li);
-    });
-  }
   // formato de verdade, pelos primeiros bytes ('?' = não deu para ler; o servidor decide)
   function tipoReal(f) {
     return new Promise(function (ok) {
@@ -435,6 +528,246 @@ footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);colo
       try { r.readAsArrayBuffer(f.slice(0, 12)); } catch (e) { ok('?'); }
     });
   }
+  function ler(arquivo, item) {
+    return new Promise(function (ok, falhou) {
+      var r = new FileReader();
+      r.onload = function () { var s = String(r.result); ok(s.slice(s.indexOf(',') + 1)); };
+      r.onerror = function () { var e = new Error('Não foi possível ler “' + arquivo.name + '” neste aparelho. Remova e escolha o arquivo de novo.'); e.leitura = true; e.item = item; falhou(e); };
+      r.readAsDataURL(arquivo);
+    });
+  }
+
+  /* ---------- erros ---------- */
+  function limparErros(raiz) {
+    [].forEach.call((raiz || document).querySelectorAll('.invalido'), function (x) { x.classList.remove('invalido'); });
+  }
+  function erroCampo(campo, msg) {
+    var c = document.querySelector('[data-campo="' + campo + '"]');
+    if (!c || c.offsetParent === null) return false;
+    c.classList.add('invalido');
+    c.querySelector('.msg-erro').textContent = msg;
+    return c;
+  }
+  function erroEm(id, msg) { var e = $(id); e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: 'center' }); }
+
+  /* ---------- 1) entrar com usuário e senha ---------- */
+  $('ver-senha').addEventListener('click', function () {
+    var s = $('senha'), mostrar = s.type === 'password';
+    s.type = mostrar ? 'text' : 'password';
+    this.textContent = mostrar ? 'Ocultar' : 'Mostrar';
+    this.setAttribute('aria-pressed', String(mostrar));
+  });
+  $('f-entrar').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    limparErros($('f-entrar')); $('erro-entrar').hidden = true;
+    var usuario = $('usuario').value.trim(), senha = $('senha').value.trim();
+    var ruim = false;
+    if (!usuario) { erroCampo('usuario', 'Informe o usuário: o e-mail do líder ou o código da equipe (ex.: EQ-07).'); ruim = true; }
+    if (senha.replace(/[^A-Za-z0-9]/g, '').length < 4) { erroCampo('senha', 'Informe a senha da equipe (8 letras e números, no e-mail do líder).'); ruim = true; }
+    if (ruim) return;
+    var b = $('b-entrar'); b.disabled = true; b.textContent = 'Entrando…';
+    chamar({ acao: 'entrar', usuario: usuario, senha: senha, site: $('site').value }).then(function (r) {
+      token = r.token;
+      guardarSessao();
+      $('senha').value = ''; $('senha').type = 'password'; $('ver-senha').textContent = 'Mostrar'; $('ver-senha').setAttribute('aria-pressed', 'false');
+      mostrarArea(r);
+      restaurarGuardado();
+    }).catch(function (e) {
+      var c = e.servidor && e.campo && erroCampo(e.campo, e.message);
+      if (!c) erroEm('erro-entrar', e.servidor ? e.message : (e.aviso ? e.aviso + ' Se continuar, avise o comitê do Rali.' : 'Não foi possível entrar agora. Confira a internet e tente de novo.'));
+    }).then(function () { b.disabled = false; b.textContent = 'Entrar'; });
+  });
+  $('sair').addEventListener('click', function () {
+    if (enviando || enviandoTermo) { window.alert('Aguarde terminar o envio em andamento antes de sair.'); return; }
+    revogar(token); // a sessão deixa de valer no servidor, não só neste navegador
+    token = ''; guardado = null;
+    esquecerSessao();
+    limparArea();
+    $('area').hidden = true; $('entrar').hidden = false; $('erro-entrar').hidden = true;
+    window.scrollTo(0, 0);
+  });
+
+  /* ---------- 2) área da equipe ---------- */
+  function mostrarArea(r) {
+    if (r.estado) aplicarEstado(r.estado);
+    equipe = r.equipe;
+    $('entrar').hidden = true; $('area').hidden = false;
+    $('eq-id').textContent = equipe.id;
+    $('eq-nome').textContent = equipe.nome || 'Equipe sem nome';
+    $('eq-desafio').textContent = equipe.desafio ? 'Desafio: ' + equipe.desafio + (equipe.titulo ? ' · Solução: ' + equipe.titulo : '') : '';
+    desenharTermos();
+    desenharEntrega();
+  }
+
+  function desenharTermos() {
+    var c = equipe.termos, r = $('resumo-termos');
+    r.textContent = '';
+    r.appendChild(el('span', '', c.validado + ' de ' + c.total + ' validados'));
+    if (c.emValidacao) r.appendChild(el('span', '', c.emValidacao + ' em validação'));
+    if (c.recusado) r.appendChild(el('span', '', c.recusado + ' recusado(s)'));
+    if (c.aEntregar) r.appendChild(el('span', '', c.aEntregar + ' a entregar'));
+    var ul = $('pessoas');
+    ul.textContent = '';
+    var aberto = !estado || estado.aberto;
+    // o arquivo com todos vale para quem está "A entregar" ou "Recusado"
+    var pendentes = equipe.integrantes.filter(function (p) { return p.termo === 'a_entregar' || p.termo === 'recusado'; }).length;
+    $('todos').hidden = !(aberto && pendentes >= 2);
+    equipe.integrantes.forEach(function (p) {
+      var li = el('li', 'pessoa');
+      var l1 = el('div', 'linha1');
+      l1.appendChild(el('span', 'quem', p.nome));
+      if (p.lider) l1.appendChild(el('span', 'tag', 'Líder'));
+      l1.appendChild(el('span', 'chip ' + p.termo, ROTULO_TERMO[p.termo] + (p.termo === 'em_validacao' && p.enviadoEm ? ' · ' + p.enviadoEm : '')));
+      li.appendChild(l1);
+      if (p.termo === 'recusado' && p.motivo) li.appendChild(el('p', 'motivo', 'Motivo: ' + p.motivo));
+      if (p.termo !== 'validado') {
+        var ajuda = el('p', 'ajuda');
+        ajuda.appendChild(document.createTextNode('Modelo: '));
+        var qual = p.menor === 'SIM' ? ['menor'] : (p.menor === 'NÃO' ? ['maior'] : ['maior', 'menor']);
+        qual.forEach(function (k, i) {
+          if (i) ajuda.appendChild(document.createTextNode(' ou '));
+          var a = el('a', '', k === 'menor' ? 'termo para menor de 18 (assinam o participante e o responsável)' : 'termo para 18 anos ou mais');
+          a.href = MODELO[k]; a.target = '_blank'; a.rel = 'noopener';
+          ajuda.appendChild(a);
+        });
+        li.appendChild(ajuda);
+        if (aberto) {
+          var envio = el('div', 'envio'), emEnvio = termosEmEnvio[p.pessoa], erro = termosErro[p.pessoa];
+          var lab = el('label', 'btn pequeno' + (p.termo === 'a_entregar' || p.termo === 'recusado' ? '' : ' ghost') + (emEnvio ? ' ocupado' : ''));
+          lab.appendChild(document.createTextNode(p.termo === 'em_validacao' ? 'Trocar o arquivo' : 'Enviar termo assinado'));
+          var inp = el('input'); inp.type = 'file'; inp.accept = '.pdf,.jpg,.jpeg,.png,.webp'; inp.disabled = !!emEnvio;
+          inp.setAttribute('aria-label', 'Enviar termo de ' + p.nome);
+          lab.appendChild(inp);
+          var st = el('span', 'estado' + (erro && !emEnvio ? ' erro' : ''),
+            emEnvio || erro || (p.termo === 'em_validacao' ? 'Enviado. Aguardando o comitê.' : 'PDF ou foto, até ' + TERMO_MB + ' MB.'));
+          st.setAttribute('role', 'status');
+          envio.appendChild(lab); envio.appendChild(st);
+          inp.addEventListener('change', function () { var f = inp.files[0]; inp.value = ''; if (f) enviarTermo(p.pessoa, p.nome, f); });
+          li.appendChild(envio);
+        }
+      }
+      ul.appendChild(li);
+    });
+  }
+
+  // problema antes de enviar: mensagem no lugar certo (integrante ou "arquivo com todos")
+  function avisoTermo(alvo, msg) {
+    if (alvo === 'TODOS') { var t = $('todos-estado'); t.textContent = msg; t.classList.toggle('erro', !!msg); return; }
+    if (msg) termosErro[alvo] = msg; else delete termosErro[alvo];
+    if (equipe) desenharTermos();
+  }
+  function conferirTermo(f) {
+    if (EXT_TERMO.indexOf(extensao(f.name)) < 0) return 'Envie o termo assinado em PDF ou foto (JPG, PNG). Arquivo Word não serve: imprima, assine e fotografe ou escaneie.';
+    if (f.size > TERMO_MB * 1048576) return 'O arquivo passa de ' + TERMO_MB + ' MB. Reduza a foto ou o PDF.';
+    if (f.size === 0) return 'O arquivo está vazio.';
+    return '';
+  }
+  function enviarTermo(alvo, nome, f) {
+    var problema = conferirTermo(f);
+    if (problema) return avisoTermo(alvo, problema);
+    var todos = alvo === 'TODOS', texto = 'Enviando “' + f.name + '” (' + tamanho(f.size) + ')…';
+    // como estava antes, para saber depois de uma falha se este envio chegou mesmo assim
+    function retrato(eq) {
+      if (!eq) return '';
+      if (todos) return String(eq.integrantes.filter(function (x) { return x.termo === 'a_entregar' || x.termo === 'recusado'; }).length);
+      var p = eq.integrantes.filter(function (x) { return x.pessoa === alvo; })[0];
+      return p ? p.termo + '|' + (p.enviadoTs || p.enviadoEm) : '';
+    }
+    var antes = retrato(equipe);
+    enviandoTermo++;
+    if (todos) { avisoTermo('TODOS', ''); $('todos-estado').textContent = texto; $('todos-botao').classList.add('ocupado'); $('todos-arquivo').disabled = true; }
+    else { delete termosErro[alvo]; termosEmEnvio[alvo] = texto; desenharTermos(); }
+    function fim() {
+      enviandoTermo--;
+      if (todos) { $('todos-botao').classList.remove('ocupado'); $('todos-arquivo').disabled = false; }
+      else delete termosEmEnvio[alvo];
+    }
+    tipoReal(f).then(function (tipo) {
+      if (tipo !== '?' && EXT_TERMO.indexOf(tipo) < 0) { var e = new Error('Esse arquivo não é um PDF nem uma foto válida.'); e.servidor = true; throw e; }
+      return ler(f, '');
+    }).then(function (b64) {
+      return chamar({ acao: 'termo', token: token, pessoa: alvo, nome: f.name, dados: b64 });
+    }).then(function (r) {
+      // o termo foi gravado; se o servidor não mandou a lista atualizada, pede de novo
+      return r.recarregar ? chamar({ acao: 'equipe', token: token }) : r;
+    }).then(function (r) {
+      fim();
+      if (!token) return;
+      if (r.estado) aplicarEstado(r.estado);
+      equipe = r.equipe;
+      if (todos) { termosErro = {}; $('todos-estado').textContent = '✓ Arquivo enviado. Os termos estão em validação.'; }
+      desenharTermos();
+    }).catch(function (e) {
+      fim();
+      if (semSessao(e) || !token) return;
+      var msg = e.servidor || e.leitura ? e.message : (e.aviso || 'A conexão falhou. Confira a internet e tente de novo.');
+      if (e.leitura) return avisoTermo(alvo, msg);
+      // confere no servidor como ficou: o termo pode ter sido gravado antes de a resposta se perder
+      chamar({ acao: 'equipe', token: token }).then(function (r) {
+        equipe = r.equipe;
+        var depois = retrato(equipe);
+        var p = equipe.integrantes.filter(function (x) { return x.pessoa === alvo; })[0];
+        var chegou = depois !== antes && (todos ? depois === '0' : !!(p && p.termo === 'em_validacao'));
+        if (chegou) { if (todos) { termosErro = {}; $('todos-estado').textContent = '✓ Arquivo recebido. Os termos estão em validação.'; } else delete termosErro[alvo]; desenharTermos(); }
+        else avisoTermo(alvo, msg);
+      }).catch(function (e2) { if (!semSessao(e2)) avisoTermo(alvo, msg); });
+    });
+  }
+  $('todos-arquivo').addEventListener('change', function () {
+    var f = this.files[0]; this.value = '';
+    if (f) enviarTermo('TODOS', '', f);
+  });
+
+  /* ---------- entrega ---------- */
+  function desenharEntrega() {
+    var s = $('status-entrega');
+    s.textContent = '';
+    var aberto = !estado || estado.aberto;
+    if (equipe.entrega) {
+      var box = el('div', 'entregue');
+      box.appendChild(el('b', '', '✓ Entrega recebida em ' + equipe.entrega.quando));
+      box.appendChild(el('span', '', 'Protocolo ' + equipe.entrega.protocolo + (equipe.entrega.titulo ? ' · ' + equipe.entrega.titulo : '')));
+      s.appendChild(box);
+      if (aberto) {
+        var b = el('button', 'btn ghost pequeno', 'Enviar uma nova versão'); b.type = 'button';
+        b.addEventListener('click', function () { $('form-entrega').hidden = false; b.hidden = true; prepararForm(); $('form-entrega').scrollIntoView({ block: 'start' }); });
+        s.appendChild(b);
+      }
+      $('form-entrega').hidden = true;
+    } else {
+      s.appendChild(el('p', 'sub', aberto ? 'Ainda não enviada. Preencha tudo abaixo e envie de uma vez.' : 'A equipe não enviou a entrega.'));
+      $('form-entrega').hidden = !aberto;
+      if (aberto) prepararForm();
+    }
+    $('pronto').hidden = true;
+  }
+
+  // o desafio vem da inscrição; só quem está "A definir" escolhe aqui (troca: com o comitê)
+  function prepararForm() {
+    var travado = !!equipe.desafioTravado, sel = $('desafio');
+    document.querySelector('[data-campo="desafio"]').hidden = travado;
+    $('desafio-fixo').hidden = !travado;
+    if (travado) $('desafio-fixo-texto').textContent = equipe.desafio;
+    else if (!sel.value && equipe.desafio) {
+      for (var i = 0; i < sel.options.length; i++) if (sel.options[i].value === equipe.desafio) { sel.value = equipe.desafio; break; }
+    }
+    if (!$('titulo').value && equipe.titulo) $('titulo').value = equipe.titulo;
+  }
+
+  function desenhar(item) {
+    var ul = document.querySelector('[data-lista="' + item + '"]');
+    ul.textContent = '';
+    escolhidos[item].forEach(function (f, i) {
+      var li = el('li'), b = el('button', '', 'Remover');
+      li.appendChild(el('span', 'nome', f.name)); li.appendChild(el('span', 'tam', tamanho(f.size)));
+      b.type = 'button'; b.setAttribute('aria-label', 'Remover ' + f.name);
+      b.addEventListener('click', function () { if (enviando) return; escolhidos[item].splice(i, 1); recomecar(); desenhar(item); });
+      li.appendChild(b); ul.appendChild(li);
+    });
+  }
+  // mudou o conteúdo da entrega: o próximo envio é um envio novo (novo protocolo)
+  function recomecar() { sessao = null; envioId = null; $('enviar').textContent = 'Enviar a entrega'; $('erro').hidden = true; }
+  function travar(sim) { [].forEach.call($('form-entrega').querySelectorAll('input,select,textarea,button'), function (x) { if (x.id !== 'enviar') x.disabled = sim; }); }
   function adicionar(item, arquivos) {
     if (enviando) return;
     var def = ITENS[item], caixa = document.querySelector('[data-campo="' + item + '"]'), problemas = [], candidatos = [];
@@ -460,28 +793,48 @@ footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);colo
       if (problemas.length) erroCampo(item, problemas.join(' '));
     });
   }
-  [].forEach.call(document.querySelectorAll('input[type=file]'), function (inp) {
+  [].forEach.call(document.querySelectorAll('#form-entrega input[type=file]'), function (inp) {
     var item = inp.getAttribute('data-item'), caixa = inp.parentNode;
     inp.addEventListener('change', function () { adicionar(item, inp.files); inp.value = ''; });
     ['dragenter', 'dragover'].forEach(function (ev) { caixa.addEventListener(ev, function (e) { e.preventDefault(); caixa.classList.add('sobre'); }); });
     ['dragleave', 'drop'].forEach(function (ev) { caixa.addEventListener(ev, function (e) { e.preventDefault(); caixa.classList.remove('sobre'); }); });
     caixa.addEventListener('drop', function (e) { if (e.dataTransfer && e.dataTransfer.files) adicionar(item, e.dataTransfer.files); });
   });
+  function mexeu(e) {
+    var c = e.target && e.target.closest && e.target.closest('[data-campo]');
+    if (c && e.target.type !== 'file') c.classList.remove('invalido');
+    // mudou um dado da entrega: o próximo clique é outro envio (não a repetição do anterior)
+    if (!enviando && e.target && e.target.type !== 'file') { envioId = null; if (sessao) recomecar(); }
+  }
+  $('form-entrega').addEventListener('input', mexeu);
+  $('form-entrega').addEventListener('change', mexeu);
+  $('f-entrar').addEventListener('input', function (e) { var c = e.target.closest && e.target.closest('[data-campo]'); if (c) c.classList.remove('invalido'); });
 
-  /* ---------- conferência antes de enviar ---------- */
+  function youtube(link) {
+    var u = String(link || '').trim();
+    if (!u) return { erro: 'Informe o link do vídeo no YouTube.' };
+    if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+    var m = u.match(/^https?:\/\/(?:www\.|m\.|music\.)?(youtube\.com|youtu\.be|youtube-nocookie\.com)\/(.*)$/i);
+    if (!m) return { erro: 'O link precisa ser de um vídeo do YouTube (youtube.com ou youtu.be).' };
+    var host = m[1].toLowerCase(), resto = m[2];
+    if (/^shorts\//i.test(resto)) return { erro: 'Esse link é de um Shorts. Publique o vídeo na horizontal, como vídeo comum, e envie o link dele.' };
+    var id = '';
+    if (host === 'youtu.be') id = resto.split(/[?&#\/]/)[0];
+    else {
+      var q = resto.match(/^watch\/?\?(?:[^#]*&)?v=([\w-]{11})(?![\w-])/), p = resto.match(/^(?:live|embed|v)\/([\w-]{11})(?![\w-])/);
+      id = q ? q[1] : (p ? p[1] : '');
+    }
+    if (!/^[\w-]{11}$/.test(id)) return { erro: 'Não reconhecemos esse link. Abra o vídeo no YouTube, toque em Compartilhar › Copiar link e cole aqui.' };
+    return { id: id };
+  }
+
   function conferir() {
-    limparErros();
+    limparErros($('form-entrega')); $('erro').hidden = true;
     var primeiro = null;
-    function falha(campo, msg) { var el = erroCampo(campo, msg); if (!primeiro) primeiro = el; }
-    var v = {}; CAMPOS.forEach(function (c) { v[c] = $(c).value.trim(); });
-    if (v.equipe.length < 2) falha('equipe', 'Informe o nome da equipe.');
-    if (v.lider.length < 3) falha('lider', 'Informe o nome do líder da equipe.');
-    var fone = v.whatsapp.replace(/\D/g, '');
-    if (fone.length < 10 || fone.length > 13) falha('whatsapp', 'Informe o WhatsApp com DDD.');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)) falha('email', 'Informe um e-mail válido.');
+    function falha(campo, msg) { var c = erroCampo(campo, msg); if (!primeiro) primeiro = c; }
+    var v = { desafio: equipe.desafioTravado ? equipe.desafio : $('desafio').value, titulo: $('titulo').value.trim(), video: $('video').value.trim(), obs: $('obs').value.trim() };
     if (!v.desafio) falha('desafio', 'Escolha o desafio da equipe.');
-    v.codigo = $('codigo').value.trim();
-    if (exigeCodigo && !v.codigo) falha('codigo', 'Informe o código da entrega divulgado pelo comitê.');
+    if (v.titulo.length < 3) falha('titulo', 'Dê um nome para a solução da equipe.');
     var yt = youtube(v.video);
     if (yt.erro) falha('video', yt.erro);
     if (!$('confirmaVideo').checked) falha('confirmaVideo', 'Marque a confirmação sobre o vídeo.');
@@ -490,51 +843,21 @@ footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);colo
       if (!escolhidos[k].length) falha(k, 'Falta anexar: ' + ITENS[k].rotulo + '.');
       escolhidos[k].forEach(function (f) { total += f.size; });
     });
-    if (!primeiro && total > MAX_TOTAL_MB * 1048576) { erroGeral('A soma dos arquivos passa de ' + MAX_TOTAL_MB + ' MB. Reduza os arquivos maiores.'); return null; }
+    if (!primeiro && total > MAX_TOTAL_MB * 1048576) { erroEm('erro', 'A soma dos arquivos passa de ' + MAX_TOTAL_MB + ' MB. Reduza os arquivos maiores.'); return null; }
     if (primeiro) { primeiro.scrollIntoView({ block: 'center' }); var foco = primeiro.querySelector('input,select'); if (foco) foco.focus({ preventScroll: true }); return null; }
-    v.confirmaVideo = true; v.site = $('site').value;
+    v.confirmaVideo = true; v.site = $('site2').value;
     return v;
   }
-
-  /* ---------- conversa com o servidor ---------- */
-  function esperar(ms) { return new Promise(function (ok) { setTimeout(ok, ms); }); }
-  function chamar(obj, tentativa) {
-    tentativa = tentativa || 1;
-    return fetch(API, { method: 'POST', body: JSON.stringify(obj), redirect: 'follow' })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      .then(function (j) {
-        if (j && !j.ok && j.temporario) { var t = new Error(j.erro || 'Servidor ocupado.'); t.aviso = j.erro; throw t; }
-        return j;
-      })
-      .catch(function (e) {
-        if (tentativa >= 3) throw e;
-        return esperar(tentativa * 2500).then(function () { return chamar(obj, tentativa + 1); });
-      })
-      .then(function (j) {
-        if (j && j.ok) return j;
-        var e = new Error((j && j.erro) || 'Resposta inesperada do servidor.'); e.servidor = true; e.campo = j && j.campo; throw e;
-      });
-  }
-  function ler(arquivo, item) {
-    return new Promise(function (ok, falhou) {
-      var r = new FileReader();
-      r.onload = function () { var s = String(r.result); ok(s.slice(s.indexOf(',') + 1)); };
-      r.onerror = function () { var e = new Error('Não foi possível ler “' + arquivo.name + '” neste aparelho. Remova e escolha o arquivo de novo.'); e.leitura = true; e.item = item; falhou(e); };
-      r.readAsDataURL(arquivo);
-    });
-  }
-  function andamento(feitos, total, texto) {
-    $('and-barra').style.width = Math.round(100 * feitos / total) + '%';
-    $('and-texto').textContent = texto;
-  }
+  function andamento(feitos, total, texto) { $('and-barra').style.width = Math.round(100 * feitos / total) + '%'; $('and-texto').textContent = texto; }
 
   function enviar(dados) {
     var fila = [];
     ORDEM.forEach(function (k) { escolhidos[k].forEach(function (f, i) { fila.push({ item: k, indice: i, arquivo: f }); }); });
     var total = fila.length + 2, feitos = 0;
-
-    var inicio = sessao ? Promise.resolve(sessao) : (andamento(0, total, 'Conferindo os dados e o link do vídeo…'), chamar(Object.assign({ acao: 'iniciar' }, dados)).then(function (s) { sessao = { protocolo: s.protocolo, token: s.token, prontos: {} }; return sessao; }));
-
+    // o mesmo clique leva sempre o mesmo envioId: se a resposta se perder, a repetição não cria outro protocolo
+    if (!sessao && !envioId) envioId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'e' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+    var inicio = sessao ? Promise.resolve(sessao) : (andamento(0, total, 'Conferindo os dados e o link do vídeo…'),
+      chamar(Object.assign({ acao: 'iniciar', token: token, envioId: envioId }, dados)).then(function (s) { sessao = { protocolo: s.protocolo, token: s.token, prontos: {} }; return sessao; }));
     return inicio.then(function (s) {
       feitos = 1;
       return fila.reduce(function (antes, x, n) {
@@ -556,70 +879,96 @@ footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);colo
   function mostrarComprovante(c) {
     $('c-proto').textContent = c.protocolo;
     $('c-quando').textContent = c.recebidoEm + ' (horário de Brasília)';
-    $('c-equipe').textContent = c.equipe;
+    $('c-equipe').textContent = c.equipe || equipe.nome || equipe.id;
+    $('c-titulo').textContent = c.titulo || '';
+    $('c-desafio').textContent = c.desafio || '';
     var v = $('c-video'); v.textContent = '';
     if (c.tituloVideo) { v.appendChild(document.createTextNode(c.tituloVideo)); v.appendChild(document.createElement('br')); }
-    var a = document.createElement('a'); a.href = c.video; a.target = '_blank'; a.rel = 'noopener'; a.textContent = c.video; v.appendChild(a);
-    var avisos = [c.avisoEntrega, c.avisoVideo].filter(function (x) { return !!x; });
-    var al = $('c-alerta'); al.hidden = !avisos.length; al.textContent = avisos.length ? 'Atenção: ' + avisos.join(' ') : '';
+    var a = el('a', '', c.video); a.href = c.video; a.target = '_blank'; a.rel = 'noopener'; v.appendChild(a);
+    var al = $('c-alerta'); al.hidden = !c.avisoVideo; al.textContent = c.avisoVideo ? 'Atenção: ' + c.avisoVideo : '';
     var dl = $('c-arquivos'); dl.textContent = '';
-    c.arquivos.forEach(function (g) {
-      var dt = document.createElement('dt'), dd = document.createElement('dd');
-      dt.textContent = g.item; dd.textContent = g.nomes.join(' · ');
-      dl.appendChild(dt); dl.appendChild(dd);
-    });
-    $('envio').hidden = true; $('oque').hidden = true; $('pronto').hidden = false;
-    $('comprovante').focus(); window.scrollTo(0, 0);
+    c.arquivos.forEach(function (g) { dl.appendChild(el('dt', '', g.item)); dl.appendChild(el('dd', '', g.nomes.join(' · '))); });
+    $('form-entrega').hidden = true; $('status-entrega').hidden = true; $('pronto').hidden = false;
+    $('comprovante').focus(); $('comprovante').scrollIntoView({ block: 'start' });
   }
 
-  form.addEventListener('submit', function (ev) {
+  $('form-entrega').addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (enviando) return;
     var dados = conferir();
     if (!dados) return;
+    var btn = $('enviar');
     enviando = true; btn.disabled = true; btn.textContent = 'Enviando…'; travar(true);
-    $('and-titulo').textContent = 'Enviando a entrega…'; $('andamento').hidden = false;
-    $('andamento').scrollIntoView({ block: 'center' });
-
+    $('andamento').hidden = false; $('andamento').scrollIntoView({ block: 'center' });
     enviar(dados).then(function (c) {
-      enviando = false; sessao = null; travar(false);
-      try { sessionStorage.removeItem('rali_entrega'); } catch (e) {}
+      enviando = false; sessao = null; envioId = null; travar(false);
+      btn.disabled = false; btn.textContent = 'Enviar a entrega'; $('andamento').hidden = true;
+      ORDEM.forEach(function (k) { escolhidos[k] = []; desenhar(k); });
+      $('confirmaVideo').checked = false;
       mostrarComprovante(c);
+      chamar({ acao: 'equipe', token: token }).then(function (r) { equipe = r.equipe; desenharTermos(); }).catch(function () {});
     }).catch(function (e) {
       enviando = false; btn.disabled = false; $('andamento').hidden = true; travar(false);
+      if (semSessao(e)) return;
       if (e.leitura) {
-        // o navegador não conseguiu ler o arquivo: não é problema de internet
-        var caixa = erroCampo(e.item, e.message);
+        var cx = erroCampo(e.item, e.message);
         btn.textContent = sessao ? 'Continuar o envio' : 'Enviar a entrega';
-        if (caixa) caixa.scrollIntoView({ block: 'center' }); else erroGeral(e.message);
+        if (cx) cx.scrollIntoView({ block: 'center' }); else erroEm('erro', e.message);
       } else if (e.servidor) {
-        // recusado pelo servidor: a equipe corrige e manda de novo (vira um novo protocolo)
-        sessao = null; btn.textContent = 'Enviar a entrega';
-        var el = e.campo && erroCampo(e.campo, e.message);
-        if (el) { el.scrollIntoView({ block: 'center' }); var foco = el.querySelector('input,select'); if (foco && e.campo === 'codigo') foco.focus({ preventScroll: true }); }
-        else if (/prazo de entrega terminou|está fechado/i.test(e.message)) fechar(e.message);
-        else erroGeral(e.message);
+        // envio em andamento: continua de onde parou (o que já chegou vale, mesmo perto do prazo);
+        // só recomeça do zero se o servidor disser que esta entrega não existe mais
+        if (e.reiniciar || !sessao) { sessao = null; envioId = null; btn.textContent = 'Enviar a entrega'; }
+        else btn.textContent = 'Continuar o envio';
+        if (!sessao && e.campo) envioId = null; // dado recusado: o próximo clique é outro pedido
+        var c = e.campo && erroCampo(e.campo, e.message);
+        if (c) c.scrollIntoView({ block: 'center' }); else erroEm('erro', e.message + (sessao ? ' O que já foi enviado não se perde.' : ''));
+        // o comitê pode ter trocado o desafio da equipe com a página aberta: atualiza
+        if (e.campo === 'desafio') chamar({ acao: 'equipe', token: token }).then(function (r) { equipe = r.equipe; prepararForm(); }).catch(function () {});
       } else {
         btn.textContent = sessao ? 'Continuar o envio' : 'Enviar a entrega';
-        erroGeral(e.aviso ? e.aviso + ' O que já foi enviado não se perde: aguarde alguns minutos e toque em “' + btn.textContent + '”.'
+        erroEm('erro', e.aviso ? e.aviso + ' O que já foi enviado não se perde: aguarde alguns minutos e toque em “' + btn.textContent + '”.'
           : 'A conexão falhou no meio do envio. Confira a internet e toque em “' + btn.textContent + '”: o que já foi enviado não se perde.');
       }
     });
   });
-  // mudar um dado de texto depois de uma falha recomeça o envio do zero (os dados já foram gravados no primeiro passo)
-  function mexeu(e) { if (!enviando && sessao && e.target && e.target.type !== 'file') recomecar(); }
-  form.addEventListener('input', mexeu);
-  form.addEventListener('change', mexeu);
-
-  window.addEventListener('beforeunload', function (e) { if (enviando) { e.preventDefault(); e.returnValue = ''; } });
-  $('imprimir').addEventListener('click', function () { window.print(); });
-  $('denovo').addEventListener('click', function () {
-    ORDEM.forEach(function (k) { escolhidos[k] = []; desenhar(k); });
-    $('confirmaVideo').checked = false; btn.textContent = 'Enviar a entrega'; btn.disabled = false; $('andamento').hidden = true; travar(false); sessao = null;
-    limparErros();
-    $('pronto').hidden = true; $('oque').hidden = false; $('envio').hidden = false; window.scrollTo(0, 0);
-    contagem();
+  window.addEventListener('beforeunload', function (e) { if (enviando || enviandoTermo) { e.preventDefault(); e.returnValue = ''; } });
+  // Voltar/avançar do navegador pode trazer a página de volta da memória, com a equipe aberta.
+  // Ao sair da página por um link, a sessão é encerrada: no laboratório, quem chega depois não entra pela seta Voltar.
+  window.addEventListener('pagehide', function (ev) {
+    if (!ev.persisted || !token) return;
+    revogar(token); token = ''; guardado = null; esquecerSessao();
+    limparArea(); $('area').hidden = true; $('entrar').hidden = false;
   });
+  window.addEventListener('pageshow', function (ev) {
+    if (ev.persisted && !token) { $('area').hidden = true; if (API) $('entrar').hidden = false; }
+  });
+  $('imprimir').addEventListener('click', function () { window.print(); });
+  $('voltar-area').addEventListener('click', function () {
+    $('pronto').hidden = true; $('status-entrega').hidden = false;
+    chamar({ acao: 'equipe', token: token }).then(mostrarArea).catch(function (e) { if (!semSessao(e)) desenharEntrega(); });
+  });
+
+  /* ---------- início ---------- */
+  if (!API) {
+    $('aviso-espera').hidden = false;
+  } else {
+    buscar('').then(function (e) {
+      aplicarEstado(e);
+      var salvo = sessaoGuardada();
+      if (salvo) {
+        token = salvo;
+        return chamar({ acao: 'equipe', token: token }).then(mostrarArea).catch(function (e2) {
+          if (semSessao(e2)) return;
+          token = ''; $('entrar').hidden = false;
+          erroEm('erro-entrar', (e2.servidor ? e2.message : (e2.aviso || 'Não foi possível abrir a área da equipe agora.')) + ' Entre de novo com o usuário e a senha.');
+        });
+      }
+      $('entrar').hidden = false;
+    }).catch(function (e) {
+      $('aviso-rede').hidden = false;
+      if (e && e.servidor) { $('aviso-rede-t').textContent = 'Sistema em manutenção'; $('aviso-rede-x').textContent = e.message + ' '; }
+    });
+  }
 })();
 </script>
 </body>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Rali de Inovação 2ª Edição — painel das equipes inscritas: equipes, desafios escolhidos, termos de imagem e trabalhos postados na classificatória.">
+<title>Painel das equipes · Rali de Inovação</title>
+<link rel="icon" href="/assets/logo-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Michroma&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --bg:#F6F8FB; --paper:#FFFFFF; --ink:#0B2545; --ink-2:#3F5473; --muted:#6B7A93; --line:#D9E1EC;
+  --blue:#1A5E8E; --blue-2:#DCEBF5; --gold:#9A6F12; --gold-2:#F6ECD6;
+  --ok:#1E7A4C; --ok-2:#E3F3EA; --wait:#8A5A00; --wait-2:#FFF1C2; --erro:#B3261E; --erro-2:#FBE9E7; --off:#8592A3; --off-2:#E8EAED;
+  --s1:#1A5E8E; --s2:#4E9BD1; --s3:#9CC73C;
+  --n1:#5E8A12; --n2:#B07A12; --n3:#1A5E8E; --np:#7A4FB0; --nd:#8592A3;
+  --display:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
+  --blue:#7CC4F2; --blue-2:#143A61; --gold:#E2B55B; --gold-2:#3A2E12;
+  --ok:#8EE0B0; --ok-2:#113A26; --wait:#F2C94C; --wait-2:#3A2E12; --erro:#FFB4AB; --erro-2:#4A1512; --off:#8A99AE; --off-2:#1C3354;
+  --s1:#7CC4F2; --s2:#3E7FB8; --s3:#C6F55A;
+  --n1:#C6F55A; --n2:#E2B55B; --n3:#7CC4F2; --np:#C4A6F0; --nd:#8A99AE; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#071A33; --paper:#0F2748; --ink:#F2F6FB; --ink-2:#C7D3E3; --muted:#93A4BC; --line:#24406A;
+  --blue:#7CC4F2; --blue-2:#143A61; --gold:#E2B55B; --gold-2:#3A2E12;
+  --ok:#8EE0B0; --ok-2:#113A26; --wait:#F2C94C; --wait-2:#3A2E12; --erro:#FFB4AB; --erro-2:#4A1512; --off:#8A99AE; --off-2:#1C3354;
+  --s1:#7CC4F2; --s2:#3E7FB8; --s3:#C6F55A;
+  --n1:#C6F55A; --n2:#E2B55B; --n3:#7CC4F2; --np:#C4A6F0; --nd:#8A99AE; color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 var(--body)}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+p{margin:0}
+a{color:var(--blue)}
+[hidden]{display:none !important}
+.wrap{max-width:1180px;margin:0 auto;padding-left:16px;padding-right:16px}
+
+.top{position:sticky;top:0;z-index:9;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;min-height:64px}
+.tutela{display:flex;align-items:center;text-decoration:none;margin-right:auto}
+.tutela img{width:42px;height:42px;border-radius:50%;display:block;margin-right:11px}
+.tutela .t1{display:block;font:400 14px/1 Michroma,var(--display);letter-spacing:.12em;color:var(--ink)}
+.tutela .t2{display:block;font:400 8px/1 Michroma,var(--display);letter-spacing:.5em;color:var(--blue);margin-top:4px}
+.toplink{font:700 15px var(--display);text-decoration:none;color:var(--ink-2);padding:10px 12px;border-radius:8px;border:1px solid var(--line);margin-left:8px;white-space:nowrap}
+.toplink.forte{background:var(--blue);color:var(--paper);border-color:var(--blue)}
+@media (max-width:520px){ .toplink.voltar{display:none} }
+
+.hero{padding:30px 0 8px;display:flex;align-items:flex-end;flex-wrap:wrap}
+.hero > div{flex:1;min-width:260px}
+.eyebrow{font:700 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h1{font-size:42px;font-weight:800}
+@media (max-width:560px){ h1{font-size:32px} }
+.lead{font-size:18px;color:var(--ink-2);margin-top:8px}
+.atual{font-size:14px;color:var(--muted);margin-top:10px}
+.prazo{background:var(--gold-2);border-radius:12px;padding:12px 16px;font:700 17px/1.25 var(--display);margin-top:14px}
+.prazo b{display:block;font-size:30px;color:var(--gold)}
+
+.aviso{border-radius:12px;padding:16px;margin-top:22px;border:1px solid var(--line);background:var(--paper);border-left:6px solid var(--gold)}
+.aviso b{font-family:var(--display);font-size:20px;display:block;margin-bottom:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+@media (max-width:900px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.kpi .rot{font:700 13px/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kpi .num{font:800 46px/1 var(--display);margin-top:8px;font-variant-numeric:tabular-nums}
+.kpi .num small{font-size:22px;color:var(--muted);font-weight:700}
+.kpi .det{color:var(--ink-2);font-size:15px;margin-top:6px}
+.trilho{height:10px;border-radius:5px;background:var(--off-2);overflow:hidden;margin-top:10px;display:flex}
+.trilho i{display:block;height:100%}
+
+.graficos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+@media (max-width:900px){ .graficos{grid-template-columns:1fr} }
+.graf{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.graf h3{font-size:19px;margin-bottom:12px}
+.barra-h{display:grid;grid-template-columns:minmax(0,1fr) 34px;align-items:center;gap:4px 10px;margin-top:8px;font-size:15px}
+.barra-h .r{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.barra-h .v{font:700 16px var(--display);text-align:right;font-variant-numeric:tabular-nums}
+.barra-h .t{grid-column:1/-1;height:8px;border-radius:4px;background:var(--off-2);overflow:hidden}
+.barra-h .t i{display:block;height:100%;border-radius:4px}
+.legenda{display:flex;flex-wrap:wrap;margin-top:10px}
+.legenda span{display:inline-flex;align-items:center;font-size:14px;color:var(--ink-2);margin:4px 14px 0 0}
+.legenda i{width:11px;height:11px;border-radius:3px;margin-right:6px;display:inline-block}
+.vazio{color:var(--muted);font-size:15px}
+
+.secao{margin-top:34px;display:flex;align-items:flex-end;flex-wrap:wrap}
+.secao h2{font-size:30px;margin-right:auto}
+.filtros{display:flex;flex-wrap:wrap;align-items:center;margin-top:14px}
+.filtros input{flex:1;min-width:200px;font:400 16px var(--body);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;margin:0 10px 8px 0}
+.fchip{font:700 15px var(--display);border:1.5px solid var(--line);background:var(--paper);color:var(--ink-2);border-radius:999px;padding:9px 14px;margin:0 8px 8px 0;cursor:pointer}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.conta{color:var(--muted);font-size:15px;margin-top:2px}
+
+.grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:10px}
+@media (max-width:1000px){ .grade{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:640px){ .grade{grid-template-columns:1fr} }
+.eq{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column}
+.eq .id{font:700 13px var(--display);color:var(--muted);letter-spacing:.06em}
+.eq h3{font-size:23px;margin:2px 0 8px;overflow-wrap:anywhere}
+.eq h3.oculto{color:var(--muted);font-weight:700;font-size:20px}
+.eq .sol{font:700 16px/1.3 var(--display);color:var(--blue);margin-bottom:6px;overflow-wrap:anywhere}
+.eq .des{font-size:15px;color:var(--ink-2);margin-bottom:10px}
+.eq .des b{font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;font-size:12px;color:var(--muted);display:block}
+.gente{display:flex;flex-wrap:wrap;margin-bottom:10px}
+.pes{display:inline-flex;align-items:center;font-size:15px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 10px 4px 8px;margin:0 6px 6px 0}
+.pes i{width:10px;height:10px;border-radius:50%;margin-right:6px;flex:none}
+.pes.lider{font-weight:700}
+.pes.lider::after{content:"líder";font:700 11px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:6px}
+.selos{display:flex;flex-wrap:wrap;margin-top:auto}
+.selo{font:700 13.5px/1 var(--display);letter-spacing:.03em;border-radius:999px;padding:7px 10px;margin:4px 6px 0 0}
+.selo.ok{background:var(--ok-2);color:var(--ok)}
+.selo.pend{background:var(--off-2);color:var(--ink-2)}
+.selo.wait{background:var(--wait-2);color:var(--wait)}
+.c-validado{background:var(--ok)} .c-em_validacao{background:var(--wait)} .c-recusado{background:var(--erro)} .c-a_entregar{background:var(--off)}
+
+.nota{color:var(--muted);font-size:14px;margin-top:14px}
+footer{margin-top:44px;padding:24px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="tutela" href="/" title="Tutela Tech">
+    <img src="/assets/emblema.png" alt="" width="42" height="42">
+    <span><span class="t1">TUTELA</span><span class="t2">TECH</span></span>
+  </a>
+  <a class="toplink voltar" href="/rali/">← Rali</a>
+  <a class="toplink forte" href="/rali/entrega/">Área da equipe</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Rali de Inovação · 2ª edição</p>
+      <h1>Painel das equipes</h1>
+      <p class="lead">Quem está no Rali, os desafios escolhidos e como está a classificatória.</p>
+      <p class="atual" id="atual"></p>
+    </div>
+    <div class="prazo" id="prazo">Entrega da classificatória<b id="prazo-dias">15/12</b><span id="prazo-txt">até 23h59</span></div>
+  </div>
+
+  <div class="aviso" id="aviso-breve" hidden><b>O painel abre em breve</b>Assim que as inscrições forem conferidas, as equipes aparecem aqui.</div>
+  <div class="aviso" id="aviso-rede" hidden><b>Não foi possível carregar o painel</b>Confira a internet e <a href="">recarregue a página</a>.</div>
+
+  <div id="conteudo" hidden>
+    <div class="kpis">
+      <div class="kpi"><div class="rot">Equipes no Rali</div><div class="num" id="k-equipes">0</div><div class="det" id="k-equipes-det"></div></div>
+      <div class="kpi"><div class="rot">Participantes</div><div class="num" id="k-part">0</div><div class="det" id="k-part-det"></div></div>
+      <div class="kpi"><div class="rot">Documentação em dia</div><div class="num" id="k-doc">0</div><div class="det" id="k-doc-det"></div><div class="trilho" id="k-doc-trilho"></div></div>
+      <div class="kpi"><div class="rot">Trabalhos postados</div><div class="num" id="k-ent">0</div><div class="det" id="k-ent-det"></div><div class="trilho" id="k-ent-trilho"></div></div>
+    </div>
+
+    <div class="graficos">
+      <div class="graf"><h3>Termos de imagem</h3><div id="g-termos"></div></div>
+      <div class="graf"><h3>Desafios mais escolhidos</h3><div id="g-desafios"></div></div>
+      <div class="graf"><h3>Quem participa</h3><div id="g-origem"></div><h3 style="margin-top:18px">Nível dos desafios</h3><div id="g-nivel"></div></div>
+    </div>
+
+    <div class="secao"><h2>Equipes</h2><p class="conta" id="conta"></p></div>
+    <div class="filtros">
+      <input id="busca" type="search" placeholder="Buscar equipe, participante, desafio ou solução" aria-label="Buscar">
+      <button class="fchip" type="button" data-f="todas" aria-pressed="true">Todas</button>
+      <button class="fchip" type="button" data-f="pend-doc" aria-pressed="false">Termos pendentes</button>
+      <button class="fchip" type="button" data-f="sem-ent" aria-pressed="false">Sem entrega</button>
+      <button class="fchip" type="button" data-f="ok" aria-pressed="false">Tudo em dia</button>
+    </div>
+    <div class="legenda" aria-label="Legenda dos termos"><span><i class="c-validado"></i>termo validado</span><span><i class="c-em_validacao"></i>em validação</span><span><i class="c-recusado"></i>recusado</span><span><i class="c-a_entregar"></i>a entregar</span></div>
+    <div class="grade" id="grade"></div>
+    <p class="nota">Para proteger os dados pessoais (LGPD), o painel mostra só o primeiro nome de cada participante, e só das equipes que autorizaram a divulgação na inscrição. Atualiza sozinho a cada 2 minutos.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">Rali de Inovação · 2ª Edição · SENAI Toledo · IguassuTec · Biopark · INSIDE Sistemas</div></footer>
+
+<script>
+(function () {
+  'use strict';
+  // Endereço do App da Web (termina em /exec). Vazio = painel ainda não aberto.
+  var API = '';
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    var teste = new URLSearchParams(location.search).get('api');
+    if (teste) API = teste;
+  }
+  // nível de cada desafio publicado (gerado a partir da página do Rali)
+  var NIVEL = {"Ligar ventiladores e aspersores na hora certa para as vacas leiteiras":"Iniciante","Registrar as paradas de máquina na hora em que acontecem":"Iniciante","Rastrear sementes do caminhão até o cliente sem planilhas de papel":"Iniciante","Saber quanto cada setor da fábrica gasta de energia e água":"Iniciante","Aquecer aviários gastando menos":"Iniciante","Medir a pegada de carbono de uma fábrica que está nascendo":"Iniciante","Entender por que os colaboradores vão embora — e fazê-los ficar":"Iniciante","Conhecer a experiência de quem almoça no restaurante todos os dias":"Iniciante","Levar o conhecimento até o mecânico na hora do aperto":"Iniciante","Receber lenha e paletes sem depender da balança da rodovia":"Intermediário","Enxergar onde a energia está sendo desperdiçada na fábrica":"Intermediário","Medir quanto biogás o biodigestor produz":"Intermediário","Lavar o frigorífico com menos água e menos esforço":"Intermediário","Um lava-rápido para o interior de baús e contêineres refrigerados":"Intermediário","O que fazer com os dejetos de suínos?":"Intermediário","Prever o peso das aves antes de elas chegarem ao abate":"Intermediário","Conferir cada peça antes de o equipamento embarcar":"Intermediário","Embalar equipamentos pesados sem sacrificar o corpo de ninguém":"Intermediário","Unir cursos, alunos e vendas em um ecossistema só":"Intermediário","Acabar com os volumes que ficam órfãos no estoque":"Intermediário","Prever a demanda para não parar a linha por falta de insumo":"Intermediário","Transformar a experiência dos engenheiros em dados de precificação":"Intermediário","Refilar o filé de peito de frango com menos trabalho manual":"Avançado","Analisar o tamanho dos grãos de soja sem parar a máquina":"Avançado","Medir a espessura das lâminas de soja em tempo real":"Avançado","Menos tilápias mortas entre o tanque e o abate":"Avançado","Reaproveitar o calor da água que a caldeira descarta":"Avançado","Tirar a subjetividade da inspeção na linha de processamento":"Avançado","Sincronizar produção e carregamento para acabar com a fila de caminhões":"Avançado","Carregar a câmara fria sem rearranjar pallets no frio":"Avançado","Escolher o mix de produção que gera mais resultado":"Avançado","Manter a temperatura certa em rotas longas de cadeia fria":"Avançado","Encontrar qualquer documento em 38 anos de projetos de engenharia":"Avançado","Transformar relatórios em previsões e planos de ação automáticos":"Avançado"};
+
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, texto) { var e = document.createElement(tag); if (cls) e.className = cls; if (texto !== undefined) e.textContent = texto; return e; }
+  var dados = null, filtro = 'todas';
+
+  function trilho(alvo, partes) {
+    var t = $(alvo); t.textContent = '';
+    var total = partes.reduce(function (s, p) { return s + p.v; }, 0) || 1;
+    partes.forEach(function (p) { if (!p.v) return; var i = el('i'); i.style.width = (100 * p.v / total) + '%'; i.style.background = p.cor; t.appendChild(i); });
+  }
+  function barras(alvo, linhas, max) {
+    var raiz = $(alvo); raiz.textContent = '';
+    if (!linhas.length) { raiz.appendChild(el('p', 'vazio', 'Ainda sem dados.')); return; }
+    max = max || Math.max.apply(null, linhas.map(function (l) { return l.v; })) || 1;
+    linhas.forEach(function (l) {
+      var b = el('div', 'barra-h');
+      var r = el('span', 'r', l.r); r.title = l.r;
+      b.appendChild(r); b.appendChild(el('span', 'v', String(l.v)));
+      var t = el('span', 't'), i = el('i'); i.style.width = (100 * l.v / max) + '%'; i.style.background = l.cor || 'var(--s1)';
+      t.appendChild(i); b.appendChild(t); raiz.appendChild(b);
+    });
+  }
+  function pct(a, b) { return b ? Math.round(100 * a / b) + '%' : '—'; }
+
+  function prazo(iso) {
+    var fim = new Date(iso || '2026-12-16T02:59:59Z').getTime(), falta = fim - Date.now();
+    var dias = Math.floor(falta / 86400000);
+    if (falta <= 0) { $('prazo-dias').textContent = 'encerrada'; $('prazo-txt').textContent = 'o prazo terminou'; return; }
+    $('prazo-dias').textContent = dias < 1 ? 'último dia' : (dias === 1 ? 'falta 1 dia' : 'faltam ' + dias + ' dias');
+    var hora = new Date(fim).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).replace(':', 'h');
+    $('prazo-txt').textContent = 'até ' + new Date(fim).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' }) + ', ' + hora;
+  }
+
+  function desenhar(d) {
+    dados = d;
+    var k = d.indicadores;
+    $('atual').textContent = 'Atualizado em ' + d.atualizadoEm;
+    prazo(d.prazoIso);
+    $('k-equipes').textContent = k.equipes;
+    $('k-equipes-det').textContent = (k.desafios === 1 ? '1 desafio' : k.desafios + ' desafios diferentes') +
+      (k.desafiosProprios ? ' · ' + k.desafiosProprios + ' com desafio próprio' : '') + (k.desafiosADefinir ? ' · ' + k.desafiosADefinir + ' a definir' : '');
+    $('k-part').textContent = k.participantes;
+    $('k-part-det').textContent = k.aguardando ? k.aguardando + ' inscrito(s) aguardando equipe' : 'em equipes de 2 a 5 pessoas';
+    $('k-doc').innerHTML = ''; $('k-doc').appendChild(document.createTextNode(k.equipesTermosOk)); $('k-doc').appendChild(el('small', '', ' de ' + k.equipes));
+    $('k-doc-det').textContent = 'equipes com todos os termos validados (' + pct(k.equipesTermosOk, k.equipes) + ')';
+    trilho('k-doc-trilho', [{ v: k.equipesTermosOk, cor: 'var(--ok)' }, { v: k.equipes - k.equipesTermosOk, cor: 'var(--off-2)' }]);
+    $('k-ent').innerHTML = ''; $('k-ent').appendChild(document.createTextNode(k.entregas)); $('k-ent').appendChild(el('small', '', ' de ' + k.equipes));
+    $('k-ent-det').textContent = 'equipes com a entrega completa (' + pct(k.entregas, k.equipes) + ')';
+    trilho('k-ent-trilho', [{ v: k.entregas, cor: 'var(--blue)' }, { v: k.equipes - k.entregas, cor: 'var(--off-2)' }]);
+
+    var t = k.termos;
+    barras('g-termos', [
+      { r: 'Validados', v: t.validado, cor: 'var(--ok)' }, { r: 'Em validação', v: t.emValidacao, cor: 'var(--wait)' },
+      { r: 'Recusados', v: t.recusado, cor: 'var(--erro)' }, { r: 'A entregar', v: t.aEntregar, cor: 'var(--off)' }
+    ], t.total);
+    barras('g-desafios', d.desafios.slice(0, 6).map(function (x) { return { r: x.titulo, v: x.equipes }; }));
+    barras('g-origem', [
+      { r: 'Alunos do SENAI', v: k.origem.SENAI, cor: 'var(--s1)' }, { r: 'Alunos do SESI', v: k.origem.SESI, cor: 'var(--s2)' },
+      { r: 'Comunidade', v: k.origem.Comunidade, cor: 'var(--s3)' }
+    ].concat(k.origem.Outros ? [{ r: 'Outros', v: k.origem.Outros, cor: 'var(--off)' }] : []).filter(function (x) { return x.v; }));
+    var niv = { 'Iniciante': 0, 'Intermediário': 0, 'Avançado': 0, 'Desafio próprio': 0, 'A definir': 0 };
+    d.equipes.forEach(function (e) {
+      var n = e.desafio === 'Desafio próprio' ? 'Desafio próprio' : (NIVEL[e.desafio] || 'A definir');
+      niv[n] = (niv[n] || 0) + 1;
+    });
+    var cores = { 'Iniciante': 'var(--n1)', 'Intermediário': 'var(--n2)', 'Avançado': 'var(--n3)', 'Desafio próprio': 'var(--np)', 'A definir': 'var(--nd)' };
+    barras('g-nivel', Object.keys(niv).filter(function (n) { return niv[n]; }).map(function (n) { return { r: n, v: niv[n], cor: cores[n] }; }));
+    desenharEquipes();
+  }
+
+  function passa(e) {
+    var ok = e.termos.total && e.termos.validados === e.termos.total;
+    if (filtro === 'pend-doc' && ok) return false;
+    if (filtro === 'sem-ent' && e.entrega) return false;
+    if (filtro === 'ok' && !(ok && e.entrega)) return false;
+    var q = $('busca').value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    if (!q) return true;
+    var alvo = [e.nome, e.id, e.lider, e.desafio, e.titulo].concat(e.integrantes.map(function (p) { return p.nome; })).join(' ')
+      .toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    return alvo.indexOf(q) >= 0;
+  }
+
+  function desenharEquipes() {
+    var g = $('grade'); g.textContent = '';
+    // equipes que não autorizaram a divulgação do nome vêm por último, pelo código
+    var lista = dados.equipes.filter(passa).sort(function (a, b) { return (a.nome ? 0 : 1) - (b.nome ? 0 : 1) || (a.nome || a.id).localeCompare(b.nome || b.id, 'pt-BR'); });
+    $('conta').textContent = lista.length + ' de ' + dados.equipes.length + ' equipes';
+    if (!lista.length) { g.appendChild(el('p', 'vazio', dados.equipes.length ? 'Nenhuma equipe com esse filtro.' : 'As equipes aparecem aqui assim que as inscrições forem conferidas.')); return; }
+    lista.forEach(function (e) {
+      var c = el('article', 'eq');
+      c.appendChild(el('span', 'id', e.id));
+      c.appendChild(el('h3', e.nome ? '' : 'oculto', e.nome || 'Nome não divulgado'));
+      if (e.titulo) c.appendChild(el('p', 'sol', '💡 ' + e.titulo));
+      var des = el('p', 'des'); des.appendChild(el('b', '', 'Desafio')); des.appendChild(document.createTextNode(e.desafio || 'A definir'));
+      c.appendChild(des);
+      var gente = el('div', 'gente');
+      function pessoa(nome, termo, lider) {
+        var p = el('span', 'pes' + (lider ? ' lider' : '')), i = el('i', 'c-' + (termo || 'a_entregar'));
+        p.appendChild(i); p.appendChild(document.createTextNode(nome));
+        p.title = { validado: 'termo validado', em_validacao: 'termo em validação', recusado: 'termo recusado', a_entregar: 'termo a entregar' }[termo || 'a_entregar'];
+        gente.appendChild(p);
+      }
+      if (e.lider) pessoa(e.lider, e.termoLider, true);
+      e.integrantes.forEach(function (p) { pessoa(p.nome, p.termo, false); });
+      c.appendChild(gente);
+      var selos = el('div', 'selos');
+      var ok = e.termos.total && e.termos.validados === e.termos.total;
+      selos.appendChild(el('span', 'selo ' + (ok ? 'ok' : 'pend'), (ok ? '✓ ' : '') + 'Termos ' + e.termos.validados + '/' + e.termos.total));
+      selos.appendChild(el('span', 'selo ' + (e.entrega ? 'ok' : 'pend'), e.entrega ? '✓ Entrega em ' + e.entrega : 'Entrega pendente'));
+      c.appendChild(selos);
+      g.appendChild(c);
+    });
+  }
+
+  [].forEach.call(document.querySelectorAll('.fchip'), function (b) {
+    b.addEventListener('click', function () {
+      filtro = b.getAttribute('data-f');
+      [].forEach.call(document.querySelectorAll('.fchip'), function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      if (dados) desenharEquipes();
+    });
+  });
+  $('busca').addEventListener('input', function () { if (dados) desenharEquipes(); });
+
+  function carregar() {
+    return fetch(API + (API.indexOf('?') >= 0 ? '&' : '?') + 'acao=painel', { redirect: 'follow' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (d) {
+        $('aviso-rede').hidden = true;
+        if (!d.ok) throw new Error(d.erro || 'erro');
+        if (!d.publicado) { $('aviso-breve').hidden = false; $('conteudo').hidden = true; return; }
+        $('aviso-breve').hidden = true; $('conteudo').hidden = false;
+        desenhar(d);
+      });
+  }
+  prazo();
+  if (!API) { $('aviso-breve').hidden = false; }
+  else {
+    carregar().catch(function () { if (!dados) $('aviso-rede').hidden = false; });
+    setInterval(function () { carregar().catch(function () {}); }, 120000);
+  }
+})();
+</script>
+</body>
+</html>
